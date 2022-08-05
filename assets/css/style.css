@@ -725,6 +725,7 @@ main[data-page^="home"] section.banner .container .timer {
 	align-items: center;
 	justify-content: space-between;
 	padding: 30px;
+	margin-bottom: 30px;
 }
 
 main[data-page^="home"] section.banner .container .timer p {
