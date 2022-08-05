@@ -1,0 +1,31 @@
+/* Colors */
+$color__text_main: #3d3d3d;
+$color__text_alt: #fff;
+$color__green: #008278;
+$color_green_light: #39ac2d;
+$color__blue: #1755ce;
+$color__yellow: #f6fda4;
+
+$gradient__green: linear-gradient(
+  125.69deg,
+  rgba(58, 171, 57, 0.05) 20%,
+  rgba(58, 171, 57, 0.4) 80%,
+  rgba(58, 171, 57, 0.05) 100%
+);
+$gradient__blue: linear-gradient(
+  91.55deg,
+  #1755ce 17.65%,
+  rgba(0, 130, 120, 0.79) 98.75%
+);
+$gradient__footer: linear-gradient(
+  90.68deg,
+  #083288 2.49%,
+  rgba(0, 130, 120, 0.72) 99.61%,
+  rgba(0, 130, 120, 0.72) 99.61%
+);
+$gradient__grass: linear-gradient(90.6deg, #0f9502 19.86%, #39ac2d 81.94%);
+$gradient__sky: linear-gradient(
+  91.01deg,
+  rgba(196, 235, 232, 0.61) 4.11%,
+  #ffffff 90.12%
+);

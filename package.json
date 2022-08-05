@@ -1,0 +1,19 @@
+{
+  "name": "celius",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"watch": "node-sass ./assets/scss/ -o ./assets/css/ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+    "compile:css": "node-sass ./assets/scss/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

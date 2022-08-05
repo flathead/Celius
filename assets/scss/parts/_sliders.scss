@@ -1,0 +1,86 @@
+.swiper.course-slider {
+  width: 100%;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: calc((100% - 30px) / 2) !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    .slide-container {
+      width: calc(100% - 60px);
+      height: calc(100% - 60px);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      border-radius: 20px;
+      .slide-image {
+        height: 100%;
+        img {
+          height: 100%;
+        }
+      }
+      .slide-info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .badges {
+          display: inline-flex;
+          align-items: center;
+          gap: 1rem;
+          .badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10px;
+            height: 24px;
+            border-radius: 5px;
+
+            p {
+              margin: 0;
+              font-size: 0.8rem;
+              font-family: "Museo Sans Cyrl 300";
+              color: #fff;
+            }
+
+            &.badge-blue {
+              background: #4d81e7;
+            }
+            &.badge-pink {
+              background: #e03755;
+            }
+          }
+        }
+        .slide-title {
+          margin: 0;
+          font-size: 1.2rem;
+          font-family: "Museo Sans Cyrl 700";
+          text-align: left;
+          span {
+            color: $color_green_light;
+          }
+        }
+      }
+    }
+  }
+}
