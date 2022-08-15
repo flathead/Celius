@@ -7,6 +7,17 @@ main[data-page^="home"] {
       padding: 0 50px;
       display: grid;
       grid-template: auto/ 1fr 1fr;
+      @media screen and (max-width: 1200px) {
+        gap: 2rem;
+      }
+      @media screen and (max-width: 960px) {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 50px;
+      }
+      @media screen and (max-width: 580px) {
+        padding: 20px;
+      }
       .offer {
         display: flex;
         align-items: center;
@@ -15,6 +26,18 @@ main[data-page^="home"] {
         .logo {
           display: flex;
           align-items: center;
+          img {
+            @media screen and (max-width: 580px) {
+              &:first-child {
+                max-width: 80px;
+                width: 100%;
+              }
+              &:last-child {
+                max-width: 200px;
+                width: 100%;
+              }
+            }
+          }
         }
         .text {
           h1 {
@@ -40,10 +63,28 @@ main[data-page^="home"] {
               //text-fill-color: transparent;
               color: transparent;
               text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+              @media screen and (max-width: 1200px) {
+                font-size: 1.4rem;
+              }
+              @media screen and (max-width: 960px) {
+                font-size: 2rem;
+              }
+              @media screen and (max-width: 580px) {
+                font-size: 1.4rem;
+              }
             }
             .subtitle {
               font-weight: 300;
               font-size: 1.8rem;
+              @media screen and (max-width: 1200px) {
+                font-size: 1.2rem;
+              }
+              @media screen and (max-width: 960px) {
+                font-size: 1.8rem;
+              }
+              @media screen and (max-width: 580px) {
+                font-size: 1.2rem;
+              }
             }
           }
         }
@@ -51,6 +92,16 @@ main[data-page^="home"] {
       .image {
         justify-self: end;
         align-self: center;
+        @media screen and (max-width: 1200px) {
+          display: flex;
+          justify-content: flex-end;
+          img {
+            width: 90%;
+          }
+        }
+        @media screen and (max-width: 580px) {
+          justify-content: center;
+        }
       }
     }
 
@@ -59,9 +110,12 @@ main[data-page^="home"] {
       flex-flow: row wrap;
       gap: 2rem;
       justify-content: space-between;
+      @media screen and (max-width: 960px) {
+        gap: 1rem;
+      }
 
       .service {
-        width: calc(33.3% - 4rem);
+        width: calc(33.3% - 2rem);
         grid-area: service;
         background: #ffffff;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -73,21 +127,56 @@ main[data-page^="home"] {
           box-shadow: 0 -10px 10px #3aac2d20;
           filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.15));
         }
+        @media screen and (max-width: 960px) {
+          gap: 0.5rem;
+          width: calc(50% - 0.5rem);
+        }
         .preview {
           display: flex;
           align-items: center;
           gap: 1.4rem;
+          @media screen and (max-width: 580px) {
+            flex-direction: column;
+          }
           h4 {
             font-family: "Museo Sans Cyrl 700";
             font-size: 1.4rem;
+            @media screen and (max-width: 1200px) {
+              font-size: 1rem;
+            }
+            @media screen and (max-width: 580px) {
+              margin: 0;
+              text-align: center;
+            }
+          }
+          img {
+            @media screen and (max-width: 1200px) {
+              width: 60px;
+            }
+          }
+        }
+        .info {
+          @media screen and (max-width: 580px) {
+            display: none;
           }
         }
       }
       .service.long {
         grid-area: long-service;
-        width: calc(66.6% - 4rem);
+        width: calc(66.6% - 1rem);
         display: inline-flex;
         gap: 2rem;
+        @media screen and (max-width: 960px) {
+          gap: 1rem;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+        @media screen and (max-width: 580px) {
+          background: none;
+          box-shadow: none;
+          padding: 0;
+        }
         .column {
           display: flex;
           flex-direction: column;
@@ -100,6 +189,9 @@ main[data-page^="home"] {
             h4 {
               font-family: "Museo Sans Cyrl 700";
               font-size: 1.4rem;
+              @media screen and (max-width: 1200px) {
+                font-size: 1rem;
+              }
             }
             &.thin {
               h4 {
@@ -110,6 +202,60 @@ main[data-page^="home"] {
               transform: scale(0.9);
             }
           }
+          @media screen and (max-width: 1200px) {
+            a[type="button"] {
+              padding: 0 20px;
+            }
+          }
+          @media screen and (max-width: 960px) {
+            &:first-child {
+              width: 100%;
+              flex-direction: row;
+              gap: 2rem;
+              a {
+                width: 50%;
+                .preview {
+                  h4 {
+                    font-size: 1.2rem;
+                    margin: 0;
+                  }
+                }
+              }
+            }
+            &:last-child {
+              width: 100%;
+              flex-direction: row;
+              gap: 2rem;
+              justify-content: unset;
+              margin-top: 2rem;
+              p {
+                margin: 0;
+                width: 50%;
+              }
+            }
+          }
+          @media screen and (max-width: 580px) {
+            &:first-child {
+              flex-direction: column;
+              gap: 1rem;
+              a {
+                width: 100%;
+                .preview {
+                  background: $color__white;
+                  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+                  padding: 20px;
+                  flex-direction: row;
+                  border-radius: 20px;
+                  &:hover {
+                    transform: none;
+                  }
+                }
+              }
+            }
+            &:last-child {
+              display: none;
+            }
+          }
         }
       }
     }
@@ -117,7 +263,7 @@ main[data-page^="home"] {
       width: 100%;
       .course-pagination-container {
         width: 100%;
-        margin-top: 30px;
+        margin: 30px 0;
 
         display: flex;
         align-items: center;
@@ -125,6 +271,11 @@ main[data-page^="home"] {
         background: #fbfafa;
         box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05);
         border-radius: 20px;
+
+        @media screen and (max-width: 580px) {
+          padding: 20px;
+          flex-direction: column;
+        }
         .buttons {
           padding: 20px 40px;
           padding-right: 0;
@@ -132,10 +283,19 @@ main[data-page^="home"] {
             color: $color_green_light;
             font-family: "Museo Sans Cyrl 700";
           }
+          @media screen and (max-width: 580px) {
+            padding: 0;
+          }
         }
         .pagination {
           padding: 20px 40px;
           padding-left: 0;
+
+          @media screen and (max-width: 580px) {
+            padding: 0;
+            margin-top: 2rem;
+          }
+
           .course-navigation {
             display: flex;
             align-items: center;
@@ -146,11 +306,11 @@ main[data-page^="home"] {
               cursor: pointer;
               transition: all 1s;
             }
-            .course-prev:hover {
+            #course-prev:hover {
               transition: all 0.5s;
               transform: scale(1.2);
             }
-            .course-next {
+            #course-next {
               i {
                 font-size: 2rem;
                 color: $color_green_light;
@@ -186,7 +346,7 @@ main[data-page^="home"] {
 
   section.banner {
     background: $gradient__blue;
-    padding: 50px 20px;
+    padding: 50px 0;
     .container {
       display: flex;
       align-items: center;
@@ -198,19 +358,33 @@ main[data-page^="home"] {
         color: #fff974;
         text-align: center;
         margin: 0;
+        @media screen and (max-width: 580px) {
+          font-size: 1.6rem;
+        }
       }
       h3 {
         font-family: "Museo Sans Cyrl 700";
         font-size: 1.6rem;
-        max-width: 900px;
+        max-width: 960px;
         color: #fff;
         text-align: center;
         margin: 2rem 0;
+        @media screen and (max-width: 580px) {
+          font-size: 1.4rem;
+        }
       }
 
       .video {
         iframe {
           border-radius: 30px;
+        }
+        @media screen and (max-width: 580px) {
+          width: 100%;
+          height: 200px;
+          iframe {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
 
@@ -219,6 +393,10 @@ main[data-page^="home"] {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+          gap: 2rem;
+        }
         .list-item {
           max-width: 400px;
           display: flex;
@@ -231,6 +409,9 @@ main[data-page^="home"] {
             width: 100%;
             height: 100%;
             margin-bottom: 20px;
+            @media screen and (max-width: 580px) {
+              max-width: 60px;
+            }
           }
           p {
             text-align: center;
@@ -238,6 +419,9 @@ main[data-page^="home"] {
             font-size: 1.4rem;
             margin: 0;
             font-family: "Museo Sans Cyrl 700";
+            @media screen and (max-width: 960px) {
+              font-size: 1.2rem;
+            }
           }
         }
       }
@@ -245,16 +429,28 @@ main[data-page^="home"] {
       .timer {
         background: rgba(73, 82, 125, 0.7);
         border-radius: 15px;
-        width: 90%;
+        width: calc(100% - 40px);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 30px;
-        margin-bottom: 30px;
+        padding: 20px;
+        margin-bottom: 20px;
+        @media screen and (max-width: 960px) {
+          flex-direction: column;
+        }
+        @media screen and (max-width: 580px) {
+          width: 100%;
+        }
         p {
           color: #fff;
           font-family: "Museo Sans Cyrl 700";
           font-size: 1.3rem;
+          @media screen and (max-width: 960px) {
+            margin: 0;
+          }
+          @media screen and (max-width: 580px) {
+            text-align: center;
+          }
         }
 
         .time {
@@ -262,6 +458,9 @@ main[data-page^="home"] {
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          @media screen and (max-width: 960px) {
+            margin: 2rem 0;
+          }
           .numbers,
           .labels {
             display: flex;
@@ -297,6 +496,245 @@ main[data-page^="home"] {
 
         a.action-btn {
           background: #39ac2d;
+        }
+      }
+    }
+  }
+
+  section.team {
+    width: 100%;
+    padding: 2rem 0;
+    .swiper {
+      height: max-content;
+      padding-bottom: 4px;
+      .swiper-wrapper {
+        .swiper-slide {
+          min-height: 500px;
+          max-height: 500px;
+          max-width: 400px;
+          height: 100%;
+          display: flex;
+          @media screen and (max-width: 580px) {
+            max-width: unset;
+          }
+          .slide-container {
+            background: $color__white;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+            border-radius: 30px;
+            min-height: calc(500px - 44px);
+            width: calc(100% - 4px);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .name {
+              display: flex;
+              flex-direction: inherit;
+              align-items: center;
+              img {
+                border-radius: 50%;
+              }
+              p {
+                font-size: 1.2rem;
+                font-family: $font500;
+                max-width: 200px;
+                text-align: center;
+                margin: 1rem 0;
+              }
+            }
+            .about {
+              p {
+                text-align: center;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .team-pagination-container {
+      width: 100%;
+      margin: 30px 0;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fbfafa;
+      box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      @media screen and (max-width: 580px) {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .buttons {
+        padding: 20px 40px;
+        padding-right: 0;
+        @media screen and (max-width: 580px) {
+          padding: 0;
+        }
+        a {
+          color: $color_green_light;
+          font-family: "Museo Sans Cyrl 700";
+        }
+      }
+      .pagination {
+        padding: 20px 40px;
+        padding-left: 0;
+        @media screen and (max-width: 580px) {
+          padding: 0;
+          margin-top: 2rem;
+        }
+        .team-navigation {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          margin-bottom: 10px;
+          div {
+            cursor: pointer;
+            transition: all 1s;
+          }
+          #team-prev:hover {
+            transition: all 0.5s;
+            transform: scale(1.2);
+          }
+          #team-next {
+            i {
+              font-size: 2rem;
+              color: $color_green_light;
+            }
+            &:hover {
+              transition: all 0.5s;
+              transform: scale(0.8);
+            }
+          }
+        }
+        .team-pagination {
+          .swiper-pagination-bullet {
+            width: 1rem;
+            height: 1rem;
+            text-align: center;
+            line-height: 1rem;
+            font-size: 1rem;
+            color: #777;
+            opacity: 1;
+            background: transparent;
+            font-family: "Museo Sans Cyrl 700";
+          }
+
+          .swiper-pagination-bullet-active {
+            color: $color_green_light;
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  section.socials {
+    .container {
+      .social-banner {
+        background: linear-gradient(
+          91.01deg,
+          #1755ce 4.11%,
+          rgba(39, 150, 143, 0.57) 90.12%
+        );
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 10px 80px;
+        @media screen and (max-width: 1200px) {
+          padding: 10px 40px;
+        }
+        @media screen and (max-width: 960px) {
+          padding: 40px 150px;
+          flex-direction: column;
+        }
+        @media screen and (max-width: 580px) {
+          padding: 40px 20px;
+        }
+        .title {
+          max-width: 320px;
+          width: 100%;
+          p {
+            font-family: $font900;
+            font-size: 2.4rem;
+            color: $color__white;
+            margin: 0;
+            @media screen and (max-width: 960px) {
+              text-align: center;
+            }
+            @media screen and (max-width: 580px) {
+              font-size: 1.8rem;
+            }
+          }
+        }
+        @media screen and (max-width: 960px) {
+          .face {
+            width: 100%;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .social-list {
+          max-width: 320px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          p.status {
+            margin: 0;
+            color: #000;
+            position: relative;
+            &::before {
+              content: "";
+              background: #898989;
+              position: absolute;
+              top: 50%;
+              right: calc(100% + 10px);
+              transform: translateY(-50%);
+              height: 1px;
+              width: 50px;
+            }
+            &::after {
+              content: "";
+              background: #898989;
+              position: absolute;
+              top: 50%;
+              left: calc(100% + 10px);
+              transform: translateY(-50%);
+              height: 1px;
+              width: 50px;
+            }
+          }
+          ul.soc-list {
+            width: 100%;
+            margin: 1rem 0;
+            list-style: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            li {
+              transition: all 0.3s;
+              &:hover {
+                transform: scale(0.9);
+                filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.15));
+              }
+            }
+          }
+          p.alert {
+            font-family: $font700;
+            font-size: 1.4rem;
+            color: $color__white;
+            margin: 0;
+            @media screen and (max-width: 580px) {
+              text-align: center;
+            }
+          }
         }
       }
     }

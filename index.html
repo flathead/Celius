@@ -90,6 +90,98 @@
 		</nav>
 	</header>
 
+	<header class="site-header mobile">
+		<div class="header-controls">
+			<div class="container">
+				<a class="logo" href="/"><img src="./assets/img/png/logo_mobile.png" alt="Логотип Целиус"></a>
+
+				<div class="menu-buttons">
+					<div class="search">
+						<label for="header-search">
+							<input type="text" id="header-search">
+							<i class="fa-solid fa-magnifying-glass"></i>
+							<span>Поиск</span>
+						</label>
+					</div>
+
+					<div class="client-buttons">
+						<div class="cart">
+							<img src="./assets/img/svg/cart_alt.svg" alt="Корзина">
+						</div>
+						<div class="phone">
+							<a href="tel:"><img src="./assets/img/svg/phone.svg" alt="Вход"></a>
+						</div>
+						<div class="auth">
+							<img src="./assets/img/svg/person_alt.svg" alt="Вход">
+						</div>
+						<div class="menu-toggle">
+							<button id="toggle">
+								<img src="./assets/img/svg/burger.svg" alt="">
+								<span class="closed">меню</span>
+								<span class="opened">назад</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mobile-menu">
+			<ul class="header-menu">
+				<li class="menu-item">
+					<a href="#">Услуги центра</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Онлайн-школа "Код здоровья"</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Интернет-магазин</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Семинары</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Контакты</a>
+				</li>
+			</ul>
+			<div class="contact">
+				<div class="title">
+					<img src="./assets/img/png/Телефон.png" alt="">
+					<span>Телефоны</span>
+				</div>
+				<div class="phone">
+					<p class="title">
+						Администор центра:
+					</p>
+					<a href="tel:8 (909)-930-00-708" class="phone">8 (909)-930-00-708</a>
+					<a href="tel:8 (916)-584-68-57" class="phone">8 (916)-584-68-57</a>
+				</div>
+				<div class="phone">
+					<p class="title">
+						Интернет-магазин:
+					</p>
+					<a href="tel:8 (909)-930-10-70" class="phone">8 (909)-930-10-70</a>
+				</div>
+				<div class="phone">
+					<p class="title">
+						Онлайн-школа:
+					</p>
+					<a href="tel:8 (909)-930-10-70" class="phone">8 (909)-930-10-70</a>
+				</div>
+				<div class="open">
+					<p class="title">График работы:</p>
+					<p>Ежедневно с 10:00 - 19:00</p>
+				</div>
+				<a type="button" href="#" class="action-btn">Построить маршрут</a>
+			</div>
+			<div class="sublinks">
+				<a href="#">Сведения об образовательной организации</a>
+				<a href="#">Оплата и доставка</a>
+			</div>
+		</div>
+
+	</header>
+
 	<main class="site-main" data-page="home">
 
 		<div class="container">
@@ -426,8 +518,8 @@
 					</div>
 					<div class="pagination">
 						<div class="course-navigation">
-							<div class="course-prev"><i class="fa-solid fa-angle-left"></i></div>
-							<div class="course-next"><i class="fa-solid fa-angle-right"></i></div>
+							<div id="course-prev"><i class="fa-solid fa-angle-left"></i></div>
+							<div id="course-next"><i class="fa-solid fa-angle-right"></i></div>
 						</div>
 						<div class="course-pagination"></div>
 					</div>
@@ -481,6 +573,176 @@
 					</div>
 					<a type="button" class="action-btn" href="#"><span>Узнать подробнее</span></a>
 				</div>
+		</section>
+
+		<section class="team">
+			<div class="container">
+				<h2 class="title">Наши специалисты</h2>
+				<div class="swiper team-slider">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="slide-container">
+								<div class="name">
+									<img src="./assets/img/png/team/Shishova.png" alt="Шишова Ольга Ивановна">
+									<p>Шишова Ольга Ивановна</p>
+								</div>
+								<div class="about">
+									<p>
+										Врач по клинической лабораторной диагностике, общественному здоровью. Доктор
+										Альтернативной медицины Оксфордской образовательной сети.<br>Профессор
+										МУФО.<br>
+										Преподаватель курсов: “Основы лимфатического массажа”, “Клиническая
+										микроскопия и лимфология”, “Апигирудотерапия”.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="slide-container">
+								<div class="name">
+									<img src="./assets/img/png/team/Шишов.png" alt="Шишов Виктор Георгиевич">
+									<p>Шишов Виктор Георгиевич</p>
+								</div>
+								<div class="about">
+									<p>
+										Специалист по остеопатическим методам лечения, массажист со средним медицинским
+										образованием.<br>Преподаватель курсов: “Висцеральные остеопатические техники”,
+										“Противоацидозный массаж” (теория и практика).
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="slide-container">
+								<div class="name">
+									<img src="./assets/img/png/team/Shishova2.png" alt="Казакова Анна Викторовна">
+									<p>Казакова Анна Викторовна</p>
+								</div>
+								<div class="about">
+									<p>
+										Специалист по клинической микроскопии, апигурудотерапии, по остеопатическим и
+										висцеральным техникам, лимфатическому массажу.<br>
+										Массажист со средне-специальным медицинским образованием. Специалист по
+										проведению Прайм теста. Преподаватель курсов "Проведение прайм-теста”
+										(практика).
+
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="slide-container">
+								<div class="name">
+									<img src="./assets/img/png/team/Shishova.png" alt="Шишова Ольга Ивановна">
+									<p>Шишова Ольга Ивановна</p>
+								</div>
+								<div class="about">
+									<p>
+										Врач по клинической лабораторной диагностике, общественному здоровью. Доктор
+										Альтернативной медицины Оксфордской образовательной сети.<br>Профессор
+										МУФО.<br>
+										Преподаватель курсов: “Основы лимфатического массажа”, “Клиническая
+										микроскопия и лимфология”, “Апигирудотерапия”.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="slide-container">
+								<div class="name">
+									<img src="./assets/img/png/team/Shishova.png" alt="Шишова Ольга Ивановна">
+									<p>Шишова Ольга Ивановна</p>
+								</div>
+								<div class="about">
+									<p>
+										Врач по клинической лабораторной диагностике, общественному здоровью. Доктор
+										Альтернативной медицины Оксфордской образовательной сети.<br>Профессор
+										МУФО.<br>
+										Преподаватель курсов: “Основы лимфатического массажа”, “Клиническая
+										микроскопия и лимфология”, “Апигирудотерапия”.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="slide-container">
+								<div class="name">
+									<img src="./assets/img/png/team/Shishova.png" alt="Шишова Ольга Ивановна">
+									<p>Шишова Ольга Ивановна</p>
+								</div>
+								<div class="about">
+									<p>
+										Врач по клинической лабораторной диагностике, общественному здоровью. Доктор
+										Альтернативной медицины Оксфордской образовательной сети.<br>Профессор
+										МУФО.<br>
+										Преподаватель курсов: “Основы лимфатического массажа”, “Клиническая
+										микроскопия и лимфология”, “Апигирудотерапия”.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="team-pagination-container">
+					<div class="buttons">
+						<a href="#" class="green">Показать всех сотрудников</a>
+					</div>
+					<div class="pagination">
+						<div class="team-navigation">
+							<div id="team-prev"><i class="fa-solid fa-angle-left"></i></div>
+							<div id="team-next"><i class="fa-solid fa-angle-right"></i></div>
+						</div>
+						<div class="team-pagination"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="socials">
+			<div class="container">
+				<div class="social-banner">
+					<div class="title">
+						<p>
+							Ольга Ивановна в соц. сетях
+						</p>
+					</div>
+					<div class="face">
+						<img src="./assets/img/png/smm.png" alt="Ольга Ивановна">
+					</div>
+					<div class="social-list">
+						<p class="status">в сети</p>
+						<ul class="soc-list">
+							<li class="soc-item">
+								<a href="#">
+									<img src="./assets/img/svg/socials/YouTube.svg" alt="">
+								</a>
+							</li>
+							<li class="soc-item">
+								<a href="#">
+									<img src="./assets/img/svg/socials/Яндекс.svg" alt="">
+								</a>
+							</li>
+							<li class="soc-item">
+								<a href="#">
+									<img src="./assets/img/svg/socials/Вконтакте.svg" alt="">
+								</a>
+							</li>
+							<li class="soc-item">
+								<a href="#">
+									<img src="./assets/img/svg/socials/Телеграм.svg" alt="">
+								</a>
+							</li>
+							<li class="soc-item">
+								<a href="#">
+									<img src="./assets/img/svg/socials/Одноклассники.svg" alt="">
+								</a>
+							</li>
+						</ul>
+						<p class="alert">Не забудьте подписаться</p>
+					</div>
+				</div>
+			</div>
 		</section>
 	</main>
 

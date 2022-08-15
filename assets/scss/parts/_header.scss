@@ -1,4 +1,7 @@
 header.site-header {
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
   width: 100%;
   div,
   nav {
@@ -9,6 +12,12 @@ header.site-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @media screen and (max-width: 1200px) {
+        gap: 1rem;
+      }
+      @media screen and (max-width: 580px) {
+        gap: 10px;
+      }
       p {
         margin: 0;
       }
@@ -40,12 +49,18 @@ header.site-header {
         p.title {
           font-size: 1.4rem;
           color: $color__green;
+          @media screen and (max-width: 1200px) {
+            font-size: 1rem;
+          }
         }
         .phone-wrapper {
           display: inline-flex;
           align-items: flex-end;
           flex-direction: row;
           gap: 1rem;
+          @media screen and (max-width: 580px) {
+            gap: 10px;
+          }
           span {
             color: $color__blue;
             cursor: pointer;
@@ -58,11 +73,19 @@ header.site-header {
           &:hover {
             color: $color_green_light;
           }
+          @media screen and (max-width: 1200px) {
+            font-size: 1rem;
+          }
         }
       }
       .search {
         label {
           position: relative;
+          /* @media screen and (max-width: 1200px) {
+            span {
+              display: none;
+            }
+          } */
           input {
             height: 40px;
             background: #ffffff;
@@ -71,6 +94,15 @@ header.site-header {
             width: 200px;
             padding: 0 10px;
             transition: 0.3s;
+            /* @media screen and (max-width: 1200px) {
+              width: 40px;
+              padding: 0;
+            } */
+            @media screen and (max-width: 580px) {
+              max-width: 200px;
+              min-width: 100px;
+              width: 100%;
+            }
             &:focus-visible {
               border: 1px solid $color__green;
               outline: 0;
@@ -82,12 +114,20 @@ header.site-header {
             top: 50%;
             left: 10px;
             transform: translateY(-50%);
+            /* @media screen and (max-width: 1200px) {
+              font-size: 1.2rem;
+              opacity: 0.7;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            } */
+            pointer-events: none;
           }
           span {
             position: absolute;
             top: 50%;
             left: 34px;
             transform: translateY(-50%);
+            pointer-events: none;
           }
           &.focused {
             @keyframes focus-animation {
@@ -103,9 +143,15 @@ header.site-header {
             i,
             span {
               animation: focus-animation 0.3s forwards linear;
+              /* @media screen and (max-width: 1200px) {
+                display: none;
+              } */
             }
             input {
               padding: 0 10px;
+              /* @media screen and (max-width: 1200px) {
+                width: 200px;
+              } */
             }
           }
         }
@@ -114,6 +160,9 @@ header.site-header {
         display: flex;
         align-items: center;
         gap: 1rem;
+        @media screen and (max-width: 580px) {
+          gap: 10px;
+        }
       }
     }
   }
@@ -125,11 +174,214 @@ header.site-header {
       justify-content: space-between;
       gap: 2rem;
       width: 100%;
+      @media screen and (max-width: 580px) {
+        gap: 10px;
+      }
       li.menu-item {
         a {
           text-transform: uppercase;
           color: $color__text_alt;
           font-family: "Museo Sans Cyrl 500";
+        }
+      }
+    }
+  }
+}
+
+header.site-header.mobile {
+  display: flex;
+
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+  padding: 10px 0;
+  background: $color__green;
+  .header-controls {
+    background: none;
+    width: 100%;
+    .logo {
+      display: flex;
+      align-items: center;
+      @media screen and (max-width: 580px) {
+        width: 100px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .menu-buttons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      @media screen and (max-width: 580px) {
+        gap: 10px;
+      }
+      .client-buttons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        @media screen and (max-width: 580px) {
+          gap: 10px;
+        }
+        div {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        .menu-toggle {
+          height: 30px;
+          width: 30px;
+          button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            border-radius: 0;
+            position: relative;
+            height: inherit;
+            width: inherit;
+            padding: 0;
+            img {
+              height: 100%;
+              width: 100%;
+            }
+            span {
+              color: $color_green_light;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 0.8rem;
+              &.opened {
+                display: none;
+              }
+            }
+            &.toggled {
+              span.opened {
+                display: block;
+              }
+              span.closed {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #mobile-menu {
+    display: none;
+  }
+  &.menu-toggled {
+    #mobile-menu {
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: flex;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      height: calc(100% - 60px);
+      width: 100%;
+      background: linear-gradient(168.36deg, rgba(0, 130, 120, 0.9), #39ac2d);
+      padding: 20px;
+      display: grid;
+      grid-template: "links phone" "sublinks phone" auto / 1fr 1fr;
+      @media screen and (max-width: 580px) {
+        grid-template: "links" "phone" "sublinks" auto / 1fr;
+        gap: 1rem;
+      }
+      ul.header-menu {
+        grid-area: links;
+        li {
+          margin-bottom: 10px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          a {
+            color: $color__white;
+            font-size: 1.4rem;
+            @media screen and (max-width: 580px) {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .sublinks {
+        grid-area: sublinks;
+        display: flex;
+        flex-direction: column;
+        align-self: end;
+        @media screen and (max-width: 580px) {
+          align-self: unset;
+        }
+        a {
+          color: $color__smoke;
+          font-size: 1rem;
+          @media screen and (max-width: 580px) {
+            font-size: 0.8rem;
+          }
+          margin-bottom: 10px;
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+      .contact {
+        grid-area: phone;
+        padding: 20px 40px;
+        background: $color__white;
+        border-radius: 15px;
+        width: max-content;
+        height: max-content;
+        justify-self: end;
+        @media screen and (max-width: 580px) {
+          justify-self: start;
+        }
+        .title {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          span {
+            font-family: $font500;
+            margin-left: 4px;
+          }
+        }
+        .phone {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+
+          .title {
+            color: $color_green_light;
+            font-size: 0.8rem;
+            margin: 0;
+          }
+          &:first-child {
+            a.phone {
+              font-size: 1.2rem;
+            }
+          }
+          a.phone {
+            font-family: $font500;
+            margin: 0;
+          }
+        }
+        .open {
+          margin-bottom: 25px;
+          p {
+            margin: 0;
+            font-family: $font500;
+            &.title {
+              font-size: 0.8rem;
+              font-family: $font300;
+            }
+          }
+        }
+        a[type="button"] {
+          color: $color__white;
         }
       }
     }

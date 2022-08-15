@@ -5,13 +5,18 @@ jQuery( function( $ ) {
 	} ).on( 'focusout', function() {
 		$( this ).closest( 'label' ).removeClass( 'focused' );
 	} );
+
+	$( 'button#toggle' ).on( 'click', function() {
+		$( 'header.mobile' ).toggleClass( 'menu-toggled' );
+		$( this ).toggleClass( 'toggled' );
+		$( 'body' ).toggleClass( 'noscroll' );
+	} );
 	
 	// Слайдеры
 	const courseSlider = new Swiper( '.course-slider', {
-		slidesPerView: 2,
-		grid: {
-		  rows: 2,
-		},
+		loop: false,
+		slidesPerView: 1,
+		grid: false,
 		spaceBetween: 30,
 		pagination: {
 			el: '.course-pagination',
@@ -21,9 +26,41 @@ jQuery( function( $ ) {
 			},
 		  },
 		navigation: {
-			prevEl: '.course-prev',
-			nextEl: '.course-next',
-		}
-	});
+			prevEl: '#course-prev',
+			nextEl: '#course-next',
+		},
+		breakpoints: {
+			960: {
+				slidesPerView: 2,
+				grid: {
+					rows: 2,
+				},
+			},
+		},
+	} );
+	const teamSlider = new Swiper( '.team-slider', {
+		loop: false,
+		slidesPerView: 1,
+		spaceBetween: 20,
+		pagination: {
+			el: '.team-pagination',
+			clickable: true,
+			renderBullet: function (index, className) {
+			  return '<span class="' + className + '">' + (index + 1) + '</span>';
+			},
+		  },
+		navigation: {
+			prevEl: '#team-prev',
+			nextEl: '#team-next',
+		},
+		breakpoints: {
+			580: {
+				slidesPerView: 2,
+			},
+			960: {
+				slidesPerView: 3,
+			},
+		},
+	} );
 } );
 

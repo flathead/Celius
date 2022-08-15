@@ -15,14 +15,33 @@ footer.site-footer {
     .footer-links {
       display: grid;
       grid-template: auto / 1fr 1fr 1fr;
+      @media screen and (max-width: 768px) {
+        gap: 2rem;
+      }
+      @media screen and (max-width: 580px) {
+        gap: 4px;
+        grid-template: auto / 1fr;
+      }
       .column {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        @media screen and (max-width: 580px) {
+          gap: 4px;
+        }
         a {
           text-transform: uppercase;
           font-family: "Museo Sans Cyrl 700";
           font-size: 1.2rem;
+          @media screen and (max-width: 1200px) {
+            font-size: 1rem;
+          }
+          @media screen and (max-width: 960px) {
+            font-size: 0.8rem;
+          }
+          @media screen and (max-width: 580px) {
+            font-size: 1rem;
+          }
         }
       }
     }
@@ -31,6 +50,14 @@ footer.site-footer {
       align-items: center;
       gap: 2rem;
       justify-content: center;
+      @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+      }
+      @media screen and (max-width: 580px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
       p {
         margin: 0;
       }
@@ -39,6 +66,9 @@ footer.site-footer {
       p {
         margin: 0;
         color: $color__yellow;
+        @media screen and (max-width: 580px) {
+          font-size: 0.8rem;
+        }
       }
     }
     .footer-warning {
