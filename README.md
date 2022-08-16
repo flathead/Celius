@@ -3,9 +3,9 @@
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/flathead/Celius-Static)
 
 #### 🗃️ Структура
-🔗 [Главная страница](https://flathead.github.io/Celius-Static/)
-🔗 [Заглушка (на обслуживании)](https://flathead.github.io/Celius-Static/maintenance)
-🔗 [Личный кабинет](https://flathead.github.io/Celius-Static/account)
+- 🔗 [Главная страница](https://flathead.github.io/Celius-Static/)
+- - 🔗 [Заглушка (на обслуживании)](https://flathead.github.io/Celius-Static/maintenance)
+- - 🔗 [Личный кабинет](https://flathead.github.io/Celius-Static/account)
 
 #### 📲 Версии
 ##### — 0.2
