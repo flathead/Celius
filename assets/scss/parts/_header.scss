@@ -335,7 +335,7 @@ header.site-header.mobile {
             left: -4px;
             height: calc(100% + 4px);
             width: 0;
-            background: $color__blue;
+            background: linear-gradient(to right, $color__blue, #3169d9);
             transition: all 0.3s;
             z-index: -1;
           }

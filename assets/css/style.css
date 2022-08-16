@@ -667,7 +667,7 @@ header.site-header.mobile #mobile-menu ul.header-menu li a::before {
 	left: -4px;
 	height: calc(100% + 4px);
 	width: 0;
-	background: #1755ce;
+	background: linear-gradient(to right, #1755ce, #3169d9);
 	transition: all 0.3s;
 	z-index: -1;
 }
