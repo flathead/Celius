@@ -3,8 +3,14 @@
  * 1200, 960, 768, 560, 480
  */
 
+/******************************
+ * Elements
+ *****************************/
+
+/* Scrollbar */
 @import "./parts/scrollbar";
 
+/* Base */
 @import "./base/base";
 
 /* Header */
@@ -16,5 +22,12 @@
 /* Sliders */
 @import "./parts/sliders";
 
+/******************************
+ * Pages
+ *****************************/
+
 /* Homepage */
 @import "./pages/home";
+
+/* Maintenance */
+@import "./pages/maintenance";

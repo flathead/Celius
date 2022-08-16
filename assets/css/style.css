@@ -2,6 +2,10 @@
  * Breakpoints:
  * 1200, 960, 768, 560, 480
  */
+/******************************
+ * Elements
+ *****************************/
+/* Scrollbar */
 /* Firefox */
 * {
 	scrollbar-width: thin;
@@ -40,6 +44,7 @@
 	background-color: #39ac2d;
 }
 
+/* Base */
 /* Colors */
 * {
 	box-sizing: border-box;
@@ -1000,6 +1005,9 @@ footer.site-footer .container .footer-warning p {
 	}
 }
 
+/******************************
+ * Pages
+ *****************************/
 /* Homepage */
 main[data-page^="home"] .container {
 	width: 100%;
@@ -1901,6 +1909,94 @@ main[data-page^="home"] section.socials .container .social-banner .social-list p
 	main[data-page^="home"] section.socials .container .social-banner .social-list p.alert {
 		text-align: center;
 	}
+}
+
+/* Maintenance */
+main[data-page="maintenance"] section.maintenance-alert {
+	background: linear-gradient(91.01deg, rgba(196, 235, 232, 0.61) 4.11%, #ffffff 90.12%);
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+	border-radius: 30px;
+	padding: 50px 90px;
+	display: grid;
+	grid-template: auto/ 50% 50%;
+	height: auto;
+	gap: 4rem;
+}
+
+@media screen and (max-width: 1200px) {
+	main[data-page="maintenance"] section.maintenance-alert {
+		gap: 2rem;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	main[data-page="maintenance"] section.maintenance-alert {
+		display: flex;
+		flex-direction: column;
+		padding: 50px;
+		height: max-content;
+	}
+}
+
+@media screen and (max-width: 580px) {
+	main[data-page="maintenance"] section.maintenance-alert {
+		padding: 20px;
+	}
+}
+
+main[data-page="maintenance"] section.maintenance-alert .alert h1 {
+	font-family: "Museo Sans Cyrl 700";
+	color: #181818;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	font-size: 3rem;
+	margin: 0;
+	margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 580px) {
+	main[data-page="maintenance"] section.maintenance-alert .alert h1 {
+		font-size: 2rem;
+		position: relative;
+	}
+	main[data-page="maintenance"] section.maintenance-alert .alert h1::before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 40px;
+		height: 5px;
+		left: 0;
+		top: calc(100% + 1rem);
+		background: linear-gradient(90deg, #67e3d9 12.66%, #41b5ad 57.78%, #27968f 88.92%);
+		border-radius: 30px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	main[data-page="maintenance"] section.maintenance-alert .alert h1 {
+		font-size: 1.4rem;
+	}
+}
+
+main[data-page="maintenance"] section.maintenance-alert .alert p {
+	font-size: 1.2rem;
+}
+
+@media screen and (max-width: 480px) {
+	main[data-page="maintenance"] section.maintenance-alert .alert p {
+		font-size: 1rem;
+	}
+}
+
+main[data-page="maintenance"] section.maintenance-alert .image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+main[data-page="maintenance"] section.maintenance-alert .image img {
+	object-fit: contain;
+	width: 100%;
+	max-width: 400px;
 }
 
 /*# sourceMappingURL=style.css.map */
