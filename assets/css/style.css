@@ -481,6 +481,10 @@ header.site-header.mobile {
 	display: flex;
 	padding: 10px 0;
 	background: #008278;
+	/* #mobile-menu {
+    display: none;
+  } */
+	/* &.menu-toggled { */
 }
 
 @media screen and (min-width: 1200px) {
@@ -586,14 +590,10 @@ header.site-header.mobile .header-controls .menu-buttons .client-buttons .menu-t
 }
 
 header.site-header.mobile #mobile-menu {
-	display: none;
-}
-
-header.site-header.mobile.menu-toggled #mobile-menu {
 	overflow-x: hidden;
 	overflow-y: auto;
-	display: flex;
 	position: fixed;
+	z-index: 100;
 	top: 60px;
 	left: 0;
 	height: calc(100% - 60px);
@@ -605,36 +605,36 @@ header.site-header.mobile.menu-toggled #mobile-menu {
 }
 
 @media screen and (max-width: 580px) {
-	header.site-header.mobile.menu-toggled #mobile-menu {
+	header.site-header.mobile #mobile-menu {
 		grid-template: "links" "phone" "sublinks" auto / 1fr;
 		gap: 1rem;
 	}
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu ul.header-menu {
+header.site-header.mobile #mobile-menu ul.header-menu {
 	grid-area: links;
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu ul.header-menu li {
+header.site-header.mobile #mobile-menu ul.header-menu li {
 	margin-bottom: 10px;
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu ul.header-menu li:last-child {
+header.site-header.mobile #mobile-menu ul.header-menu li:last-child {
 	margin-bottom: 0;
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu ul.header-menu li a {
+header.site-header.mobile #mobile-menu ul.header-menu li a {
 	color: #fff;
 	font-size: 1.4rem;
 }
 
 @media screen and (max-width: 580px) {
-	header.site-header.mobile.menu-toggled #mobile-menu ul.header-menu li a {
+	header.site-header.mobile #mobile-menu ul.header-menu li a {
 		font-size: 1rem;
 	}
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .sublinks {
+header.site-header.mobile #mobile-menu .sublinks {
 	grid-area: sublinks;
 	display: flex;
 	flex-direction: column;
@@ -642,28 +642,28 @@ header.site-header.mobile.menu-toggled #mobile-menu .sublinks {
 }
 
 @media screen and (max-width: 580px) {
-	header.site-header.mobile.menu-toggled #mobile-menu .sublinks {
+	header.site-header.mobile #mobile-menu .sublinks {
 		align-self: unset;
 	}
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .sublinks a {
+header.site-header.mobile #mobile-menu .sublinks a {
 	color: #f5f5f5;
 	font-size: 1rem;
 	margin-bottom: 10px;
 }
 
 @media screen and (max-width: 580px) {
-	header.site-header.mobile.menu-toggled #mobile-menu .sublinks a {
+	header.site-header.mobile #mobile-menu .sublinks a {
 		font-size: 0.8rem;
 	}
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .sublinks a:last-child {
+header.site-header.mobile #mobile-menu .sublinks a:last-child {
 	margin: 0;
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .contact {
+header.site-header.mobile #mobile-menu .contact {
 	grid-area: phone;
 	padding: 20px 40px;
 	background: #fff;
@@ -674,61 +674,62 @@ header.site-header.mobile.menu-toggled #mobile-menu .contact {
 }
 
 @media screen and (max-width: 580px) {
-	header.site-header.mobile.menu-toggled #mobile-menu .contact {
+	header.site-header.mobile #mobile-menu .contact {
 		justify-self: start;
 	}
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .contact .title {
+header.site-header.mobile #mobile-menu .contact .title {
 	display: flex;
 	align-items: center;
 	margin-bottom: 10px;
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .contact .title span {
+header.site-header.mobile #mobile-menu .contact .title span {
 	font-family: "Museo Sans Cyrl 500";
 	margin-left: 4px;
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .contact .phone {
+header.site-header.mobile #mobile-menu .contact .phone {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 10px;
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .contact .phone .title {
+header.site-header.mobile #mobile-menu .contact .phone .title {
 	color: #39ac2d;
 	font-size: 0.8rem;
 	margin: 0;
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .contact .phone:first-child a.phone {
+header.site-header.mobile #mobile-menu .contact .phone:first-child a.phone {
 	font-size: 1.2rem;
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .contact .phone a.phone {
+header.site-header.mobile #mobile-menu .contact .phone a.phone {
 	font-family: "Museo Sans Cyrl 500";
 	margin: 0;
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .contact .open {
+header.site-header.mobile #mobile-menu .contact .open {
 	margin-bottom: 25px;
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .contact .open p {
+header.site-header.mobile #mobile-menu .contact .open p {
 	margin: 0;
 	font-family: "Museo Sans Cyrl 500";
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .contact .open p.title {
+header.site-header.mobile #mobile-menu .contact .open p.title {
 	font-size: 0.8rem;
 	font-family: "Museo Sans Cyrl 300";
 }
 
-header.site-header.mobile.menu-toggled #mobile-menu .contact a[type="button"] {
+header.site-header.mobile #mobile-menu .contact a[type="button"] {
 	color: #fff;
 }
 
+/* } */
 /* Footer */
 footer.site-footer {
 	background: linear-gradient(90.68deg, #083288 2.49%, rgba(0, 130, 120, 0.72) 99.61%, rgba(0, 130, 120, 0.72) 99.61%);

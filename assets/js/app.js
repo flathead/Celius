@@ -6,9 +6,17 @@ jQuery( function( $ ) {
 		$( this ).closest( 'label' ).removeClass( 'focused' );
 	} );
 
+	$( '#mobile-menu' ).hide();
 	$( 'button#toggle' ).on( 'click', function() {
 		$( 'header.mobile' ).toggleClass( 'menu-toggled' );
-		$( this ).toggleClass( 'toggled' );
+		
+		if( $( 'header.mobile' ).hasClass( 'menu-toggled' ) ) {
+			$( '#mobile-menu' ).slideDown();
+		} else {
+			$( '#mobile-menu' ).slideUp();
+		}
+		
+		$( 'button#toggle' ).toggleClass( 'toggled' );
 		$( 'body' ).toggleClass( 'noscroll' );
 	} );
 	

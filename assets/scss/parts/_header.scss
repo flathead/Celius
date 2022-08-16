@@ -272,118 +272,118 @@ header.site-header.mobile {
       }
     }
   }
-  #mobile-menu {
+  /* #mobile-menu {
     display: none;
-  }
-  &.menu-toggled {
-    #mobile-menu {
-      overflow-x: hidden;
-      overflow-y: auto;
-      display: flex;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      height: calc(100% - 60px);
-      width: 100%;
-      background: linear-gradient(168.36deg, rgba(0, 130, 120, 0.9), #39ac2d);
-      padding: 20px;
-      display: grid;
-      grid-template: "links phone" "sublinks phone" auto / 1fr 1fr;
-      @media screen and (max-width: 580px) {
-        grid-template: "links" "phone" "sublinks" auto / 1fr;
-        gap: 1rem;
-      }
-      ul.header-menu {
-        grid-area: links;
-        li {
-          margin-bottom: 10px;
-          &:last-child {
-            margin-bottom: 0;
-          }
-          a {
-            color: $color__white;
-            font-size: 1.4rem;
-            @media screen and (max-width: 580px) {
-              font-size: 1rem;
-            }
-          }
-        }
-      }
-      .sublinks {
-        grid-area: sublinks;
-        display: flex;
-        flex-direction: column;
-        align-self: end;
-        @media screen and (max-width: 580px) {
-          align-self: unset;
+  } */
+  /* &.menu-toggled { */
+  #mobile-menu {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    z-index: 100;
+    top: 60px;
+    left: 0;
+    height: calc(100% - 60px);
+    width: 100%;
+    background: linear-gradient(168.36deg, rgba(0, 130, 120, 0.9), #39ac2d);
+    padding: 20px;
+    display: grid;
+    grid-template: "links phone" "sublinks phone" auto / 1fr 1fr;
+    @media screen and (max-width: 580px) {
+      grid-template: "links" "phone" "sublinks" auto / 1fr;
+      gap: 1rem;
+    }
+    ul.header-menu {
+      grid-area: links;
+      li {
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
         }
         a {
-          color: $color__smoke;
-          font-size: 1rem;
+          color: $color__white;
+          font-size: 1.4rem;
           @media screen and (max-width: 580px) {
-            font-size: 0.8rem;
-          }
-          margin-bottom: 10px;
-          &:last-child {
-            margin: 0;
+            font-size: 1rem;
           }
         }
       }
-      .contact {
-        grid-area: phone;
-        padding: 20px 40px;
-        background: $color__white;
-        border-radius: 15px;
-        width: max-content;
-        height: max-content;
-        justify-self: end;
+    }
+    .sublinks {
+      grid-area: sublinks;
+      display: flex;
+      flex-direction: column;
+      align-self: end;
+      @media screen and (max-width: 580px) {
+        align-self: unset;
+      }
+      a {
+        color: $color__smoke;
+        font-size: 1rem;
         @media screen and (max-width: 580px) {
-          justify-self: start;
+          font-size: 0.8rem;
         }
-        .title {
-          display: flex;
-          align-items: center;
-          margin-bottom: 10px;
-          span {
-            font-family: $font500;
-            margin-left: 4px;
-          }
+        margin-bottom: 10px;
+        &:last-child {
+          margin: 0;
         }
-        .phone {
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 10px;
+      }
+    }
+    .contact {
+      grid-area: phone;
+      padding: 20px 40px;
+      background: $color__white;
+      border-radius: 15px;
+      width: max-content;
+      height: max-content;
+      justify-self: end;
+      @media screen and (max-width: 580px) {
+        justify-self: start;
+      }
+      .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        span {
+          font-family: $font500;
+          margin-left: 4px;
+        }
+      }
+      .phone {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
 
-          .title {
-            color: $color_green_light;
-            font-size: 0.8rem;
-            margin: 0;
-          }
-          &:first-child {
-            a.phone {
-              font-size: 1.2rem;
-            }
-          }
+        .title {
+          color: $color_green_light;
+          font-size: 0.8rem;
+          margin: 0;
+        }
+        &:first-child {
           a.phone {
-            font-family: $font500;
-            margin: 0;
+            font-size: 1.2rem;
           }
         }
-        .open {
-          margin-bottom: 25px;
-          p {
-            margin: 0;
-            font-family: $font500;
-            &.title {
-              font-size: 0.8rem;
-              font-family: $font300;
-            }
+        a.phone {
+          font-family: $font500;
+          margin: 0;
+        }
+      }
+      .open {
+        margin-bottom: 25px;
+        p {
+          margin: 0;
+          font-family: $font500;
+          &.title {
+            font-size: 0.8rem;
+            font-family: $font300;
           }
         }
-        a[type="button"] {
-          color: $color__white;
-        }
+      }
+      a[type="button"] {
+        color: $color__white;
       }
     }
   }
 }
+/* } */
