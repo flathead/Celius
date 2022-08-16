@@ -346,7 +346,7 @@ header.site-header.mobile {
           }
         }
         &.has-child {
-          a:first-of-type {
+          a {
             position: relative;
             &::after {
               font-family: "Font Awesome 6 Free";
@@ -356,6 +356,18 @@ header.site-header.mobile {
               font-size: 1rem;
             }
             &.active {
+              &::before {
+                display: block;
+                content: "";
+                position: absolute;
+                top: -2px;
+                left: -4px;
+                height: calc(100% + 4px);
+                background: linear-gradient(to right, $color__blue, #3169d9);
+                transition: all 0.3s;
+                /* z-index: -1; */
+                width: calc(100% + 8px) !important;
+              }
               &::after {
                 content: "\f106";
               }

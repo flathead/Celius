@@ -676,11 +676,11 @@ header.site-header.mobile #mobile-menu ul.header-menu li a:hover::before {
 	width: calc(100% + 8px);
 }
 
-header.site-header.mobile #mobile-menu ul.header-menu li.has-child a:first-of-type {
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child a {
 	position: relative;
 }
 
-header.site-header.mobile #mobile-menu ul.header-menu li.has-child a:first-of-type::after {
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child a::after {
 	font-family: "Font Awesome 6 Free";
 	font-weight: 900;
 	content: "\f107";
@@ -688,7 +688,20 @@ header.site-header.mobile #mobile-menu ul.header-menu li.has-child a:first-of-ty
 	font-size: 1rem;
 }
 
-header.site-header.mobile #mobile-menu ul.header-menu li.has-child a:first-of-type.active::after {
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child a.active::before {
+	display: block;
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: -4px;
+	height: calc(100% + 4px);
+	background: linear-gradient(to right, #1755ce, #3169d9);
+	transition: all 0.3s;
+	/* z-index: -1; */
+	width: calc(100% + 8px) !important;
+}
+
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child a.active::after {
 	content: "\f106";
 }
 
