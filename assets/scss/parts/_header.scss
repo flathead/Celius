@@ -178,10 +178,30 @@ header.site-header {
         gap: 10px;
       }
       li.menu-item {
+        position: relative;
         a {
           text-transform: uppercase;
           color: $color__text_alt;
           font-family: "Museo Sans Cyrl 500";
+        }
+        ul.sub-menu {
+          display: none;
+          background: #ffffff;
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+          border-radius: 0 0 20px 20px;
+          position: absolute;
+          top: calc(100% + 6px);
+          width: max-content;
+          padding: 20px;
+          li.sub-menu-item {
+            a {
+              color: #222222;
+              text-transform: none;
+              &:hover {
+                color: $color__blue;
+              }
+            }
+          }
         }
       }
     }
@@ -306,6 +326,65 @@ header.site-header.mobile {
           @media screen and (max-width: 580px) {
             font-size: 1rem;
           }
+          position: relative;
+          &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -4px;
+            height: calc(100% + 4px);
+            width: 0;
+            background: $color__blue;
+            transition: all 0.3s;
+            z-index: -1;
+          }
+          &:hover {
+            &::before {
+              width: calc(100% + 8px);
+            }
+          }
+        }
+        &.has-child {
+          a:first-of-type {
+            position: relative;
+            &::after {
+              font-family: "Font Awesome 6 Free";
+              font-weight: 900;
+              content: "\f107";
+              margin-left: 10px;
+              font-size: 1rem;
+            }
+            &.active {
+              &::after {
+                content: "\f106";
+              }
+            }
+          }
+          ul.sub-menu {
+            display: none;
+            position: relative;
+            margin: 1rem 0;
+            padding: 20px;
+            border-radius: 15px;
+            background: #51b279;
+            width: max-content;
+            li {
+              margin: 0;
+              a {
+                font-size: 1rem;
+                &:hover {
+                  text-decoration: underline;
+                }
+                &::before {
+                  display: none;
+                }
+                &::after {
+                  content: "";
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -314,8 +393,10 @@ header.site-header.mobile {
       display: flex;
       flex-direction: column;
       align-self: end;
+      margin-top: 2rem;
       @media screen and (max-width: 580px) {
         align-self: unset;
+        margin-top: 0;
       }
       a {
         color: $color__smoke;
@@ -326,6 +407,9 @@ header.site-header.mobile {
         margin-bottom: 10px;
         &:last-child {
           margin: 0;
+        }
+        &:hover {
+          text-decoration: underline;
         }
       }
     }

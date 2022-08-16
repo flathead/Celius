@@ -1,15 +1,45 @@
 jQuery( function( $ ) {
-	// Search focus animation
+	/* [START]
+	 * Анимация поля поиска при форкусировке на нём
+	 */
 	$( 'input#header-search' ).on( 'focus', function() {
 		$( this ).closest( 'label' ).addClass( 'focused' );
 	} ).on( 'focusout', function() {
 		$( this ).closest( 'label' ).removeClass( 'focused' );
 	} );
-
+	/* [END]
+	 * Анимация поля поиска при форкусировке на нём
+	 */
+//	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+	/* [START]
+	 * Открытие и закрытие подменю по наведению курсора
+	 */
+	$( 'header.site-header:not(.mobile) ul.header-menu li.menu-item.has-child' ).on( 'mouseenter', function() {
+		$( this ).find( '.sub-menu' ).slideDown( 300 );
+	} );
+	$( 'header.site-header:not(.mobile) ul.header-menu li.menu-item.has-child .sub-menu' ).on( 'mouseleave', function() {
+		$( this ).slideUp( 200 );
+	} );
+	/* [END]
+	 * Открытие и закрытие подменю по наведению курсора
+	 */
+//	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+	$( 'header.site-header.mobile ul.header-menu li.menu-item.has-child a' ).on( 'click', function() {
+		$( this ).toggleClass( 'active' );
+		if( $( this ).hasClass( 'active' ) ) {
+			$( this ).closest( '.has-child' ).find( 'ul.sub-menu' ).slideDown( 'slow' );
+		} else {
+			$( this ).closest( '.has-child' ).find( 'ul.sub-menu' ).slideUp( 'slow' );
+		}
+		return false;
+	} );
+	/* [START]
+	 * Мобильное меню
+	 */
 	$( '#mobile-menu' ).hide();
 	$( 'button#toggle' ).on( 'click', function() {
 		$( 'header.mobile' ).toggleClass( 'menu-toggled' );
-		
+
 		if( $( 'header.mobile' ).hasClass( 'menu-toggled' ) ) {
 			$( '#mobile-menu' ).slideDown();
 		} else {
@@ -19,8 +49,13 @@ jQuery( function( $ ) {
 		$( 'button#toggle' ).toggleClass( 'toggled' );
 		$( 'body' ).toggleClass( 'noscroll' );
 	} );
-	
-	// Слайдеры
+	/* [END]
+	 * Мобильное меню
+	 */
+//	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+	/* [START]
+	 * Слайдеры SwiperJS
+	 */
 	const courseSlider = new Swiper( '.course-slider', {
 		loop: false,
 		slidesPerView: 1,
@@ -70,5 +105,9 @@ jQuery( function( $ ) {
 			},
 		},
 	} );
+	/* [END]
+	 * Слайдеры SwiperJS
+	 */
+//	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 } );
 

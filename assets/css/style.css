@@ -471,10 +471,34 @@ header.site-header nav.header-links ul.header-menu {
 	}
 }
 
+header.site-header nav.header-links ul.header-menu li.menu-item {
+	position: relative;
+}
+
 header.site-header nav.header-links ul.header-menu li.menu-item a {
 	text-transform: uppercase;
 	color: #fff;
 	font-family: "Museo Sans Cyrl 500";
+}
+
+header.site-header nav.header-links ul.header-menu li.menu-item ul.sub-menu {
+	display: none;
+	background: #ffffff;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+	border-radius: 0 0 20px 20px;
+	position: absolute;
+	top: calc(100% + 6px);
+	width: max-content;
+	padding: 20px;
+}
+
+header.site-header nav.header-links ul.header-menu li.menu-item ul.sub-menu li.sub-menu-item a {
+	color: #222222;
+	text-transform: none;
+}
+
+header.site-header nav.header-links ul.header-menu li.menu-item ul.sub-menu li.sub-menu-item a:hover {
+	color: #1755ce;
 }
 
 header.site-header.mobile {
@@ -626,6 +650,7 @@ header.site-header.mobile #mobile-menu ul.header-menu li:last-child {
 header.site-header.mobile #mobile-menu ul.header-menu li a {
 	color: #fff;
 	font-size: 1.4rem;
+	position: relative;
 }
 
 @media screen and (max-width: 580px) {
@@ -634,16 +659,81 @@ header.site-header.mobile #mobile-menu ul.header-menu li a {
 	}
 }
 
+header.site-header.mobile #mobile-menu ul.header-menu li a::before {
+	display: block;
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: -4px;
+	height: calc(100% + 4px);
+	width: 0;
+	background: #1755ce;
+	transition: all 0.3s;
+	z-index: -1;
+}
+
+header.site-header.mobile #mobile-menu ul.header-menu li a:hover::before {
+	width: calc(100% + 8px);
+}
+
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child a:first-of-type {
+	position: relative;
+}
+
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child a:first-of-type::after {
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	content: "\f107";
+	margin-left: 10px;
+	font-size: 1rem;
+}
+
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child a:first-of-type.active::after {
+	content: "\f106";
+}
+
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child ul.sub-menu {
+	display: none;
+	position: relative;
+	margin: 1rem 0;
+	padding: 20px;
+	border-radius: 15px;
+	background: #51b279;
+	width: max-content;
+}
+
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child ul.sub-menu li {
+	margin: 0;
+}
+
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child ul.sub-menu li a {
+	font-size: 1rem;
+}
+
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child ul.sub-menu li a:hover {
+	text-decoration: underline;
+}
+
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child ul.sub-menu li a::before {
+	display: none;
+}
+
+header.site-header.mobile #mobile-menu ul.header-menu li.has-child ul.sub-menu li a::after {
+	content: "";
+}
+
 header.site-header.mobile #mobile-menu .sublinks {
 	grid-area: sublinks;
 	display: flex;
 	flex-direction: column;
 	align-self: end;
+	margin-top: 2rem;
 }
 
 @media screen and (max-width: 580px) {
 	header.site-header.mobile #mobile-menu .sublinks {
 		align-self: unset;
+		margin-top: 0;
 	}
 }
 
@@ -661,6 +751,10 @@ header.site-header.mobile #mobile-menu .sublinks a {
 
 header.site-header.mobile #mobile-menu .sublinks a:last-child {
 	margin: 0;
+}
+
+header.site-header.mobile #mobile-menu .sublinks a:hover {
+	text-decoration: underline;
 }
 
 header.site-header.mobile #mobile-menu .contact {
