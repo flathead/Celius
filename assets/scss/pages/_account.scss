@@ -1,0 +1,304 @@
+main[data-page="account"] {
+  .account-header {
+    height: auto;
+    width: 100%;
+    background: linear-gradient(
+      91.01deg,
+      rgba(196, 235, 232, 0.61) 4.11%,
+      #ffffff 90.12%
+    );
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    @media screen and (max-width: 768px) {
+      display: grid;
+      grid-template: "title title" "person controls" auto / calc(50% + 2rem) calc(
+          50% - 2rem
+        );
+      justify-items: center;
+      gap: 1rem;
+      .person {
+        grid-area: person;
+        justify-self: end;
+        flex-direction: row-reverse;
+        img {
+          margin-right: 0 !important;
+          margin-left: 1rem;
+        }
+        p {
+          text-align: right;
+        }
+      }
+      .title {
+        grid-area: title;
+      }
+      .controls {
+        grid-area: controls;
+        justify-self: start;
+      }
+    }
+    .person {
+      display: flex;
+      align-items: center;
+      img {
+        border-radius: 5px 5px 5px 20px;
+        width: 46px;
+        height: 46px;
+        object-fit: cover;
+        object-position: center center;
+        margin-right: 16px;
+      }
+      p {
+        width: min-content;
+        color: #181818;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: $font500;
+        margin: 0;
+      }
+    }
+    .title {
+      h1 {
+        margin: 0;
+      }
+    }
+    .controls {
+      a {
+        color: #1755ce;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .elements-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "or pr ya ya ya ya";
+    gap: 2rem;
+    height: 173.34px;
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-areas: "or pr ya ya ya";
+      height: 158.4px;
+    }
+    @media screen and (max-width: 960px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "or pr ya ya";
+      height: 170px;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "or pr" "ya ya";
+      grid-template-rows: 170px 1fr;
+      height: auto;
+    }
+
+    a[grid-name="orders"] {
+      grid-area: or;
+    }
+    a[grid-name="profile"] {
+      grid-area: pr;
+    }
+    a[grid-name="yandex"] {
+      grid-area: ya;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      div {
+        transition: all 0.3s;
+      }
+      .orders,
+      .profile {
+        padding: 15px;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          91.01deg,
+          rgba(196, 235, 232, 0.5) 4.11%,
+          #ffffff 90.12%
+        );
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+        border-radius: 15px;
+        position: relative;
+        p {
+          margin: 0;
+          font-family: $font500;
+          font-size: 1.1rem;
+          line-height: 1.1rem;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 39.09px;
+            height: 6.58px;
+            left: 0;
+            top: calc(100% + 0.6rem);
+            background: linear-gradient(
+              90deg,
+              #67e3d9 12.66%,
+              #41b5ad 57.78%,
+              #27968f 88.92%
+            );
+            border-radius: 20px;
+            transition: all 0.5s;
+          }
+          &.data {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            color: #00827880;
+            margin: 0;
+            &::before {
+              display: none;
+            }
+            img {
+              width: 1.2rem;
+            }
+          }
+        }
+      }
+
+      .yandex {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          100.95deg,
+          #ffdf3f -0.46%,
+          rgba(194, 255, 165, 0.35) 92.06%
+        );
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+        @media screen and (max-width: 1200px) {
+          padding: 20px;
+        }
+        @media screen and (max-width: 480px) {
+          flex-direction: column;
+        }
+        .info {
+          height: 100%;
+          p {
+            margin: 0;
+          }
+          .title {
+            margin-bottom: 1.6rem;
+            @media screen and (max-width: 960px) {
+              margin-bottom: 1rem;
+            }
+            p {
+              font-size: 2rem;
+              font-family: $font500;
+              @media screen and (max-width: 1200px) {
+                font-size: 1.4rem;
+              }
+              @media screen and (max-width: 960px) {
+                font-size: 1rem;
+              }
+              @media screen and (max-width: 480px) {
+                font-size: 1.4rem;
+              }
+            }
+          }
+          .promo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-right: 2rem;
+            @media screen and (max-width: 1200px) {
+              gap: 20px;
+            }
+            @media screen and (max-width: 960px) {
+              gap: 10px;
+              flex-direction: column;
+            }
+            @media screen and (max-width: 480px) {
+              margin-right: 0;
+            }
+            div {
+              width: 50%;
+              @media screen and (max-width: 960px) {
+                width: 100%;
+              }
+              p {
+                font-size: 1.2rem;
+                font-family: $font500;
+                @media screen and (max-width: 1200px) {
+                  font-size: 1rem;
+                }
+                @media screen and (max-width: 960px) {
+                  font-size: 0.8rem;
+                }
+                span {
+                  white-space: nowrap;
+                }
+                @media screen and (max-width: 480px) {
+                  font-size: 1rem;
+                }
+              }
+              ul {
+                list-style: disc;
+                @media screen and (max-width: 960px) {
+                  list-style: none;
+                }
+                li {
+                  font-size: 1.2rem;
+                  font-family: $font500;
+                  @media screen and (max-width: 1200px) {
+                    font-size: 1rem;
+                  }
+                  @media screen and (max-width: 960px) {
+                    font-size: 0.8rem;
+                  }
+                  @media screen and (max-width: 480px) {
+                    font-size: 1rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .logo {
+          height: 100%;
+          @media screen and (max-width: 480px) {
+            margin-top: 2rem;
+          }
+          img {
+            @media screen and (max-width: 1200px) {
+              width: 120px;
+            }
+            @media screen and (max-width: 960px) {
+              width: 132px;
+            }
+            @media screen and (max-width: 480px) {
+              width: 160px;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        div {
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          p::before {
+            width: 100%;
+          }
+          div {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}

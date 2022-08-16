@@ -2000,4 +2000,391 @@ main[data-page="maintenance"] section.maintenance-alert .image img {
 	max-width: 400px;
 }
 
+/* Account */
+main[data-page="account"] .account-header {
+	height: auto;
+	width: 100%;
+	background: linear-gradient(91.01deg, rgba(196, 235, 232, 0.61) 4.11%, #ffffff 90.12%);
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+	main[data-page="account"] .account-header {
+		display: grid;
+		grid-template: "title title" "person controls" auto/calc(50% + 2rem) calc( 50% - 2rem);
+		justify-items: center;
+		gap: 1rem;
+	}
+	main[data-page="account"] .account-header .person {
+		grid-area: person;
+		justify-self: end;
+		flex-direction: row-reverse;
+	}
+	main[data-page="account"] .account-header .person img {
+		margin-right: 0 !important;
+		margin-left: 1rem;
+	}
+	main[data-page="account"] .account-header .person p {
+		text-align: right;
+	}
+	main[data-page="account"] .account-header .title {
+		grid-area: title;
+	}
+	main[data-page="account"] .account-header .controls {
+		grid-area: controls;
+		justify-self: start;
+	}
+}
+
+main[data-page="account"] .account-header .person {
+	display: flex;
+	align-items: center;
+}
+
+main[data-page="account"] .account-header .person img {
+	border-radius: 5px 5px 5px 20px;
+	width: 46px;
+	height: 46px;
+	object-fit: cover;
+	object-position: center center;
+	margin-right: 16px;
+}
+
+main[data-page="account"] .account-header .person p {
+	width: min-content;
+	color: #181818;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	font-family: "Museo Sans Cyrl 500";
+	margin: 0;
+}
+
+main[data-page="account"] .account-header .title h1 {
+	margin: 0;
+}
+
+main[data-page="account"] .account-header .controls a {
+	color: #1755ce;
+}
+
+main[data-page="account"] .account-header .controls a:hover {
+	text-decoration: underline;
+}
+
+main[data-page="account"] .elements-grid {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-areas: "or pr ya ya ya ya";
+	gap: 2rem;
+	height: 173.34px;
+}
+
+@media screen and (max-width: 1200px) {
+	main[data-page="account"] .elements-grid {
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-areas: "or pr ya ya ya";
+		height: 158.4px;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	main[data-page="account"] .elements-grid {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas: "or pr ya ya";
+		height: 170px;
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	main[data-page="account"] .elements-grid {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas: "or pr" "ya ya";
+		grid-template-rows: 170px 1fr;
+		height: auto;
+	}
+}
+
+main[data-page="account"] .elements-grid a[grid-name="orders"] {
+	grid-area: or;
+}
+
+main[data-page="account"] .elements-grid a[grid-name="profile"] {
+	grid-area: pr;
+}
+
+main[data-page="account"] .elements-grid a[grid-name="yandex"] {
+	grid-area: ya;
+}
+
+main[data-page="account"] .elements-grid a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+main[data-page="account"] .elements-grid a div {
+	transition: all 0.3s;
+}
+
+main[data-page="account"] .elements-grid a .orders,
+main[data-page="account"] .elements-grid a .profile {
+	padding: 15px;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(91.01deg, rgba(196, 235, 232, 0.5) 4.11%, #ffffff 90.12%);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+	border-radius: 15px;
+	position: relative;
+}
+
+main[data-page="account"] .elements-grid a .orders p,
+main[data-page="account"] .elements-grid a .profile p {
+	margin: 0;
+	font-family: "Museo Sans Cyrl 500";
+	font-size: 1.1rem;
+	line-height: 1.1rem;
+	position: relative;
+}
+
+main[data-page="account"] .elements-grid a .orders p::before,
+main[data-page="account"] .elements-grid a .profile p::before {
+	content: "";
+	position: absolute;
+	width: 39.09px;
+	height: 6.58px;
+	left: 0;
+	top: calc(100% + 0.6rem);
+	background: linear-gradient(90deg, #67e3d9 12.66%, #41b5ad 57.78%, #27968f 88.92%);
+	border-radius: 20px;
+	transition: all 0.5s;
+}
+
+main[data-page="account"] .elements-grid a .orders p.data,
+main[data-page="account"] .elements-grid a .profile p.data {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	color: #00827880;
+	margin: 0;
+}
+
+main[data-page="account"] .elements-grid a .orders p.data::before,
+main[data-page="account"] .elements-grid a .profile p.data::before {
+	display: none;
+}
+
+main[data-page="account"] .elements-grid a .orders p.data img,
+main[data-page="account"] .elements-grid a .profile p.data img {
+	width: 1.2rem;
+}
+
+main[data-page="account"] .elements-grid a .yandex {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(100.95deg, #ffdf3f -0.46%, rgba(194, 255, 165, 0.35) 92.06%);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 40px;
+}
+
+@media screen and (max-width: 1200px) {
+	main[data-page="account"] .elements-grid a .yandex {
+		padding: 20px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	main[data-page="account"] .elements-grid a .yandex {
+		flex-direction: column;
+	}
+}
+
+main[data-page="account"] .elements-grid a .yandex .info {
+	height: 100%;
+}
+
+main[data-page="account"] .elements-grid a .yandex .info p {
+	margin: 0;
+}
+
+main[data-page="account"] .elements-grid a .yandex .info .title {
+	margin-bottom: 1.6rem;
+}
+
+@media screen and (max-width: 960px) {
+	main[data-page="account"] .elements-grid a .yandex .info .title {
+		margin-bottom: 1rem;
+	}
+}
+
+main[data-page="account"] .elements-grid a .yandex .info .title p {
+	font-size: 2rem;
+	font-family: "Museo Sans Cyrl 500";
+}
+
+@media screen and (max-width: 1200px) {
+	main[data-page="account"] .elements-grid a .yandex .info .title p {
+		font-size: 1.4rem;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	main[data-page="account"] .elements-grid a .yandex .info .title p {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	main[data-page="account"] .elements-grid a .yandex .info .title p {
+		font-size: 1.4rem;
+	}
+}
+
+main[data-page="account"] .elements-grid a .yandex .info .promo {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+	margin-right: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+	main[data-page="account"] .elements-grid a .yandex .info .promo {
+		gap: 20px;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	main[data-page="account"] .elements-grid a .yandex .info .promo {
+		gap: 10px;
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	main[data-page="account"] .elements-grid a .yandex .info .promo {
+		margin-right: 0;
+	}
+}
+
+main[data-page="account"] .elements-grid a .yandex .info .promo div {
+	width: 50%;
+}
+
+@media screen and (max-width: 960px) {
+	main[data-page="account"] .elements-grid a .yandex .info .promo div {
+		width: 100%;
+	}
+}
+
+main[data-page="account"] .elements-grid a .yandex .info .promo div p {
+	font-size: 1.2rem;
+	font-family: "Museo Sans Cyrl 500";
+}
+
+@media screen and (max-width: 1200px) {
+	main[data-page="account"] .elements-grid a .yandex .info .promo div p {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	main[data-page="account"] .elements-grid a .yandex .info .promo div p {
+		font-size: 0.8rem;
+	}
+}
+
+main[data-page="account"] .elements-grid a .yandex .info .promo div p span {
+	white-space: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+	main[data-page="account"] .elements-grid a .yandex .info .promo div p {
+		font-size: 1rem;
+	}
+}
+
+main[data-page="account"] .elements-grid a .yandex .info .promo div ul {
+	list-style: disc;
+}
+
+@media screen and (max-width: 960px) {
+	main[data-page="account"] .elements-grid a .yandex .info .promo div ul {
+		list-style: none;
+	}
+}
+
+main[data-page="account"] .elements-grid a .yandex .info .promo div ul li {
+	font-size: 1.2rem;
+	font-family: "Museo Sans Cyrl 500";
+}
+
+@media screen and (max-width: 1200px) {
+	main[data-page="account"] .elements-grid a .yandex .info .promo div ul li {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	main[data-page="account"] .elements-grid a .yandex .info .promo div ul li {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	main[data-page="account"] .elements-grid a .yandex .info .promo div ul li {
+		font-size: 1rem;
+	}
+}
+
+main[data-page="account"] .elements-grid a .yandex .logo {
+	height: 100%;
+}
+
+@media screen and (max-width: 480px) {
+	main[data-page="account"] .elements-grid a .yandex .logo {
+		margin-top: 2rem;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	main[data-page="account"] .elements-grid a .yandex .logo img {
+		width: 120px;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	main[data-page="account"] .elements-grid a .yandex .logo img {
+		width: 132px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	main[data-page="account"] .elements-grid a .yandex .logo img {
+		width: 160px;
+	}
+}
+
+main[data-page="account"] .elements-grid a:hover div {
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+main[data-page="account"] .elements-grid a:hover div p::before {
+	width: 100%;
+}
+
+main[data-page="account"] .elements-grid a:hover div div {
+	box-shadow: none;
+}
+
 /*# sourceMappingURL=style.css.map */
