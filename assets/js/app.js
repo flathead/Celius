@@ -24,14 +24,40 @@ jQuery( function( $ ) {
 	 * Открытие и закрытие подменю по наведению курсора
 	 */
 //	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+	let touchtime = 0;
 	$( 'header.site-header.mobile ul.header-menu li.menu-item.has-child a' ).on( 'click', function() {
 		$( this ).toggleClass( 'active' );
-		if( $( this ).hasClass( 'active' ) ) {
-			$( this ).closest( '.has-child' ).find( 'ul.sub-menu' ).slideDown( 'slow' );
+		if (touchtime == 0) {
+			// set first click
+			touchtime = new Date().getTime();
+			if( $( this ).hasClass( 'active' ) ) {
+				$( this ).closest( '.has-child' ).find( 'ul.sub-menu' ).slideDown( 'slow' );
+			} else {
+				$( this ).closest( '.has-child' ).find( 'ul.sub-menu' ).slideUp( 'slow' );
+			}
+			
+			return false;
 		} else {
-			$( this ).closest( '.has-child' ).find( 'ul.sub-menu' ).slideUp( 'slow' );
+			if (((new Date().getTime()) - touchtime) < 800) {
+				// double click
+				
+				window.location = this.href;
+				touchtime = 0;
+        		return false;
+				
+			} else {
+				// not a double click
+				touchtime = new Date().getTime();
+
+				if( $( this ).hasClass( 'active' ) ) {
+					$( this ).closest( '.has-child' ).find( 'ul.sub-menu' ).slideDown( 'slow' );
+				} else {
+					$( this ).closest( '.has-child' ).find( 'ul.sub-menu' ).slideUp( 'slow' );
+				}
+				
+				return false;
+			}
 		}
-		return false;
 	} );
 	/* [START]
 	 * Мобильное меню
