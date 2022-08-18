@@ -30,6 +30,12 @@ h6 {
   color: $color__text_main;
   text-decoration: none;
 }
+a {
+  transition: all 0.3s;
+  &:hover {
+    color: $color__blue;
+  }
+}
 main.site-main {
   margin: 2rem 0;
 }

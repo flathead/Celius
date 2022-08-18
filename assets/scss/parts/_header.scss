@@ -163,6 +163,12 @@ header.site-header {
         @media screen and (max-width: 580px) {
           gap: 10px;
         }
+        .auth {
+          button {
+            background: none;
+            border: none;
+          }
+        }
       }
     }
   }
@@ -183,6 +189,10 @@ header.site-header {
           text-transform: uppercase;
           color: $color__text_alt;
           font-family: "Museo Sans Cyrl 500";
+          transition: all 0.3s;
+          &:hover {
+            color: $color__yellow;
+          }
         }
         ul.sub-menu {
           display: none;

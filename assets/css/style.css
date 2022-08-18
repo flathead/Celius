@@ -84,6 +84,14 @@ h6 {
 	text-decoration: none;
 }
 
+a {
+	transition: all 0.3s;
+}
+
+a:hover {
+	color: #1755ce;
+}
+
 main.site-main {
 	margin: 2rem 0;
 }
@@ -121,6 +129,11 @@ main.site-main {
 }
 
 /* Buttons */
+a[type="button"],
+button {
+	cursor: pointer;
+}
+
 button.label,
 a[type="button"] {
 	background: none;
@@ -137,6 +150,7 @@ a[type="button"].modal-btn {
 	display: flex;
 	gap: 10px;
 	width: max-content;
+	transition: all 0.1s ease-in;
 }
 
 a[type="button"].modal-btn img {
@@ -149,6 +163,11 @@ a[type="button"].modal-btn span {
 	color: #fff;
 }
 
+a[type="button"].modal-btn:hover {
+	transform: scale(1.05);
+	box-shadow: 4px 4px 0px #b8ceff;
+}
+
 a[type="button"].action-btn {
 	padding: 0 20px;
 	height: 50px;
@@ -159,6 +178,7 @@ a[type="button"].action-btn {
 	display: flex;
 	gap: 10px;
 	width: max-content;
+	transition: all 0.1s ease-in;
 }
 
 a[type="button"].action-btn img {
@@ -174,6 +194,11 @@ a[type="button"].action-btn i {
 a[type="button"].action-btn span {
 	font-family: "Museo Sans Cyrl 700";
 	color: #fff;
+}
+
+a[type="button"].action-btn:hover {
+	transform: scale(1.05);
+	box-shadow: 4px 4px 0px #b8ceff;
 }
 
 @font-face {
@@ -453,6 +478,11 @@ header.site-header .header-controls .container .client-buttons {
 	}
 }
 
+header.site-header .header-controls .container .client-buttons .auth button {
+	background: none;
+	border: none;
+}
+
 header.site-header nav.header-links {
 	background: #008278;
 }
@@ -479,6 +509,11 @@ header.site-header nav.header-links ul.header-menu li.menu-item a {
 	text-transform: uppercase;
 	color: #fff;
 	font-family: "Museo Sans Cyrl 500";
+	transition: all 0.3s;
+}
+
+header.site-header nav.header-links ul.header-menu li.menu-item a:hover {
+	color: #f6fda4;
 }
 
 header.site-header nav.header-links ul.header-menu li.menu-item ul.sub-menu {
@@ -890,6 +925,10 @@ footer.site-footer .container .footer-links .column a {
 	font-size: 1.2rem;
 }
 
+footer.site-footer .container .footer-links .column a:hover {
+	text-decoration: underline;
+}
+
 @media screen and (max-width: 1200px) {
 	footer.site-footer .container .footer-links .column a {
 		font-size: 1rem;
@@ -1111,6 +1150,284 @@ footer.site-footer .container .footer-warning p {
 		width: max-content;
 		padding: 0 40px;
 	}
+}
+
+/* Sweet Alert Popups */
+.swal2-popup {
+	max-width: 420px !important;
+	width: 100% !important;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.swal2-popup .swal2-close {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.swal2-popup .swal2-html-container {
+	margin: 3rem 3rem 0.8rem 3rem !important;
+	overflow: visible;
+	font-size: 1rem;
+}
+
+.swal2-popup .swal2-html-container .phone-container span,
+.swal2-popup .swal2-html-container .phone-container p,
+.swal2-popup .swal2-html-container .phone-container a {
+	font-family: "Museo Sans Cyrl 500";
+}
+
+.swal2-popup .swal2-html-container .phone-container .title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+
+.swal2-popup .swal2-html-container .phone-container .title img {
+	margin-right: 10px;
+}
+
+.swal2-popup .swal2-html-container .phone-container div.phone {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2rem;
+	position: relative;
+}
+
+.swal2-popup .swal2-html-container .phone-container div.phone::after {
+	position: absolute;
+	content: "";
+	top: calc(100% + 1rem);
+	left: 50%;
+	transform: translateX(-50%);
+	background: #969595;
+	width: 25px;
+	height: 1px;
+}
+
+.swal2-popup .swal2-html-container .phone-container div.phone:nth-child(4n)::after {
+	display: none;
+}
+
+.swal2-popup .swal2-html-container .phone-container div.phone .title {
+	font-size: 1rem;
+	color: #39ac2d;
+	margin: 0;
+	margin-bottom: 4px;
+}
+
+.swal2-popup .swal2-html-container .phone-container div.phone a.phone {
+	font-size: 1.2rem;
+	transition: all 0.3s;
+}
+
+.swal2-popup .swal2-html-container .phone-container div.phone a.phone:hover {
+	color: #1755ce;
+}
+
+.swal2-popup .swal2-html-container .phone-container div.open p {
+	margin: 0;
+	font-family: "Museo Sans Cyrl 300";
+}
+
+.swal2-popup .swal2-html-container .phone-container div.open p.title {
+	font-size: 0.9rem;
+	margin-bottom: 4px;
+}
+
+.swal2-popup .swal2-html-container .auth-register {
+	display: flex;
+	flex-direction: column;
+}
+
+.swal2-popup .swal2-html-container .auth-register label {
+	width: max-content;
+	margin-bottom: 6px;
+	font-family: "Museo Sans Cyrl 500";
+}
+
+.swal2-popup .swal2-html-container .auth-register label span {
+	color: red;
+}
+
+.swal2-popup .swal2-html-container .auth-register .grid {
+	width: 100%;
+	display: grid;
+	grid-template: auto/repeat(2, calc(50% - 0.5rem));
+	gap: 1rem;
+}
+
+.swal2-popup .swal2-html-container .auth-register .grid div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.swal2-popup .swal2-html-container .auth-register .grid div label {
+	margin-bottom: 6px;
+}
+
+.swal2-popup .swal2-html-container .auth-register .grid div input {
+	width: 100%;
+}
+
+.swal2-popup .swal2-html-container .auth-register input:not([type="submit"]) {
+	height: 50px;
+	background: #f9f9f9;
+	border: 0.5px solid #898989;
+	border-radius: 15px;
+	font-size: 1rem;
+	padding-left: 15px;
+	margin-bottom: 1rem;
+}
+
+.swal2-popup .swal2-html-container .auth-register input[type="submit"] {
+	width: 100%;
+	height: 50px;
+	background: linear-gradient(90.6deg, #0f9502 19.86%, #39ac2d 81.94%);
+	border-radius: 15px;
+	font-family: "Museo Sans Cyrl 700";
+	font-size: 1.1rem;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in;
+}
+
+.swal2-popup .swal2-html-container .auth-register input[type="submit"]:hover {
+	transform: scale(1.05);
+	box-shadow: 4px 4px 0px #b8ceff;
+}
+
+.swal2-popup .swal2-html-container .auth-container div.title {
+	margin-bottom: 1rem;
+}
+
+.swal2-popup .swal2-html-container .auth-container div.title p {
+	margin: 0;
+	font-family: "Museo Sans Cyrl 700";
+	font-size: 1.4rem;
+}
+
+.swal2-popup .swal2-html-container .auth-container .break {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.swal2-popup .swal2-html-container .auth-container .break p {
+	margin: 0;
+	position: relative;
+	width: 3rem;
+}
+
+.swal2-popup .swal2-html-container .auth-container .break p::before, .swal2-popup .swal2-html-container .auth-container .break p::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 1px;
+	background: #898989;
+}
+
+.swal2-popup .swal2-html-container .auth-container .break p::before {
+	right: calc(100% + 10px);
+}
+
+.swal2-popup .swal2-html-container .auth-container .break p::after {
+	left: calc(100% + 10px);
+}
+
+.swal2-popup .swal2-html-container .auth-container .social {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin: 10px 0;
+}
+
+.swal2-popup .swal2-html-container .auth-container .social a img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	transition: all 0.5s;
+}
+
+.swal2-popup .swal2-html-container .auth-container .social a:hover img {
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	transform: scale(0.95);
+}
+
+.swal2-popup .swal2-html-container .auth-container div.form {
+	margin-top: 1rem;
+}
+
+.swal2-popup .swal2-html-container .auth-container div.form form.auth-register button#forgot {
+	border: none;
+	background: none;
+	text-align: right;
+	color: #1755ce;
+	margin-bottom: 1rem;
+}
+
+.swal2-popup .swal2-html-container .auth-container div.form form.auth-register button#forgot:hover {
+	text-decoration: underline;
+}
+
+.swal2-popup .swal2-html-container .auth-container div.form form.auth-register .warning {
+	margin: 0;
+	margin-top: 4px;
+	text-align: center;
+	font-size: 0.8rem;
+	font-family: "Museo Sans Cyrl 500";
+}
+
+.swal2-popup .swal2-html-container .auth-container div.form form.auth-register .warning a {
+	color: #1755ce;
+}
+
+.swal2-popup .swal2-html-container .auth-container div.form form.auth-register .warning a:hover {
+	text-decoration: underline;
+}
+
+.swal2-popup .swal2-html-container .auth-container div.form p.question {
+	margin: 0;
+	margin-top: 1rem;
+	display: flex;
+	align-items: center;
+	font-size: 0.9rem;
+	line-height: 0.9rem;
+	text-align: center;
+	justify-content: center;
+	font-family: "Museo Sans Cyrl 700";
+}
+
+.swal2-popup .swal2-html-container .auth-container div.form p.question button {
+	border: none;
+	padding: 0;
+	background: none;
+	color: #1755ce;
+	line-height: 0.9rem;
+	font-size: 0.9rem;
+	margin-left: 2pt;
+	font-family: "Museo Sans Cyrl 700";
+}
+
+.swal2-popup .swal2-html-container .auth-container div.form p.question button:hover {
+	text-decoration: underline;
+}
+
+.swal2-popup .swal2-html-container .forgot-container div.title {
+	margin-bottom: 1rem;
+}
+
+.swal2-popup .swal2-html-container .forgot-container div.title p {
+	margin: 0;
+	font-family: "Museo Sans Cyrl 700";
+	font-size: 1.4rem;
 }
 
 /******************************
