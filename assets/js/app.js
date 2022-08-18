@@ -72,11 +72,11 @@ function authModal() {
 			'<p>через</p>' +
 		'</div>' +
 		'<div class="social">' +
-			'<a href="#"><img src="../assets/img/svg/socials/Яндекс.svg" alt="" /></a>' +
-			'<a href="#"><img src="../assets/img/svg/socials/Google.svg" alt="" /></a>' +
-			'<a href="#"><img src="../assets/img/svg/socials/Мейл.svg" alt="" /></a>' +
-			'<a href="#"><img src="../assets/img/svg/socials/Вконтакте.svg" alt="" /></a>' +
-			'<a href="#"><img src="../assets/img/svg/socials/Одноклассники.svg" alt="" /></a>' +
+			'<a href="#"><img src="../Celius-Static/assets/img/svg/socials/Яндекс.svg" alt="" /></a>' +
+			'<a href="#"><img src="../Celius-Static/assets/img/svg/socials/Google.svg" alt="" /></a>' +
+			'<a href="#"><img src="../Celius-Static/assets/img/svg/socials/Мейл.svg" alt="" /></a>' +
+			'<a href="#"><img src="../Celius-Static/assets/img/svg/socials/Вконтакте.svg" alt="" /></a>' +
+			'<a href="#"><img src="../Celius-Static/assets/img/svg/socials/Одноклассники.svg" alt="" /></a>' +
 		'</div>' +
 		'<div class="break">' +
 			'<p>или</p>' +
@@ -111,11 +111,11 @@ function registerModal() {
 			'<p>через</p>' +
 		'</div>' +
 		'<div class="social">' +
-			'<a href="#"><img src="../assets/img/svg/socials/Яндекс.svg" alt="" /></a>' +
-			'<a href="#"><img src="../assets/img/svg/socials/Google.svg" alt="" /></a>' +
-			'<a href="#"><img src="../assets/img/svg/socials/Мейл.svg" alt="" /></a>' +
-			'<a href="#"><img src="../assets/img/svg/socials/Вконтакте.svg" alt="" /></a>' +
-			'<a href="#"><img src="../assets/img/svg/socials/Одноклассники.svg" alt="" /></a>' +
+			'<a href="#"><img src="../Celius-Static/assets/img/svg/socials/Яндекс.svg" alt="" /></a>' +
+			'<a href="#"><img src="../Celius-Static/assets/img/svg/socials/Google.svg" alt="" /></a>' +
+			'<a href="#"><img src="../Celius-Static/assets/img/svg/socials/Мейл.svg" alt="" /></a>' +
+			'<a href="#"><img src="../Celius-Static/assets/img/svg/socials/Вконтакте.svg" alt="" /></a>' +
+			'<a href="#"><img src="../Celius-Static/assets/img/svg/socials/Одноклассники.svg" alt="" /></a>' +
 		'</div>' +
 		'<div class="break">' +
 			'<p>или</p>' +
