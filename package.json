@@ -1,19 +1,46 @@
 {
   "name": "celius",
-  "version": "1.0.0",
+  "version": "0.2.1",
   "description": "",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
+	"editorconfig": "editorconfig-cli",
     "test": "echo \"Error: no test specified\" && exit 1",
-	"watch": "node-sass ./assets/scss/ -o ./assets/css/ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
-    "compile:css": "node-sass ./assets/scss/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix"
+    "dev": "npx gulp"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "node-sass": "^7.0.1"
-  }
+  "devDependencies": {
+	"@htmlacademy/editorconfig-cli": "1.0.0",
+    "@babel/core": "^7.18.10",
+    "@babel/register": "^7.18.9",
+    "autoprefixer": "10.4.0",
+    "browser-sync": "^2.24.1",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "1.2.1",
+    "gulp-postcss": "9.0.1",
+    "gulp-sass": "5.0.0",
+    "postcss": "8.3.11",
+    "sass": "^1.54.5",
+	"stylelint": "13.13.1",
+    "stylelint-config-htmlacademy": "0.1.11"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all",
+    "not < 0.25%"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "*.html",
+    "assets/js/**/*.js",
+    "assets/img/**/*.svg",
+    "assets/scss/**/*.scss"
+  ],
+  "engines": {
+    "node": "^16"
+  },
+  "type": "module"
 }

@@ -5,15 +5,32 @@
 ## 🗃️ Структура
 
 - [Главная страница](https://flathead.github.io/Celius-Static/)
-- - [Заглушка (на обслуживании)](https://flathead.github.io/Celius-Static/maintenance)
-- - [Личный кабинет](https://flathead.github.io/Celius-Static/account)
+  - [Заглушка (на обслуживании)](https://flathead.github.io/Celius-Static/maintenance)
+  - [Личный кабинет](https://flathead.github.io/Celius-Static/account)
+  - [Услуги центра](https://flathead.github.io/Celius-Static/service)
+  - [Наши специалисты](https://flathead.github.io/Celius-Static/employees)
+    - [Консультация специалиста (пример услуги)](https://flathead.github.io/Celius-Static/service/konsultacia-specialista)
+  - [Сведения об образовательной организации](https://flathead.github.io/Celius-Static/information)
+  - [Оплата и доставка](https://flathead.github.io/Celius-Static/delivery)
+  - [Контакты](https://flathead.github.io/Celius-Static/contact)
 
 ## 📲 Версии
 
-### — 0.2.1
+### — 0.3
 
-- Добавлены hover-transition для ссылок
-- Добавлены 4 модальных окна: для вывода вписка телефонов, авторизация, регистрация, восстановление пароля
+- Добавлены hover-transition для ссылок, кнопок, элементов меню и управления
+- **Добавлены 4 модальных окна:**
+  - МО для вывода списка телефонов
+  - МО для авторизации
+  - МО для регистрации
+  - МО для восстановления пароля
+- **Добавлены и адаптированы 6 страниц:**
+  - [Услуги центра](https://flathead.github.io/Celius-Static/service)
+  - [Наши специалисты](https://flathead.github.io/Celius-Static/employees)
+  - [Консультация специалиста (пример услуги)](https://flathead.github.io/Celius-Static/service/konsultacia-specialista)
+  - [Сведения об образовательной организации](https://flathead.github.io/Celius-Static/information)
+  - [Оплата и доставка](https://flathead.github.io/Celius-Static/delivery)
+  - [Контакты](https://flathead.github.io/Celius-Static/contact)
 
 ### — 0.2
 

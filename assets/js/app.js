@@ -154,13 +154,13 @@ function registerModal() {
 
 jQuery( function( $ ) {
 	/* [START]
-	 * Модальное окно для телефонов
+	 * Модальные окна
 	 */
 	$( 'span.show-phones' ).on( 'click', phonesModal );
 	$( 'button#auth' ).on( 'click', authModal );
 	$( 'button#register' ).on( 'click', registerModal );
 	/* [END]
-	 * Модальное окно для телефонов
+	 * Модальные окна
 	 */
 
 //	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -197,6 +197,7 @@ jQuery( function( $ ) {
 	/* [START]
 	 * Открытие подменю на мобильных устройствах
 	 */
+
 	let touchtime = 0;
 	$( 'header.site-header.mobile ul.header-menu li.menu-item.has-child a' ).on( 'click', function() {
 		$( this ).toggleClass( 'active' );
@@ -210,6 +211,34 @@ jQuery( function( $ ) {
 			}
 			
 			return false;
+		} else {
+			if (((new Date().getTime()) - touchtime) < 800) {
+				// двойной клик
+				
+				window.location = this.href;
+				touchtime = 0;
+        		return false;
+				
+			} else {
+				// не двойной и не первый клики
+				touchtime = new Date().getTime();
+
+				if( $( this ).hasClass( 'active' ) ) {
+					$( this ).closest( '.has-child' ).find( 'ul.sub-menu' ).slideDown( 'slow' );
+				} else {
+					$( this ).closest( '.has-child' ).find( 'ul.sub-menu' ).slideUp( 'slow' );
+				}
+				
+				return false;
+			}
+		}
+	} );
+
+	$( 'header.site-header.mobile ul.header-menu li.menu-item.has-child ul.sub-menu li.sub-menu-item a.sub-link' ).on( 'click', function() {
+		if (touchtime == 0) {
+			// первый клик
+			touchtime = new Date().getTime();
+			return true;
 		} else {
 			if (((new Date().getTime()) - touchtime) < 800) {
 				// двойной клик
