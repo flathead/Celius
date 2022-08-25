@@ -1,6 +1,7 @@
 # Целиус
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/flathead/Celius-Static)
+**`Статус:`** `в процессе вёрстки`
 
 ## 🗃️ Структура
 
@@ -22,7 +23,7 @@
 
 - **Добавлено и адаптировано 2 страницы:**
   - [Семинары](https://flathead.github.io/Celius-Static/seminars) - в том числе работает фильтрация семинаров
-  - [Учебный центр](https://flathead.github.io/Celius-Static/training)
+  - [Учебный центр](https://flathead.github.io/Celius-Static/training) - в том числе работает фильтрация курсов
 
 ### — 0.3.1
 
