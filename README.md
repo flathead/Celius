@@ -1,6 +1,7 @@
 # Целиус
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/flathead/Celius-Static)
+
 **`Статус:`** `в процессе вёрстки`
 
 ## 🗃️ Структура
