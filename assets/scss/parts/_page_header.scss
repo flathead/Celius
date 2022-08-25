@@ -85,7 +85,12 @@ section.alert-header {
       }
     }
   }
-  &.contact {
+  &.contact,
+  &.seminars,
+  &.training,
+  &.shop,
+  &.blog,
+  &.post {
     padding: 60px;
     gap: 0;
     @media screen and (max-width: 580px) {
@@ -135,6 +140,110 @@ section.alert-header {
       @media screen and (max-width: 350px) {
         height: 120px;
       }
+    }
+  }
+  &.seminars,
+  &.training {
+    .alert {
+      h1 {
+        margin-bottom: 2rem;
+        ::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+section.alert-inner {
+  background: linear-gradient(90.06deg, #008278 25.42%, #39ac2d 71.49%);
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+  padding: 90px;
+  display: grid;
+  grid-template: auto/ 50% 50%;
+  height: auto;
+  gap: 0;
+  @media screen and (max-width: 1200px) {
+    gap: 2rem;
+  }
+  @media screen and (max-width: 960px) {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    height: max-content;
+  }
+  @media screen and (max-width: 580px) {
+    padding: 20px;
+  }
+  .alert {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    p {
+      font-family: $font900;
+      color: $color__white;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-size: 2.8rem;
+      margin: 0;
+      margin-bottom: 2rem;
+      @media screen and (max-width: 580px) {
+        font-size: 2rem;
+        position: relative;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 40px;
+          height: 5px;
+          left: 0;
+          top: calc(100% + 1rem);
+          background: linear-gradient(
+            90deg,
+            #67e3d9 12.66%,
+            #41b5ad 57.78%,
+            #27968f 88.92%
+          );
+          border-radius: 30px;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    @media screen and (max-width: 960px) {
+      justify-content: center;
+    }
+    @media screen and (max-width: 480px) {
+      align-items: flex-start;
+    }
+    p,
+    p a {
+      color: $color__smoke;
+      font-family: $font700;
+      font-size: 2rem;
+      margin: 0;
+      @media screen and (max-width: 480px) {
+        font-size: 1.4rem;
+      }
+    }
+    p {
+      margin-bottom: 1rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    a:hover {
+      color: #b9d0ff;
     }
   }
 }

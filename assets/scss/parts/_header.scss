@@ -34,7 +34,7 @@ header.site-header {
       font-family: "Museo Sans Cyrl 700";
     }
     span.green {
-      color: $color_green_light;
+      color: $color__greenlight;
     }
   }
   .header-controls {
@@ -71,7 +71,7 @@ header.site-header {
           font-weight: 700;
           transition: 0.5s;
           &:hover {
-            color: $color_green_light;
+            color: $color__greenlight;
           }
           @media screen and (max-width: 1200px) {
             font-size: 1rem;
@@ -279,7 +279,7 @@ header.site-header.mobile {
               width: 100%;
             }
             span {
-              color: $color_green_light;
+              color: $color__greenlight;
               position: absolute;
               top: 50%;
               left: 50%;
@@ -461,7 +461,7 @@ header.site-header.mobile {
         margin-bottom: 10px;
 
         .title {
-          color: $color_green_light;
+          color: $color__greenlight;
           font-size: 0.8rem;
           margin: 0;
         }

@@ -31,6 +31,9 @@
 /* Socials Block */
 @import "./parts/socials";
 
+/* Event filter */
+@import "./parts/event-filter";
+
 /******************************
 * Libraries
 *****************************/
@@ -66,3 +69,6 @@
 
 /* Contact Page */
 @import "./pages/contact";
+
+/* Training Page */
+@import "./pages/training";

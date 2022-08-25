@@ -13,8 +13,16 @@
   - [Сведения об образовательной организации](https://flathead.github.io/Celius-Static/information)
   - [Оплата и доставка](https://flathead.github.io/Celius-Static/delivery)
   - [Контакты](https://flathead.github.io/Celius-Static/contact)
+  - [Семинары](https://flathead.github.io/Celius-Static/seminars)
+  - [Учебный центр](https://flathead.github.io/Celius-Static/training)
 
 ## 📲 Версии
+
+### — 0.3.2
+
+- **Добавлено и адаптировано 2 страницы:**
+  - [Семинары](https://flathead.github.io/Celius-Static/seminars) - в том числе работает фильтрация семинаров
+  - [Учебный центр](https://flathead.github.io/Celius-Static/training)
 
 ### — 0.3.1
 

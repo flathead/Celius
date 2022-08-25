@@ -18,9 +18,9 @@ main[data-page="service"] {
         p {
           font-family: $font500;
           span {
-            color: $color_green_light;
+            color: $color__greenlight;
             a {
-              color: $color_green_light;
+              color: $color__greenlight;
               &:hover {
                 color: $color__blue;
               }
@@ -155,7 +155,7 @@ main[data-page="service"] {
       #cert-next {
         i {
           font-size: 2rem;
-          color: $color_green_light;
+          color: $color__greenlight;
         }
         &:hover {
           transition: all 0.5s;

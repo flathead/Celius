@@ -1,0 +1,114 @@
+ul#month-filter {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  row-gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 2rem !important;
+  @media screen and (max-width: 480px) {
+    gap: 1rem;
+  }
+  li.month-filter-item {
+    font-family: $font500;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      color: $color__greenlight;
+    }
+    &.active {
+      color: $color__greenlight;
+    }
+  }
+}
+ul#event-list {
+  margin-bottom: 6rem;
+  li.event-object-item {
+    max-width: 920px;
+    background: #fbfbfb;
+    border: 0.2px solid #000000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    margin: 0 auto;
+    margin-bottom: 2rem !important;
+    transition: all 0.3s;
+    @media screen and (min-width: 480px) {
+      &:hover {
+        transform: translateX(4px);
+        box-shadow: -6px 0 0 $color__greenlight;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      display: grid;
+      grid-template: auto / 1fr 1fr;
+      gap: 1rem;
+    }
+    @media screen and (max-width: 480px) {
+      display: grid;
+      grid-template: auto / 1fr;
+      gap: 1rem;
+      padding: 20px;
+    }
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+    p {
+      margin: 0;
+    }
+    .when {
+      width: 180px;
+      @media screen and (max-width: 768px) {
+        width: auto;
+      }
+      .city {
+        display: flex;
+        align-items: center;
+        i {
+          margin-right: 6px;
+        }
+        p {
+          font-family: $font700;
+          color: $color__blue;
+        }
+      }
+      .date {
+        p {
+          font-size: 1.2rem;
+          margin-top: 6px;
+        }
+      }
+    }
+    .title {
+      width: 260px;
+      p {
+        font-family: $font700;
+      }
+      @media screen and (max-width: 768px) {
+        width: auto;
+      }
+    }
+    .speaker {
+      p {
+        font-family: $font500;
+        span.name {
+          font-family: $font300;
+        }
+      }
+    }
+  }
+}
+
+main[data-page="training"] {
+  ul#event-list {
+    li.event-object-item {
+      .title {
+        width: auto;
+      }
+    }
+  }
+}

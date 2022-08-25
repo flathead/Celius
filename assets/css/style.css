@@ -255,6 +255,23 @@ h2.title {
   }
 }
 
+h2.subtitle {
+  font-size: 1.6rem;
+  margin: 0 auto;
+  text-align: center;
+  color: #3d3d3d;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  max-width: 920px;
+}
+@media screen and (max-width: 560px) {
+  h2.subtitle {
+    font-size: 1.2rem;
+    max-width: 360px;
+    width: 100%;
+  }
+}
+
 /* Header */
 header.site-header {
   width: 100%;
@@ -1344,21 +1361,21 @@ section.alert-header .image img {
     max-width: 160px;
   }
 }
-section.alert-header.contact {
+section.alert-header.contact, section.alert-header.seminars, section.alert-header.training, section.alert-header.shop, section.alert-header.blog, section.alert-header.post {
   padding: 60px;
   gap: 0;
 }
 @media screen and (max-width: 580px) {
-  section.alert-header.contact {
+  section.alert-header.contact, section.alert-header.seminars, section.alert-header.training, section.alert-header.shop, section.alert-header.blog, section.alert-header.post {
     padding: 20px;
   }
 }
-section.alert-header.contact .alert h1 {
+section.alert-header.contact .alert h1, section.alert-header.seminars .alert h1, section.alert-header.training .alert h1, section.alert-header.shop .alert h1, section.alert-header.blog .alert h1, section.alert-header.post .alert h1 {
   margin: 0;
   margin-bottom: 3rem;
   position: relative;
 }
-section.alert-header.contact .alert h1::before {
+section.alert-header.contact .alert h1::before, section.alert-header.seminars .alert h1::before, section.alert-header.training .alert h1::before, section.alert-header.shop .alert h1::before, section.alert-header.blog .alert h1::before, section.alert-header.post .alert h1::before {
   content: "";
   position: absolute;
   top: calc(100% + 1.3rem);
@@ -1368,34 +1385,145 @@ section.alert-header.contact .alert h1::before {
   background: linear-gradient(90deg, #67e3d9 12.66%, #41b5ad 57.78%, #27968f 88.92%);
   border-radius: 20px;
 }
-section.alert-header.contact .image iframe {
+section.alert-header.contact .image iframe, section.alert-header.seminars .image iframe, section.alert-header.training .image iframe, section.alert-header.shop .image iframe, section.alert-header.blog .image iframe, section.alert-header.post .image iframe {
   border-radius: 20px;
 }
 @media screen and (max-width: 960px) {
-  section.alert-header.contact .image {
+  section.alert-header.contact .image, section.alert-header.seminars .image, section.alert-header.training .image, section.alert-header.shop .image, section.alert-header.blog .image, section.alert-header.post .image {
     margin-top: 2rem;
     width: 100%;
     height: 300px;
   }
-  section.alert-header.contact .image iframe {
+  section.alert-header.contact .image iframe, section.alert-header.seminars .image iframe, section.alert-header.training .image iframe, section.alert-header.shop .image iframe, section.alert-header.blog .image iframe, section.alert-header.post .image iframe {
     width: 100% !important;
     height: 100% !important;
   }
 }
 @media screen and (max-width: 580px) {
-  section.alert-header.contact .image {
+  section.alert-header.contact .image, section.alert-header.seminars .image, section.alert-header.training .image, section.alert-header.shop .image, section.alert-header.blog .image, section.alert-header.post .image {
     height: 200px;
   }
 }
 @media screen and (max-width: 440px) {
-  section.alert-header.contact .image {
+  section.alert-header.contact .image, section.alert-header.seminars .image, section.alert-header.training .image, section.alert-header.shop .image, section.alert-header.blog .image, section.alert-header.post .image {
     height: 160px;
   }
 }
 @media screen and (max-width: 350px) {
-  section.alert-header.contact .image {
+  section.alert-header.contact .image, section.alert-header.seminars .image, section.alert-header.training .image, section.alert-header.shop .image, section.alert-header.blog .image, section.alert-header.post .image {
     height: 120px;
   }
+}
+section.alert-header.seminars .alert h1, section.alert-header.training .alert h1 {
+  margin-bottom: 2rem;
+}
+section.alert-header.seminars .alert h1 ::before, section.alert-header.training .alert h1 ::before {
+  display: none;
+}
+
+section.alert-inner {
+  background: linear-gradient(90.06deg, #008278 25.42%, #39ac2d 71.49%);
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+  padding: 90px;
+  display: grid;
+  grid-template: auto/50% 50%;
+  height: auto;
+  gap: 0;
+}
+@media screen and (max-width: 1200px) {
+  section.alert-inner {
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 960px) {
+  section.alert-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    height: max-content;
+  }
+}
+@media screen and (max-width: 580px) {
+  section.alert-inner {
+    padding: 20px;
+  }
+}
+section.alert-inner .alert {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+section.alert-inner .alert p {
+  font-family: "Museo Sans Cyrl 900";
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 2.8rem;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 580px) {
+  section.alert-inner .alert p {
+    font-size: 2rem;
+    position: relative;
+  }
+  section.alert-inner .alert p::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    left: 0;
+    top: calc(100% + 1rem);
+    background: linear-gradient(90deg, #67e3d9 12.66%, #41b5ad 57.78%, #27968f 88.92%);
+    border-radius: 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  section.alert-inner .alert p {
+    font-size: 1.4rem;
+  }
+}
+section.alert-inner .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+@media screen and (max-width: 960px) {
+  section.alert-inner .info {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  section.alert-inner .info {
+    align-items: flex-start;
+  }
+}
+section.alert-inner .info p,
+section.alert-inner .info p a {
+  color: #f5f5f5;
+  font-family: "Museo Sans Cyrl 700";
+  font-size: 2rem;
+  margin: 0;
+}
+@media screen and (max-width: 480px) {
+  section.alert-inner .info p,
+section.alert-inner .info p a {
+    font-size: 1.4rem;
+  }
+}
+section.alert-inner .info p {
+  margin-bottom: 1rem;
+}
+section.alert-inner .info p:last-child {
+  margin-bottom: 0;
+}
+section.alert-inner .info a:hover {
+  color: #b9d0ff;
 }
 
 /* Socials Block */
@@ -1510,6 +1638,123 @@ section.socials .container .social-banner .social-list p.alert {
   section.socials .container .social-banner .social-list p.alert {
     text-align: center;
   }
+}
+
+/* Event filter */
+ul#month-filter {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  row-gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 2rem !important;
+}
+@media screen and (max-width: 480px) {
+  ul#month-filter {
+    gap: 1rem;
+  }
+}
+ul#month-filter li.month-filter-item {
+  font-family: "Museo Sans Cyrl 500";
+  cursor: pointer;
+  transition: all 0.3s;
+}
+ul#month-filter li.month-filter-item:hover {
+  color: #39ac2d;
+}
+ul#month-filter li.month-filter-item.active {
+  color: #39ac2d;
+}
+
+ul#event-list {
+  margin-bottom: 6rem;
+}
+ul#event-list li.event-object-item {
+  max-width: 920px;
+  background: #fbfbfb;
+  border: 0.2px solid #000000;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  margin: 0 auto;
+  margin-bottom: 2rem !important;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 480px) {
+  ul#event-list li.event-object-item:hover {
+    transform: translateX(4px);
+    box-shadow: -6px 0 0 #39ac2d;
+  }
+}
+@media screen and (max-width: 768px) {
+  ul#event-list li.event-object-item {
+    display: grid;
+    grid-template: auto/1fr 1fr;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  ul#event-list li.event-object-item {
+    display: grid;
+    grid-template: auto/1fr;
+    gap: 1rem;
+    padding: 20px;
+  }
+}
+ul#event-list li.event-object-item:last-child {
+  margin-bottom: 0 !important;
+}
+ul#event-list li.event-object-item p {
+  margin: 0;
+}
+ul#event-list li.event-object-item .when {
+  width: 180px;
+}
+@media screen and (max-width: 768px) {
+  ul#event-list li.event-object-item .when {
+    width: auto;
+  }
+}
+ul#event-list li.event-object-item .when .city {
+  display: flex;
+  align-items: center;
+}
+ul#event-list li.event-object-item .when .city i {
+  margin-right: 6px;
+}
+ul#event-list li.event-object-item .when .city p {
+  font-family: "Museo Sans Cyrl 700";
+  color: #1755ce;
+}
+ul#event-list li.event-object-item .when .date p {
+  font-size: 1.2rem;
+  margin-top: 6px;
+}
+ul#event-list li.event-object-item .title {
+  width: 260px;
+}
+ul#event-list li.event-object-item .title p {
+  font-family: "Museo Sans Cyrl 700";
+}
+@media screen and (max-width: 768px) {
+  ul#event-list li.event-object-item .title {
+    width: auto;
+  }
+}
+ul#event-list li.event-object-item .speaker p {
+  font-family: "Museo Sans Cyrl 500";
+}
+ul#event-list li.event-object-item .speaker p span.name {
+  font-family: "Museo Sans Cyrl 300";
+}
+
+main[data-page=training] ul#event-list li.event-object-item .title {
+  width: auto;
 }
 
 /******************************
@@ -3760,5 +4005,42 @@ main[data-page=contact] section.contacts div.column {
 }
 main[data-page=contact] section.map iframe {
   border-radius: 30px;
+}
+
+/* Training Page */
+main[data-page=training] section.courses {
+  margin-bottom: 4rem;
+}
+main[data-page=training] section.courses ul.course-list {
+  display: grid;
+  grid-template: auto/repeat(3, 1fr);
+  gap: 2rem;
+}
+@media screen and (max-width: 960px) {
+  main[data-page=training] section.courses ul.course-list {
+    grid-template: auto/repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 580px) {
+  main[data-page=training] section.courses ul.course-list {
+    grid-template: auto/1fr;
+  }
+}
+main[data-page=training] section.courses ul.course-list li.course-card {
+  background: #fff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+main[data-page=training] section.courses ul.course-list li.course-card p.title {
+  margin: 0;
+  font-family: "Museo Sans Cyrl 700";
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

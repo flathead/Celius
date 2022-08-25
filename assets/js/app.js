@@ -339,6 +339,48 @@ jQuery( function( $ ) {
 //	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 
 	/* [START]
+	* 1. Получение месяца и автовыбор на странице семинаров
+	* 2. Фильтрация семинаров по клику на месяц
+	*/
+	const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+	"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+	];
+
+	const date = new Date();
+	const currentMonth = monthNames[date.getMonth()];
+	
+	$( '.month-filter-item' ).each( function() {
+		const filterData = $( this ).data( 'filter' );
+
+		if ( filterData == currentMonth ) {
+			$( this ).addClass( 'active' );
+		}
+	} );
+
+	$( '#event-list li.event-object-item' ).hide();
+	$( '#event-list li.event-object-item' ).filter( `[data-filter="${currentMonth}"]` ).show();
+
+	$( '.month-filter-item' ).on( 'click', function() {
+		const month = $( this ).data( 'filter' );
+		$( '.month-filter-item' ).removeClass( 'active' );
+		$( this ).addClass( 'active' );
+		
+		if ( month == 'All' ) {
+			$( '#event-list li.event-object-item' ).fadeIn();
+		} else {
+			$( '#event-list li.event-object-item' ).hide();
+			$( '#event-list li.event-object-item' ).filter( `[data-filter="${month}"]` ).fadeIn();
+		}
+	} );
+
+	/* [START]
+	* 1. Получение месяца и автовыбор на странице семинаров
+	* 2. Фильтрация семинаров по клику на месяц
+	*/
+
+//	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+
+	/* [START]
 	 * Слайдеры SwiperJS
 	 */
 	const courseSlider = new Swiper( '.course-slider', {
