@@ -1,6 +1,6 @@
 'use strict';
 
-// ANCHOR Functions
+// ANCHOR Функции статичных модальных окон
 function phonesModal() {
 	Swal.fire( {
 		showCloseButton: true,
@@ -56,7 +56,7 @@ function forgotModal() {
 			title: 'Отлично!',
 			text: 'Мы отправили письмо с информацией о восстановлении пароля на указанный Вами Email',
 			confirmButtonText: 'Хорошо',
-			/* timer: 3000, */
+			timer: 5000,
 		} );
 	} )
 }
@@ -153,6 +153,11 @@ function registerModal() {
 // ANCHOR DOM Ready
 
 jQuery( function( $ ) {
+
+	// Inits START
+	Fancybox.bind( '[data-fancybox="gallery"]' );
+	// Inits END
+
 	/* [START]
 	 * Модальные окна
 	 */
@@ -290,6 +295,50 @@ jQuery( function( $ ) {
 //	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 
 	/* [START]
+	 * Модальное окно записи к специалисту
+	 */
+	$( '.specialist' ).on( 'click', function() {
+		const specialistName = $( this ).find( '.name' ).text();
+		const specialistPhoto = $( this ).find( '.face' ).attr( 'src' );
+		Swal.fire( {
+			showCloseButton: true,
+			showConfirmButton: false,
+			html: '<div class="specialist-container">' +
+				'<div class="title">' +
+					'<p>Запись к специалисту</p>' +
+				'</div>' +
+				'<div class="specialist">' +
+					'<img class="specialist-photo" src="'+ specialistPhoto +'" alt="'+ specialistName +'" />' +
+					'<p class="specialist-name">'+ specialistName +'</p>' +
+				'</div>' +
+				'<div class="form">' +
+					'<form class="auth-register" id="specialist" method="POST" action="/">' +
+						'<label for="name">Введите Ваше имя <span class="needs">*</span></label>' +
+						'<input type="text" id="name" placeholder="Ваше имя" />' +
+						'<label for="phone">Укажите Ваш номер телефона <span class="needs">*</span></label>' +
+						'<input type="tel" id="phone" placeholder="Ваш номер" />' +
+						'<input class="action-btn" type="submit" id="appointment" value="Записаться" />' +
+					'</form>' +
+				'</div>' +
+			'</div>',
+		} );
+		$( '#appointment' ).on( 'click', function() {
+			Swal.fire( {
+				icon: 'success',
+				title: 'Вы записаны',
+				text: 'В ближайшее время мы перезвоним вам для уточнения деталей',
+				confirmButtonText: 'Хорошо',
+				timer: 5000,
+			} )
+		} );
+	} )
+	/* [END]
+	* Модальное окно записи к специалисту
+	*/
+
+//	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+
+	/* [START]
 	 * Слайдеры SwiperJS
 	 */
 	const courseSlider = new Swiper( '.course-slider', {
@@ -317,6 +366,7 @@ jQuery( function( $ ) {
 			},
 		},
 	} );
+
 	const teamSlider = new Swiper( '.team-slider', {
 		loop: false,
 		slidesPerView: 1,
@@ -341,11 +391,30 @@ jQuery( function( $ ) {
 			},
 		},
 	} );
+
+	const certSlider = new Swiper( '.cert-slider', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		navigation: {
+			prevEl: '#cert-prev',
+			nextEl: '#cert-next',
+		},
+		breakpoints: {
+			480: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 3,
+			},
+			900: {
+				slidesPerView: 4,
+			},
+		},
+	} );
 	/* [END]
 	 * Слайдеры SwiperJS
 	 */
 
 //	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-
 
 } );

@@ -7,9 +7,9 @@
 - [Главная страница](https://flathead.github.io/Celius-Static/)
   - [Заглушка (на обслуживании)](https://flathead.github.io/Celius-Static/maintenance)
   - [Личный кабинет](https://flathead.github.io/Celius-Static/account)
-  - [Услуги центра](https://flathead.github.io/Celius-Static/service)
-  - [Наши специалисты](https://flathead.github.io/Celius-Static/employees)
-    - [Консультация специалиста (пример услуги)](https://flathead.github.io/Celius-Static/service/konsultacia-specialista)
+  - [Услуги центра](https://flathead.github.io/Celius-Static/services)
+  - [Наши специалисты](https://flathead.github.io/Celius-Static/employee)
+    - [Консультация специалиста (пример услуги)](https://flathead.github.io/Celius-Static/services/konsultacia-specialista)
   - [Сведения об образовательной организации](https://flathead.github.io/Celius-Static/information)
   - [Оплата и доставка](https://flathead.github.io/Celius-Static/delivery)
   - [Контакты](https://flathead.github.io/Celius-Static/contact)
@@ -18,6 +18,7 @@
 
 ### — 0.3
 
+- Объединены и минифицированы все CSS - SASS и библиотеки, а так же JS и библиотеки
 - Добавлены hover-transition для ссылок, кнопок, элементов меню и управления
 - **Добавлены 4 модальных окна:**
   - МО для вывода списка телефонов
@@ -25,9 +26,9 @@
   - МО для регистрации
   - МО для восстановления пароля
 - **Добавлены и адаптированы 6 страниц:**
-  - [Услуги центра](https://flathead.github.io/Celius-Static/service)
-  - [Наши специалисты](https://flathead.github.io/Celius-Static/employees)
-  - [Консультация специалиста (пример услуги)](https://flathead.github.io/Celius-Static/service/konsultacia-specialista)
+  - [Услуги центра](https://flathead.github.io/Celius-Static/services)
+  - [Наши специалисты](https://flathead.github.io/Celius-Static/employee)
+  - [Консультация специалиста (пример услуги)](https://flathead.github.io/Celius-Static/services/konsultacia-specialista)
   - [Сведения об образовательной организации](https://flathead.github.io/Celius-Static/information)
   - [Оплата и доставка](https://flathead.github.io/Celius-Static/delivery)
   - [Контакты](https://flathead.github.io/Celius-Static/contact)
@@ -54,8 +55,14 @@ npm install
 npm i
 ```
 
-Для отслеживания изменений в SASS (node-sass):
+Для отслеживания изменений / автообновление browser-sync:
 
 ```sh
-npm run watch
+npm run dev
 ```
+
+После запуска команды, задачи по автоматизации, прописанные в gulpfile будут выполняться в автоматическом режиме. Среди них:
+
+- Объединение и минификация всех .scss + .css (библиотек)
+- Объединение и минификация всех JS-библиотек и главного JS-файла (app.js) при обновлении / сохранении `assets/js/app.js`
+- Обновление страницы сайта после любых изменений в JS/SASS/HTML

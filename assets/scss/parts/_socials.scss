@@ -1,0 +1,108 @@
+section.socials {
+  .container {
+    .social-banner {
+      background: linear-gradient(
+        91.01deg,
+        #1755ce 4.11%,
+        rgba(39, 150, 143, 0.57) 90.12%
+      );
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 10px 80px;
+      @media screen and (max-width: 1200px) {
+        padding: 10px 40px;
+      }
+      @media screen and (max-width: 960px) {
+        padding: 40px 150px;
+        flex-direction: column;
+      }
+      @media screen and (max-width: 580px) {
+        padding: 40px 20px;
+      }
+      .title {
+        max-width: 320px;
+        width: 100%;
+        p {
+          font-family: $font900;
+          font-size: 2.4rem;
+          color: $color__white;
+          margin: 0;
+          @media screen and (max-width: 960px) {
+            text-align: center;
+          }
+          @media screen and (max-width: 580px) {
+            font-size: 1.8rem;
+          }
+        }
+      }
+      @media screen and (max-width: 960px) {
+        .face {
+          width: 100%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .social-list {
+        max-width: 320px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        p.status {
+          margin: 0;
+          color: #000;
+          position: relative;
+          &::before {
+            content: "";
+            background: #898989;
+            position: absolute;
+            top: 50%;
+            right: calc(100% + 10px);
+            transform: translateY(-50%);
+            height: 1px;
+            width: 50px;
+          }
+          &::after {
+            content: "";
+            background: #898989;
+            position: absolute;
+            top: 50%;
+            left: calc(100% + 10px);
+            transform: translateY(-50%);
+            height: 1px;
+            width: 50px;
+          }
+        }
+        ul.soc-list {
+          width: 100%;
+          margin: 1rem 0;
+          list-style: none;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          li {
+            transition: all 0.3s;
+            &:hover {
+              transform: scale(0.9);
+              filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.15));
+            }
+          }
+        }
+        p.alert {
+          font-family: $font700;
+          font-size: 1.4rem;
+          color: $color__white;
+          margin: 0;
+          @media screen and (max-width: 580px) {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

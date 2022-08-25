@@ -25,6 +25,17 @@
 /* Sweet Alert Popups */
 @import "./parts/swal_popups";
 
+/* Page alert-like headers */
+@import "./parts/page_header";
+
+/* Socials Block */
+@import "./parts/socials";
+
+/******************************
+* Libraries
+*****************************/
+@import "./lib/swiper";
+
 /******************************
  * Pages
  *****************************/
@@ -40,3 +51,18 @@
 
 /* Services Block */
 @import "./pages/services";
+
+/* Employee Page */
+@import "./pages/employee";
+
+/* Service inner Page */
+@import "./pages/service-inner";
+
+/* Information Page */
+@import "./pages/information";
+
+/* Delivery Page */
+@import "./pages/delivery";
+
+/* Contact Page */
+@import "./pages/contact";

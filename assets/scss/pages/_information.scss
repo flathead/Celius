@@ -1,0 +1,40 @@
+main[data-page="info"] {
+  section.buttons-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template: auto / 1fr 1fr 1fr;
+    gap: 2rem;
+    @media screen and (max-width: 768px) {
+      grid-template: auto / 1fr 1fr;
+    }
+    @media screen and (max-width: 480px) {
+      grid-template: auto / 1fr;
+    }
+    a.card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      background: $color__white;
+      font-family: $font500;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+      border-radius: 15px;
+      transition: all 0.5s;
+      &:hover {
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      @media screen and (max-width: 1200px) {
+        padding: 2rem;
+      }
+      @media screen and (max-width: 960px) {
+        padding: 1.4rem;
+      }
+      @media screen and (max-width: 768px) {
+        padding: 2rem;
+      }
+    }
+  }
+}

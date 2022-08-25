@@ -1,0 +1,93 @@
+main[data-page="delivery"] {
+  section.content {
+    margin-top: 2rem;
+    background: $color__white;
+    border-radius: 20px;
+    padding: 40px;
+    .content-item {
+      margin-bottom: 6rem;
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        top: calc(100% + 3rem);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        height: 1px;
+        background: #777;
+      }
+      &:last-child {
+        margin-bottom: 0;
+        &::before {
+          display: none;
+          content: " ";
+        }
+      }
+      div.title {
+        h2 {
+          color: #4d81e7;
+          margin-top: 0;
+        }
+      }
+      div.post {
+        div.alert {
+          display: flex;
+          align-items: center;
+          .info-icon {
+            margin-right: 30px;
+            height: 50px;
+            width: 50px;
+            min-height: 50px;
+            min-width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba($color: #ff0000, $alpha: 1);
+            border-radius: 10px;
+            transition: all 0.3s;
+            i {
+              font-size: 2rem;
+              color: $color__white;
+              transition: all 0.3s;
+            }
+          }
+          p {
+            margin: 0;
+          }
+          &:hover {
+            .info-icon {
+              transform: scale(1.05);
+              box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
+            }
+          }
+        }
+        p.strong {
+          font-family: $font700;
+          font-size: 1.1rem;
+        }
+        ul.delivery-list {
+          padding-left: 20px;
+          margin-top: 2rem;
+          li {
+            p.title {
+              font-family: $font900;
+              span.green {
+                color: #39ac2d;
+              }
+            }
+            p:not(.title) {
+              a {
+                color: #39ac2d;
+                font-family: $font500;
+                &:hover {
+                  color: #4d81e7;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

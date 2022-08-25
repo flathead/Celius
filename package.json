@@ -1,27 +1,30 @@
 {
   "name": "celius",
-  "version": "0.2.1",
+  "version": "0.3",
   "description": "",
   "scripts": {
-	"editorconfig": "editorconfig-cli",
+    "editorconfig": "editorconfig-cli",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx gulp"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-	"@htmlacademy/editorconfig-cli": "1.0.0",
     "@babel/core": "^7.18.10",
     "@babel/register": "^7.18.9",
     "autoprefixer": "10.4.0",
     "browser-sync": "^2.24.1",
     "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^4.0.1",
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "9.0.1",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "5.0.0",
+    "gulp-uglify": "^3.0.2",
     "postcss": "8.3.11",
     "sass": "^1.54.5",
-	"stylelint": "13.13.1",
+    "stylelint": "13.13.1",
     "stylelint-config-htmlacademy": "0.1.11"
   },
   "browserslist": [
@@ -30,14 +33,6 @@
     "not ie <= 11",
     "not op_mini all",
     "not < 0.25%"
-  ],
-  "editorconfig-cli": [
-    "*.json",
-    "*.js",
-    "*.html",
-    "assets/js/**/*.js",
-    "assets/img/**/*.svg",
-    "assets/scss/**/*.scss"
   ],
   "engines": {
     "node": "^16"

@@ -57,4 +57,10 @@ main.site-main {
   @media screen and (max-width: 375px) {
     padding: 0 10px !important;
   }
+  section {
+    margin-top: 2rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
 }
