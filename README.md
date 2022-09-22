@@ -1,24 +1,52 @@
 # Целиус
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/flathead/Celius-Static)
+[![Preview Version](https://img.shields.io/badge/celius-4.0-brightgreen)](https://flathead.github.io/Celius-Static/) [![Dev Status](https://img.shields.io/badge/develop-in%20process-blue)](https://github.com/flathead/Celius-Static)
 
-**`Статус:`** `в процессе вёрстки`
+**`Статус:`** `вёрстка завершена`
+
+---
+
+‼️**Внимание**‼️
+
+Далее будет разворачиваться Bitrix и разрабатываться шаблон сайта.
+
+Следующий код шаблона Bitrix будет содержаться и обновляться в [этом репозитории](https://).
+
+Тестовый статичный сайт сохранится, но не будет обновляться.
+
+Вся работа будет перенесена на локальный сервер.
+
+---
 
 ## 🗃️ Структура
 
 - [Главная страница](https://flathead.github.io/Celius-Static/)
-  - [Заглушка (на обслуживании)](https://flathead.github.io/Celius-Static/maintenance)
-  - [Личный кабинет](https://flathead.github.io/Celius-Static/account)
-  - [Услуги центра](https://flathead.github.io/Celius-Static/services)
-  - [Наши специалисты](https://flathead.github.io/Celius-Static/employee)
-    - [Консультация специалиста (пример услуги)](https://flathead.github.io/Celius-Static/services/konsultacia-specialista)
-  - [Сведения об образовательной организации](https://flathead.github.io/Celius-Static/information)
-  - [Оплата и доставка](https://flathead.github.io/Celius-Static/delivery)
-  - [Контакты](https://flathead.github.io/Celius-Static/contact)
-  - [Семинары](https://flathead.github.io/Celius-Static/seminars)
-  - [Учебный центр](https://flathead.github.io/Celius-Static/training)
+- [Заглушка (на обслуживании)](https://flathead.github.io/Celius-Static/maintenance)
+- [Личный кабинет](https://flathead.github.io/Celius-Static/account)
+- [Услуги центра](https://flathead.github.io/Celius-Static/services)
+- [Наши специалисты](https://flathead.github.io/Celius-Static/employee)
+  - [Консультация специалиста (пример услуги)](https://flathead.github.io/Celius-Static/services/konsultacia-specialista)
+- [Сведения об образовательной организации](https://flathead.github.io/Celius-Static/information)
+- [Оплата и доставка](https://flathead.github.io/Celius-Static/delivery)
+- [Контакты](https://flathead.github.io/Celius-Static/contact)
+- [Семинары](https://flathead.github.io/Celius-Static/seminars)
+- [Учебный центр](https://flathead.github.io/Celius-Static/training)
+- [Интернет-магазин](https://flathead.github.io/Celius-Static/shop)
+  - [Страница товара](https://flathead.github.io/Celius-Static/shop/sample-product)
+- [Блог](https://flathead.github.io/Celius-Static/blog)
+  - [Страница статьи](https://flathead.github.io/Celius-Static/blog/sample-post)
 
 ## 📲 Версии
+
+### — 4.0
+
+- Вёрстка полностью выполнена
+- Обновлены ссылки тестового сайта
+- **Добавлено и адаптировано 4 страницы:**
+  - ЕСТЬ [Интернет-магазин](https://flathead.github.io/Celius-Static/shop) - в т.ч. работает фильтр
+  - ЕСТЬ [Страница товара](https://flathead.github.io/Celius-Static/shop/sample-product) - включая вкладки и форму
+  - [Блог](https://flathead.github.io/Celius-Static/blog)
+  - [Страница статьи](https://flathead.github.io/Celius-Static/blog/sample-post)
 
 ### — 0.3.2
 

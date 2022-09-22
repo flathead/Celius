@@ -97,3 +97,17 @@ h2.subtitle {
     width: 100%;
   }
 }
+p.subtitle {
+  font-size: 1.2rem;
+  font-family: $font700;
+  margin: 0 auto;
+  text-align: center;
+  color: #3d3d3d;
+  margin-bottom: 2rem;
+  max-width: 920px;
+  @media screen and (max-width: 560px) {
+    font-size: 1rem;
+    max-width: 360px;
+    width: 100%;
+  }
+}

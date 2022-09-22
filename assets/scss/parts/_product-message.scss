@@ -1,0 +1,45 @@
+.product-message {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: none;
+  padding: 20px;
+  border-radius: 15px;
+  background: $color__white;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  button.close {
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    padding: 4px;
+    margin: 0;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    i {
+      font-size: 14px;
+      line-height: 14px;
+    }
+    &:hover {
+      background: rgb(231, 231, 231);
+    }
+  }
+  p.alert {
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 1.2rem;
+    font-family: $font500;
+  }
+  a {
+    color: $color__blue;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

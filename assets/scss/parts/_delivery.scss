@@ -1,5 +1,6 @@
-main[data-page="delivery"] {
-  section.content {
+main[data-page="delivery"],
+.tab-content.delivery {
+  section.delivery-content {
     margin-top: 2rem;
     background: $color__white;
     border-radius: 20px;

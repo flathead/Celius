@@ -153,6 +153,16 @@ section.alert-header {
       }
     }
   }
+  &.shop {
+    .image {
+      img {
+        max-width: 340px;
+        @media screen and (max-width: 960px) {
+          height: 100%;
+        }
+      }
+    }
+  }
 }
 
 section.alert-inner {

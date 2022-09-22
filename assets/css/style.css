@@ -140,7 +140,8 @@ a[type=button] {
   border: none;
 }
 
-a[type=button].modal-btn {
+a[type=button].modal-btn,
+button.modal-btn {
   padding: 0 40px;
   height: 50px;
   background: linear-gradient(90.6deg, #0f9502 19.86%, #39ac2d 81.94%);
@@ -150,22 +151,27 @@ a[type=button].modal-btn {
   display: flex;
   gap: 10px;
   width: max-content;
+  border: none;
   transition: all 0.1s ease-in;
 }
-a[type=button].modal-btn img {
+a[type=button].modal-btn img,
+button.modal-btn img {
   width: 20px;
   filter: invert(1);
 }
-a[type=button].modal-btn span {
+a[type=button].modal-btn span,
+button.modal-btn span {
   font-family: "Museo Sans Cyrl 700";
   color: #fff;
 }
-a[type=button].modal-btn:hover {
+a[type=button].modal-btn:hover,
+button.modal-btn:hover {
   transform: scale(1.05);
   box-shadow: 4px 4px 0px #b8ceff;
 }
 
-a[type=button].action-btn {
+a[type=button].action-btn,
+button.action-btn {
   padding: 0 20px;
   height: 50px;
   background: linear-gradient(90.6deg, #0f9502 19.86%, #39ac2d 81.94%);
@@ -175,21 +181,47 @@ a[type=button].action-btn {
   display: flex;
   gap: 10px;
   width: max-content;
+  border: none;
   transition: all 0.1s ease-in;
 }
-a[type=button].action-btn img {
+a[type=button].action-btn img,
+button.action-btn img {
   width: 20px;
   filter: invert(1);
 }
-a[type=button].action-btn i {
+a[type=button].action-btn i,
+button.action-btn i {
   font-size: 20px;
   color: #fff;
 }
-a[type=button].action-btn span {
+a[type=button].action-btn span,
+button.action-btn span {
   font-family: "Museo Sans Cyrl 700";
   color: #fff;
 }
-a[type=button].action-btn:hover {
+a[type=button].action-btn:hover,
+button.action-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 0px #b8ceff;
+}
+
+input.submit-btn {
+  cursor: pointer;
+  padding: 0 20px;
+  height: 50px;
+  background: linear-gradient(90.6deg, #0f9502 19.86%, #39ac2d 81.94%);
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  border: none;
+  font-family: "Museo Sans Cyrl 700";
+  color: #fff;
+  transition: all 0.1s ease-in;
+}
+input.submit-btn:hover {
   transform: scale(1.05);
   box-shadow: 4px 4px 0px #b8ceff;
 }
@@ -267,6 +299,23 @@ h2.subtitle {
 @media screen and (max-width: 560px) {
   h2.subtitle {
     font-size: 1.2rem;
+    max-width: 360px;
+    width: 100%;
+  }
+}
+
+p.subtitle {
+  font-size: 1.2rem;
+  font-family: "Museo Sans Cyrl 700";
+  margin: 0 auto;
+  text-align: center;
+  color: #3d3d3d;
+  margin-bottom: 2rem;
+  max-width: 920px;
+}
+@media screen and (max-width: 560px) {
+  p.subtitle {
+    font-size: 1rem;
     max-width: 360px;
     width: 100%;
   }
@@ -1420,6 +1469,14 @@ section.alert-header.seminars .alert h1, section.alert-header.training .alert h1
 section.alert-header.seminars .alert h1 ::before, section.alert-header.training .alert h1 ::before {
   display: none;
 }
+section.alert-header.shop .image img {
+  max-width: 340px;
+}
+@media screen and (max-width: 960px) {
+  section.alert-header.shop .image img {
+    height: 100%;
+  }
+}
 
 section.alert-inner {
   background: linear-gradient(90.06deg, #008278 25.42%, #39ac2d 71.49%);
@@ -1755,6 +1812,531 @@ ul#event-list li.event-object-item .speaker p span.name {
 
 main[data-page=training] ul#event-list li.event-object-item .title {
   width: auto;
+}
+
+/* Checkbox style */
+div.checkbox {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+}
+div.checkbox:last-child {
+  margin-bottom: 0;
+}
+div.checkbox input {
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  border: none !important;
+  outline: none !important;
+  background: none !important;
+  pointer-events: auto;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  position: relative;
+}
+div.checkbox input::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  background: #e8e8e8;
+  top: 50%;
+  border-radius: 5px;
+  left: -1px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: all 0.3s;
+}
+div.checkbox input::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-family: "Font Awesome 6 Free";
+  font-weight: 600;
+  content: "\f00c";
+  color: #fff;
+  pointer-events: none;
+  transition: all 0.3s;
+  opacity: 0;
+}
+div.checkbox input:hover::before {
+  background: #dbdbdb;
+}
+div.checkbox input:checked::before {
+  background: #1755ce;
+}
+div.checkbox input:checked::after {
+  transition: all 0.6s;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+div.checkbox label {
+  margin-left: 6px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+div.checkbox label:hover {
+  color: #1755ce;
+}
+
+form.product-radio-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form.product-radio-group .product-radio-group-item {
+  position: relative;
+  height: 30px;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  margin-right: 2rem;
+  transition: all 0.3s;
+}
+form.product-radio-group .product-radio-group-item:last-child {
+  margin-right: 0;
+}
+form.product-radio-group .product-radio-group-item:hover {
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+form.product-radio-group .product-radio-group-item input[type=radio] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 8px;
+  transition: all 0.3s;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+}
+form.product-radio-group .product-radio-group-item input[type=radio]:checked {
+  background: #c9e5ff;
+  transform: scale(1.1);
+}
+form.product-radio-group .product-radio-group-item label {
+  position: relative;
+  z-index: 1;
+  font-family: "Museo Sans Cyrl 500";
+  pointer-events: none;
+}
+form.product-radio-group .product-radio-group-item:nth-child(odd) input {
+  background: #fff6c4;
+}
+form.product-radio-group .product-radio-group-item:nth-child(even) {
+  background: #f3f3ef;
+}
+
+/* Like Button */
+.like-button svg {
+  cursor: pointer;
+  overflow: visible;
+  width: 40px;
+}
+.like-button svg #heart {
+  transform-origin: center;
+  animation: animateHeartOut 0.3s linear forwards;
+}
+.like-button svg #main-circle {
+  transform-origin: 29.5px 29.5px;
+}
+.like-button .like {
+  display: none;
+}
+.like-button .like:checked + label svg #heart {
+  transform: scale(0.2);
+  fill: #e2264d !important;
+  animation: animateHeart 0.3s linear forwards 0.25s;
+}
+.like-button .like:checked + label svg #main-circle {
+  transition: all 2s;
+  animation: animateCircle 0.3s linear forwards;
+  opacity: 1;
+}
+.like-button .like:checked + label svg #grp1 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.like-button .like:checked + label svg #grp1 #circle-1 {
+  transform: scale(0) translate(0, -30px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp1 #circle-2 {
+  transform: scale(0) translate(10px, -50px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp2 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.like-button .like:checked + label svg #grp2 #circle-1 {
+  transform: scale(0) translate(30px, -15px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp2 #circle-2 {
+  transform: scale(0) translate(60px, -15px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp3 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.like-button .like:checked + label svg #grp3 #circle-1 {
+  transform: scale(0) translate(30px, 0px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp3 #circle-2 {
+  transform: scale(0) translate(60px, 10px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp4 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.like-button .like:checked + label svg #grp4 #circle-1 {
+  transform: scale(0) translate(30px, 15px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp4 #circle-2 {
+  transform: scale(0) translate(40px, 50px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp5 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.like-button .like:checked + label svg #grp5 #circle-1 {
+  transform: scale(0) translate(-10px, 20px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp5 #circle-2 {
+  transform: scale(0) translate(-60px, 30px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp6 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.like-button .like:checked + label svg #grp6 #circle-1 {
+  transform: scale(0) translate(-30px, 0px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp6 #circle-2 {
+  transform: scale(0) translate(-60px, -5px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp7 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.like-button .like:checked + label svg #grp7 #circle-1 {
+  transform: scale(0) translate(-30px, -15px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp7 #circle-2 {
+  transform: scale(0) translate(-55px, -30px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.like-button .like:checked + label svg #grp2 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+.like-button .like:checked + label svg #grp3 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+.like-button .like:checked + label svg #grp4 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+.like-button .like:checked + label svg #grp5 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+.like-button .like:checked + label svg #grp6 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+.like-button .like:checked + label svg #grp7 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+@keyframes animateCircle {
+  40% {
+    transform: scale(10);
+    opacity: 1;
+    fill: #dd4688;
+  }
+  55% {
+    transform: scale(11);
+    opacity: 1;
+    fill: #d46abf;
+  }
+  65% {
+    transform: scale(12);
+    opacity: 1;
+    fill: #cc8ef5;
+  }
+  75% {
+    transform: scale(13);
+    opacity: 1;
+    fill: transparent;
+    stroke: #cc8ef5;
+    stroke-width: 0.5;
+  }
+  85% {
+    transform: scale(17);
+    opacity: 1;
+    fill: transparent;
+    stroke: #cc8ef5;
+    stroke-width: 0.2;
+  }
+  95% {
+    transform: scale(18);
+    opacity: 1;
+    fill: transparent;
+    stroke: #cc8ef5;
+    stroke-width: 0.1;
+  }
+  100% {
+    transform: scale(19);
+    opacity: 1;
+    fill: transparent;
+    stroke: #cc8ef5;
+    stroke-width: 0;
+  }
+}
+@keyframes animateHeart {
+  0% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes animateHeartOut {
+  0% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Product Message */
+.product-message {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: none;
+  padding: 20px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.product-message button.close {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  padding: 4px;
+  margin: 0;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.product-message button.close i {
+  font-size: 14px;
+  line-height: 14px;
+}
+.product-message button.close:hover {
+  background: rgb(231, 231, 231);
+}
+.product-message p.alert {
+  margin: 0;
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+  font-family: "Museo Sans Cyrl 500";
+}
+.product-message a {
+  color: #1755ce;
+}
+.product-message a:hover {
+  text-decoration: underline;
+}
+
+/* Delivery info on Delivery page & Product page tab */
+main[data-page=delivery] section.delivery-content,
+.tab-content.delivery section.delivery-content {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+}
+main[data-page=delivery] section.delivery-content .content-item,
+.tab-content.delivery section.delivery-content .content-item {
+  margin-bottom: 6rem;
+  position: relative;
+}
+main[data-page=delivery] section.delivery-content .content-item::before,
+.tab-content.delivery section.delivery-content .content-item::before {
+  position: absolute;
+  content: "";
+  top: calc(100% + 3rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 1px;
+  background: #777;
+}
+main[data-page=delivery] section.delivery-content .content-item:last-child,
+.tab-content.delivery section.delivery-content .content-item:last-child {
+  margin-bottom: 0;
+}
+main[data-page=delivery] section.delivery-content .content-item:last-child::before,
+.tab-content.delivery section.delivery-content .content-item:last-child::before {
+  display: none;
+  content: " ";
+}
+main[data-page=delivery] section.delivery-content .content-item div.title h2,
+.tab-content.delivery section.delivery-content .content-item div.title h2 {
+  color: #4d81e7;
+  margin-top: 0;
+}
+main[data-page=delivery] section.delivery-content .content-item div.post div.alert,
+.tab-content.delivery section.delivery-content .content-item div.post div.alert {
+  display: flex;
+  align-items: center;
+}
+main[data-page=delivery] section.delivery-content .content-item div.post div.alert .info-icon,
+.tab-content.delivery section.delivery-content .content-item div.post div.alert .info-icon {
+  margin-right: 30px;
+  height: 50px;
+  width: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: red;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+main[data-page=delivery] section.delivery-content .content-item div.post div.alert .info-icon i,
+.tab-content.delivery section.delivery-content .content-item div.post div.alert .info-icon i {
+  font-size: 2rem;
+  color: #fff;
+  transition: all 0.3s;
+}
+main[data-page=delivery] section.delivery-content .content-item div.post div.alert p,
+.tab-content.delivery section.delivery-content .content-item div.post div.alert p {
+  margin: 0;
+}
+main[data-page=delivery] section.delivery-content .content-item div.post div.alert:hover .info-icon,
+.tab-content.delivery section.delivery-content .content-item div.post div.alert:hover .info-icon {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+main[data-page=delivery] section.delivery-content .content-item div.post p.strong,
+.tab-content.delivery section.delivery-content .content-item div.post p.strong {
+  font-family: "Museo Sans Cyrl 700";
+  font-size: 1.1rem;
+}
+main[data-page=delivery] section.delivery-content .content-item div.post ul.delivery-list,
+.tab-content.delivery section.delivery-content .content-item div.post ul.delivery-list {
+  padding-left: 20px;
+  margin-top: 2rem;
+}
+main[data-page=delivery] section.delivery-content .content-item div.post ul.delivery-list li p.title,
+.tab-content.delivery section.delivery-content .content-item div.post ul.delivery-list li p.title {
+  font-family: "Museo Sans Cyrl 900";
+}
+main[data-page=delivery] section.delivery-content .content-item div.post ul.delivery-list li p.title span.green,
+.tab-content.delivery section.delivery-content .content-item div.post ul.delivery-list li p.title span.green {
+  color: #39ac2d;
+}
+main[data-page=delivery] section.delivery-content .content-item div.post ul.delivery-list li p:not(.title) a,
+.tab-content.delivery section.delivery-content .content-item div.post ul.delivery-list li p:not(.title) a {
+  color: #39ac2d;
+  font-family: "Museo Sans Cyrl 500";
+}
+main[data-page=delivery] section.delivery-content .content-item div.post ul.delivery-list li p:not(.title) a:hover,
+.tab-content.delivery section.delivery-content .content-item div.post ul.delivery-list li p:not(.title) a:hover {
+  color: #4d81e7;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  margin: 3rem 0;
+}
+.breadcrumbs p {
+  font-family: "Museo Sans Cyrl 500";
+}
+.breadcrumbs p span {
+  color: #39ac2d;
+}
+.breadcrumbs p span a {
+  color: #39ac2d;
+}
+.breadcrumbs p span a:hover {
+  color: #1755ce;
+}
+.breadcrumbs p span.homepage {
+  color: #3d3d3d;
+}
+.breadcrumbs p span.homepage a {
+  color: #3d3d3d;
+}
+.breadcrumbs p span.break:first-child {
+  color: #3d3d3d !important;
+}
+.breadcrumbs.product p span {
+  color: #3d3d3d;
+}
+.breadcrumbs.product p span a {
+  color: #3d3d3d;
+}
+.breadcrumbs.product p span a:hover {
+  color: #1755ce;
+}
+.breadcrumbs.product p span.last-crumb {
+  color: #39ac2d;
+}
+.breadcrumbs.product p span.last-crumb a {
+  color: #39ac2d;
 }
 
 /******************************
@@ -3624,30 +4206,6 @@ main[data-page=service] section.service .post .video iframe {
     height: 200px !important;
   }
 }
-main[data-page=service] section.service .post .breadcrumbs {
-  margin: 3rem 0;
-}
-main[data-page=service] section.service .post .breadcrumbs p {
-  font-family: "Museo Sans Cyrl 500";
-}
-main[data-page=service] section.service .post .breadcrumbs p span {
-  color: #39ac2d;
-}
-main[data-page=service] section.service .post .breadcrumbs p span a {
-  color: #39ac2d;
-}
-main[data-page=service] section.service .post .breadcrumbs p span a:hover {
-  color: #1755ce;
-}
-main[data-page=service] section.service .post .breadcrumbs p span.homepage {
-  color: #3d3d3d;
-}
-main[data-page=service] section.service .post .breadcrumbs p span.homepage a {
-  color: #3d3d3d;
-}
-main[data-page=service] section.service .post .breadcrumbs p span.break:first-child {
-  color: #3d3d3d !important;
-}
 main[data-page=service] section.service .post .content {
   padding-bottom: 2rem;
 }
@@ -3824,89 +4382,6 @@ main[data-page=info] section.buttons-grid a.card:hover {
   }
 }
 
-/* Delivery Page */
-main[data-page=delivery] section.content {
-  margin-top: 2rem;
-  background: #fff;
-  border-radius: 20px;
-  padding: 40px;
-}
-main[data-page=delivery] section.content .content-item {
-  margin-bottom: 6rem;
-  position: relative;
-}
-main[data-page=delivery] section.content .content-item::before {
-  position: absolute;
-  content: "";
-  top: calc(100% + 3rem);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;
-  height: 1px;
-  background: #777;
-}
-main[data-page=delivery] section.content .content-item:last-child {
-  margin-bottom: 0;
-}
-main[data-page=delivery] section.content .content-item:last-child::before {
-  display: none;
-  content: " ";
-}
-main[data-page=delivery] section.content .content-item div.title h2 {
-  color: #4d81e7;
-  margin-top: 0;
-}
-main[data-page=delivery] section.content .content-item div.post div.alert {
-  display: flex;
-  align-items: center;
-}
-main[data-page=delivery] section.content .content-item div.post div.alert .info-icon {
-  margin-right: 30px;
-  height: 50px;
-  width: 50px;
-  min-height: 50px;
-  min-width: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: red;
-  border-radius: 10px;
-  transition: all 0.3s;
-}
-main[data-page=delivery] section.content .content-item div.post div.alert .info-icon i {
-  font-size: 2rem;
-  color: #fff;
-  transition: all 0.3s;
-}
-main[data-page=delivery] section.content .content-item div.post div.alert p {
-  margin: 0;
-}
-main[data-page=delivery] section.content .content-item div.post div.alert:hover .info-icon {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-main[data-page=delivery] section.content .content-item div.post p.strong {
-  font-family: "Museo Sans Cyrl 700";
-  font-size: 1.1rem;
-}
-main[data-page=delivery] section.content .content-item div.post ul.delivery-list {
-  padding-left: 20px;
-  margin-top: 2rem;
-}
-main[data-page=delivery] section.content .content-item div.post ul.delivery-list li p.title {
-  font-family: "Museo Sans Cyrl 900";
-}
-main[data-page=delivery] section.content .content-item div.post ul.delivery-list li p.title span.green {
-  color: #39ac2d;
-}
-main[data-page=delivery] section.content .content-item div.post ul.delivery-list li p:not(.title) a {
-  color: #39ac2d;
-  font-family: "Museo Sans Cyrl 500";
-}
-main[data-page=delivery] section.content .content-item div.post ul.delivery-list li p:not(.title) a:hover {
-  color: #4d81e7;
-}
-
 /* Contact Page */
 main[data-page=contact] section {
   margin-top: 2rem;
@@ -4042,5 +4517,1100 @@ main[data-page=training] section.courses ul.course-list li.course-card p.title {
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 1rem;
+}
+
+/* Shop Page */
+main[data-page=shop] section.about-shop .media {
+  display: grid;
+  grid-template: auto/1.2fr 0.8fr;
+  gap: 4rem;
+  height: 380px;
+}
+@media screen and (max-width: 1200px) {
+  main[data-page=shop] section.about-shop .media {
+    height: 340px;
+  }
+}
+@media screen and (max-width: 960px) {
+  main[data-page=shop] section.about-shop .media {
+    height: 240px;
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.about-shop .media {
+    grid-template: auto/1fr;
+    height: auto;
+  }
+}
+main[data-page=shop] section.about-shop .media .video {
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.about-shop .media .video {
+    height: auto;
+  }
+}
+main[data-page=shop] section.about-shop .media .video iframe {
+  height: 100% !important;
+  width: 100% !important;
+  border-radius: 50px;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.about-shop .media .video iframe {
+    height: 300px !important;
+  }
+}
+@media screen and (max-width: 560px) {
+  main[data-page=shop] section.about-shop .media .video iframe {
+    height: 260px !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  main[data-page=shop] section.about-shop .media .video iframe {
+    height: 180px !important;
+    border-radius: 10px;
+  }
+}
+@media screen and (max-width: 340px) {
+  main[data-page=shop] section.about-shop .media .video iframe {
+    height: 140px !important;
+  }
+}
+main[data-page=shop] section.about-shop .media .picture {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.about-shop .media .picture {
+    justify-content: center;
+  }
+}
+main[data-page=shop] section.about-shop .media .picture img {
+  height: inherit;
+  width: inherit;
+  max-width: 380px;
+  border-radius: 20px;
+}
+@media screen and (max-width: 1200px) {
+  main[data-page=shop] section.about-shop .media .picture img {
+    max-width: 340px;
+  }
+}
+@media screen and (max-width: 960px) {
+  main[data-page=shop] section.about-shop .media .picture img {
+    max-width: 240px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.about-shop .media .picture img {
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 480px) {
+  main[data-page=shop] section.about-shop .media .picture img {
+    max-width: unset;
+    width: 100%;
+    height: auto;
+  }
+}
+main[data-page=shop] section.shop-page {
+  display: grid;
+  grid-template: "filters products" auto/260px 1fr;
+}
+@media screen and (max-width: 1200px) {
+  main[data-page=shop] section.shop-page {
+    grid-template: "filters products" auto/200px 1fr;
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.shop-page {
+    grid-template: "mobilebutton" "filters" "products" auto/1fr;
+    gap: 1rem;
+  }
+}
+main[data-page=shop] section.shop-page button.mobile-filter {
+  grid-area: mobilebutton;
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  border: none;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  transition: all 0.3s;
+  font-family: "Museo Sans Cyrl 700";
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 768px) {
+  main[data-page=shop] section.shop-page button.mobile-filter {
+    display: none;
+  }
+}
+main[data-page=shop] section.shop-page button.mobile-filter i#opened {
+  display: none;
+}
+main[data-page=shop] section.shop-page button.mobile-filter.active {
+  background: #1755ce;
+  color: #fff;
+}
+main[data-page=shop] section.shop-page button.mobile-filter.active i#opened {
+  display: inline-block;
+}
+main[data-page=shop] section.shop-page button.mobile-filter.active i#closed {
+  display: none;
+}
+main[data-page=shop] section.shop-page aside.filters {
+  grid-area: filters;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.shop-page aside.filters {
+    display: none;
+  }
+}
+main[data-page=shop] section.shop-page aside.filters div.filter {
+  margin-bottom: 4rem;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.shop-page aside.filters div.filter {
+    margin-bottom: 1rem;
+  }
+}
+main[data-page=shop] section.shop-page aside.filters div.filter:last-child {
+  margin-bottom: 0;
+}
+main[data-page=shop] section.shop-page aside.filters div.filter p.filter-title {
+  font-family: "Museo Sans Cyrl 500";
+  font-size: 1.2rem;
+  color: #008278;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.shop-page aside.filters div.filter p.filter-title {
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0;
+  }
+  main[data-page=shop] section.shop-page aside.filters div.filter p.filter-title::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f107";
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+  main[data-page=shop] section.shop-page aside.filters div.filter p.filter-title:hover {
+    color: #1755ce;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.shop-page aside.filters div.filter.active p.filter-title::after {
+    content: "\f106";
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.shop-page aside.filters div.filter.catalog ul.shop-catalog-filter {
+    display: none;
+    margin: 2rem 0;
+  }
+}
+main[data-page=shop] section.shop-page aside.filters div.filter.catalog ul.shop-catalog-filter li.shop-catalog-filter-item {
+  margin-bottom: 6px;
+}
+main[data-page=shop] section.shop-page aside.filters div.filter.catalog ul.shop-catalog-filter li.shop-catalog-filter-item:last-child {
+  margin-bottom: 0;
+}
+main[data-page=shop] section.shop-page aside.filters div.filter.catalog ul.shop-catalog-filter li.shop-catalog-filter-item a.shop-catalog-filter-link {
+  font-family: "Museo Sans Cyrl 500";
+}
+main[data-page=shop] section.shop-page aside.filters div.filter.catalog ul.shop-catalog-filter li.shop-catalog-filter-item a.shop-catalog-filter-link.active {
+  color: #39ac2d;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=shop] section.shop-page aside.filters div.filter.product-filter form.shop-catalog-filter {
+    display: none;
+  }
+}
+main[data-page=shop] section.shop-page aside.filters div.filter.product-filter form.shop-catalog-filter div.product-filter-checkbox-group p.checkbox-title {
+  font-size: 1.1rem;
+  font-family: "Museo Sans Cyrl 500";
+}
+main[data-page=shop] section.shop-page article.products {
+  grid-area: products;
+  display: grid;
+  grid-template: auto/repeat(3, 1fr);
+  gap: 1rem;
+  position: sticky;
+  top: 2rem;
+  height: max-content;
+}
+@media screen and (max-width: 960px) {
+  main[data-page=shop] section.shop-page article.products {
+    grid-template: auto/repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 520px) {
+  main[data-page=shop] section.shop-page article.products {
+    grid-template: auto/1fr;
+  }
+}
+main[data-page=shop] section.shop-page article.products div.product {
+  padding: 20px;
+  background: #fff;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.05));
+  border-radius: 20px;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main[data-page=shop] section.shop-page article.products div.product .like-button {
+  position: absolute;
+  top: 10px;
+  right: 6px;
+}
+@media screen and (max-width: 1200px) {
+  main[data-page=shop] section.shop-page article.products div.product .like-button {
+    top: 14px;
+    right: 4px;
+  }
+}
+main[data-page=shop] section.shop-page article.products div.product .like-button svg {
+  width: 50px;
+}
+@media screen and (max-width: 1200px) {
+  main[data-page=shop] section.shop-page article.products div.product .like-button svg {
+    width: 40px;
+  }
+}
+main[data-page=shop] section.shop-page article.products div.product .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 30px;
+}
+main[data-page=shop] section.shop-page article.products div.product .buttons .badge {
+  padding: 0 6px;
+  width: auto;
+  height: 30px;
+  border-radius: 5px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+main[data-page=shop] section.shop-page article.products div.product .buttons .badge:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 1200px) {
+  main[data-page=shop] section.shop-page article.products div.product .buttons .badge {
+    margin-right: 0.2rem;
+  }
+}
+main[data-page=shop] section.shop-page article.products div.product .buttons .badge span {
+  color: #fff;
+  white-space: nowrap;
+}
+@media screen and (max-width: 1200px) {
+  main[data-page=shop] section.shop-page article.products div.product .buttons .badge span {
+    font-size: 0.8rem;
+  }
+}
+main[data-page=shop] section.shop-page article.products div.product .buttons .badge.popular {
+  background: #4d81e7;
+}
+main[data-page=shop] section.shop-page article.products div.product .buttons .badge.new {
+  background: #ff7171;
+}
+main[data-page=shop] section.shop-page article.products div.product.popular .badge.popular {
+  display: flex;
+}
+main[data-page=shop] section.shop-page article.products div.product.new .badge.new {
+  display: flex;
+}
+main[data-page=shop] section.shop-page article.products div.product .preview {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+main[data-page=shop] section.shop-page article.products div.product .preview img {
+  border-radius: 20px;
+}
+main[data-page=shop] section.shop-page article.products div.product .product-title p.title {
+  font-family: "Museo Sans Cyrl 700";
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+main[data-page=shop] section.shop-page article.products div.product .product-title form.product-radio-group {
+  margin-bottom: 1rem;
+}
+main[data-page=shop] section.shop-page article.products div.product .product-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1200px) and (min-width: 960px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price {
+    flex-direction: column-reverse;
+  }
+}
+@media screen and (max-width: 960px) and (min-width: 768px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price button.add-to-cart img {
+    display: none;
+  }
+  main[data-page=shop] section.shop-page article.products div.product .product-price button.add-to-cart span {
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 1200px) and (min-width: 960px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price .price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+main[data-page=shop] section.shop-page article.products div.product .product-price .price p {
+  margin: 0;
+}
+main[data-page=shop] section.shop-page article.products div.product .product-price .price p.sale {
+  display: none;
+}
+main[data-page=shop] section.shop-page article.products div.product .product-price .price p.regular {
+  color: #39ac2d;
+  font-size: 1.6rem;
+  font-family: "Museo Sans Cyrl 900";
+}
+@media screen and (max-width: 1200px) and (min-width: 960px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price .price p.regular {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 960px) and (min-width: 768px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price .price p.regular {
+    font-size: 1.4rem;
+    width: min-content;
+  }
+}
+@media screen and (max-width: 620px) and (min-width: 520px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price .price p.regular {
+    font-size: 1.4rem;
+    width: min-content;
+  }
+}
+@media screen and (max-width: 1200px) and (min-width: 960px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price .price.sale {
+    justify-content: space-between;
+  }
+}
+main[data-page=shop] section.shop-page article.products div.product .product-price .price.sale p.regular {
+  color: #fc0000;
+  font-size: 1rem;
+  font-family: "Museo Sans Cyrl 700";
+  text-decoration: line-through;
+}
+@media screen and (max-width: 960px) and (min-width: 768px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price .price.sale p.regular {
+    font-size: 0.8rem;
+    width: max-content;
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 620px) and (min-width: 520px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price .price.sale p.regular {
+    font-size: 0.8rem;
+    width: max-content;
+    white-space: nowrap;
+  }
+}
+main[data-page=shop] section.shop-page article.products div.product .product-price .price.sale p.sale {
+  display: block;
+  color: #39ac2d;
+  font-size: 1.6rem;
+  font-family: "Museo Sans Cyrl 900";
+}
+@media screen and (max-width: 1200px) and (min-width: 960px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price .price.sale p.sale {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 960px) and (min-width: 768px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price .price.sale p.sale {
+    font-size: 1.4rem;
+    width: min-content;
+  }
+}
+@media screen and (max-width: 620px) and (min-width: 520px) {
+  main[data-page=shop] section.shop-page article.products div.product .product-price .price.sale p.sale {
+    font-size: 1.4rem;
+    width: min-content;
+  }
+}
+
+/* Product Page */
+main[data-page=product] section.product-header {
+  display: grid;
+  grid-template: auto/repeat(2, 1fr);
+  padding: 3rem 6rem;
+  background: #fff;
+  border-radius: 20px;
+}
+@media screen and (max-width: 1200px) {
+  main[data-page=product] section.product-header {
+    padding: 2rem 3rem;
+  }
+}
+@media screen and (max-width: 960px) {
+  main[data-page=product] section.product-header {
+    grid-template: auto/repeat(2, 50%);
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-header {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-header .product-preview {
+    width: 100%;
+  }
+}
+main[data-page=product] section.product-header .product-preview .preview {
+  height: 400px;
+  width: 400px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #aab8c2;
+}
+@media screen and (max-width: 1200px) {
+  main[data-page=product] section.product-header .product-preview .preview {
+    height: 300px;
+    width: 300px;
+  }
+}
+@media screen and (max-width: 960px) {
+  main[data-page=product] section.product-header .product-preview .preview {
+    height: 200px;
+    width: 200px;
+    position: sticky;
+    top: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-header .product-preview .preview {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  main[data-page=product] section.product-header .product-preview .preview {
+    height: auto;
+  }
+}
+main[data-page=product] section.product-header .product-preview .preview .buttons {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  width: calc(100% - 1.2rem);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main[data-page=product] section.product-header .product-preview .preview .buttons .badge {
+  margin: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  height: 30px;
+  border-radius: 6px;
+}
+main[data-page=product] section.product-header .product-preview .preview .buttons .badge.popular {
+  background: #4d81e7;
+  color: #fff;
+}
+main[data-page=product] section.product-header .product-preview .preview .buttons .badge.new {
+  background: rgb(241, 143, 143);
+  color: #fff;
+}
+main[data-page=product] section.product-header .product-preview .preview .buttons .badge span {
+  font-size: 0.8rem;
+}
+main[data-page=product] section.product-header .product-preview .preview .product-gallery {
+  width: 100%;
+  height: 100%;
+}
+main[data-page=product] section.product-header .product-preview .preview .product-gallery .swiper-wrapper .swiper-slide a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main[data-page=product] section.product-header .product-meta h1.title {
+  margin-top: 0;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-header .product-meta h1.title {
+    text-align: center;
+  }
+}
+main[data-page=product] section.product-header .product-meta .volume {
+  display: flex;
+  align-items: center;
+}
+main[data-page=product] section.product-header .product-meta .volume p {
+  margin: 0;
+  margin-right: 2rem;
+  font-family: "Museo Sans Cyrl 700";
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-header .product-meta .volume p {
+    margin: 0;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 960px) {
+  main[data-page=product] section.product-header .product-meta .volume {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-header .product-meta .volume {
+    align-items: center;
+  }
+}
+main[data-page=product] section.product-header .product-meta .volume form.product-radio-group {
+  width: max-content;
+}
+@media screen and (max-width: 960px) {
+  main[data-page=product] section.product-header .product-meta .volume form.product-radio-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-header .product-meta .volume form.product-radio-group {
+    align-items: center;
+  }
+}
+main[data-page=product] section.product-header .product-meta .volume form.product-radio-group .product-radio-group-item {
+  padding: 0 1rem;
+  margin-right: 2rem;
+}
+@media screen and (max-width: 960px) {
+  main[data-page=product] section.product-header .product-meta .volume form.product-radio-group .product-radio-group-item {
+    margin: 0;
+    margin: 1rem 0;
+  }
+}
+main[data-page=product] section.product-header .product-meta .volume form.product-radio-group .product-radio-group-item:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 960px) {
+  main[data-page=product] section.product-header .product-meta .volume form.product-radio-group .product-radio-group-item:last-child {
+    margin: 0;
+  }
+}
+main[data-page=product] section.product-header .product-meta .price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+@media screen and (max-width: 960px) {
+  main[data-page=product] section.product-header .product-meta .price {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-header .product-meta .price {
+    align-items: center;
+  }
+}
+main[data-page=product] section.product-header .product-meta .price .action-btn {
+  padding: 0 40px;
+  font-size: 1.1rem;
+  width: 150px;
+}
+main[data-page=product] section.product-header .product-meta .price .quantity-container {
+  display: flex;
+  align-items: center;
+}
+main[data-page=product] section.product-header .product-meta .price .quantity-container button.qtt {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #f6f6f6;
+  border: 1.5px solid #000000;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-family: "Museo Sans Cyrl 500";
+  transition: all 0.3s;
+}
+main[data-page=product] section.product-header .product-meta .price .quantity-container button.qtt:hover {
+  background: #39ac2d;
+  color: #fff;
+  border: 1px solid #39ac2d;
+  box-shadow: 0 0 10px #d6d6d6;
+}
+main[data-page=product] section.product-header .product-meta .price .quantity-container input.quantity {
+  -moz-appearance: textfield;
+  text-align: center;
+  background: none;
+  border: none;
+  outline: none;
+  width: 3ch;
+  font-size: 1.4rem;
+  font-family: "Museo Sans Cyrl 700";
+  color: #1755ce;
+  margin: 0 1rem;
+}
+main[data-page=product] section.product-header .product-meta .price .quantity-container input.quantity::-webkit-outer-spin-button, main[data-page=product] section.product-header .product-meta .price .quantity-container input.quantity::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+main[data-page=product] section.product-header .product-meta .price .quantity-container input.quantity::-moz-outer-spin-button, main[data-page=product] section.product-header .product-meta .price .quantity-container input.quantity::-moz-inner-spin-button {
+  -moz-appearance: none;
+  margin: 0;
+}
+main[data-page=product] section.product-header .product-meta .price p.sum {
+  white-space: nowrap;
+  font-size: 1.4rem;
+  font-family: "Museo Sans Cyrl 900";
+  color: #39ac2d;
+  margin: 0;
+  text-align: end;
+}
+main[data-page=product] section.product-header .product-meta .short-description p {
+  margin-top: 0;
+}
+main[data-page=product] section.product-header .product-meta .short-description a {
+  color: #1755ce;
+  font-family: "Museo Sans Cyrl 700";
+}
+main[data-page=product] section.product-header .product-meta .short-description a:hover {
+  color: #39ac2d;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-header .product-meta .short-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main[data-page=product] section.product-header .product-meta .short-description a {
+    text-align: center;
+  }
+}
+main[data-page=product] section.product-header .product-meta .product-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: 2rem !important;
+}
+@media screen and (max-width: 960px) {
+  main[data-page=product] section.product-header .product-meta .product-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-header .product-meta .product-info {
+    width: max-content;
+    margin: 0 auto;
+  }
+}
+main[data-page=product] section.product-header .product-meta .product-info p {
+  font-family: "Museo Sans Cyrl 700";
+  margin: 0;
+}
+main[data-page=product] section.product-header .product-meta .product-info p span.current {
+  color: #39ac2d;
+}
+main[data-page=product] section.product-info {
+  padding: 3rem 6rem;
+  background: #fff;
+  border-radius: 20px;
+}
+@media screen and (max-width: 1200px) {
+  main[data-page=product] section.product-info {
+    padding: 2rem 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-info {
+    padding: 20px;
+  }
+}
+main[data-page=product] section.product-info ul.tab-controllers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-info ul.tab-controllers {
+    display: grid;
+    grid-template: auto/1fr 1fr;
+    gap: 1rem;
+  }
+}
+main[data-page=product] section.product-info ul.tab-controllers li.tab-button {
+  margin-right: 2rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-info ul.tab-controllers li.tab-button {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+main[data-page=product] section.product-info ul.tab-controllers li.tab-button:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-info ul.tab-controllers li.tab-button a.tab-link {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    padding: 0 20px;
+    background: #f5f3f3;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+main[data-page=product] section.product-info ul.tab-controllers li.tab-button a.tab-link.current-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 20px;
+  background: #f5f3f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-family: "Museo Sans Cyrl 700";
+  color: #39ac2d;
+  font-size: 1.1rem;
+}
+main[data-page=product] section.product-info div.tab-content .content {
+  margin-top: 2rem;
+}
+main[data-page=product] section.product-info div.tab-content.description p.strong,
+main[data-page=product] section.product-info div.tab-content.description span.strong {
+  font-family: "Museo Sans Cyrl 700";
+}
+main[data-page=product] section.product-info div.tab-content.delivery .delivery-content {
+  margin: 0;
+  padding: 0;
+}
+main[data-page=product] section.product-info div.tab-content.media .videos {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-info div.tab-content.media .videos {
+    flex-flow: row wrap;
+  }
+}
+main[data-page=product] section.product-info div.tab-content.media .videos iframe {
+  border-radius: 20px;
+  height: 280px;
+}
+@media screen and (max-width: 1200px) {
+  main[data-page=product] section.product-info div.tab-content.media .videos iframe {
+    height: 220px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-info div.tab-content.media .videos iframe {
+    border-radius: 10px;
+    height: 315px;
+  }
+}
+@media screen and (max-width: 600px) {
+  main[data-page=product] section.product-info div.tab-content.media .videos iframe {
+    height: 220px;
+  }
+}
+@media screen and (max-width: 480px) {
+  main[data-page=product] section.product-info div.tab-content.media .videos iframe {
+    height: 180px;
+  }
+}
+@media screen and (max-width: 380px) {
+  main[data-page=product] section.product-info div.tab-content.media .videos iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content {
+  display: grid;
+  grid-template: auto/repeat(2, 1fr);
+  gap: 2rem;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-info div.tab-content.reviews .content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item {
+  max-width: 400px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #f9f9f9;
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item {
+    max-width: unset;
+    width: 100%;
+  }
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item:last-child {
+  margin: 0;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item:hover {
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item .rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item .rating .star {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item .rating .star i {
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  z-index: 1;
+  color: #39ac2d;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item .rating .star.half i::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Font Awesome 6 Free";
+  font-weight: 700;
+  content: "\f5c0";
+  z-index: -1;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item .rating .star.one i {
+  font-weight: 700;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item .rating p.rating-sum {
+  margin: 0;
+  margin-left: 1rem;
+  font-family: "Museo Sans Cyrl 700";
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item.bad-review .rating .star i {
+  color: goldenrod;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item.terrible-review .rating .star i {
+  color: red;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item .review-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .review-list .review-item .review-meta p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: max-content;
+  position: sticky;
+  top: 2rem;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-info div.tab-content.reviews .content .add-review {
+    position: relative;
+    top: unset;
+  }
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form {
+  background: #f9f9f9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 400px;
+}
+@media screen and (max-width: 768px) {
+  main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form {
+    max-width: unset;
+    width: 100%;
+  }
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form p.form-title {
+  margin: 0;
+  margin-bottom: 2rem;
+  font-family: "Museo Sans Cyrl 700";
+  font-size: 1.6rem;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .form-row {
+  display: grid;
+  grid-template: auto/1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 480px) {
+  main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .form-row {
+    display: flex;
+    flex-direction: column;
+  }
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .input-group {
+  display: flex;
+  flex-direction: column;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .input-group label {
+  font-family: "Museo Sans Cyrl 700";
+  margin-bottom: 0.4rem;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .input-group label span.required {
+  color: #008278;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .input-group input[type=text],
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .input-group textarea {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #b7b7b7;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .input-group input[type=text] {
+  height: 40px;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .input-group textarea {
+  min-height: 100px;
+  height: 100%;
+  padding: 10px;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .h-captcha {
+  margin-top: 1rem;
+}
+@media screen and (max-width: 480px) {
+  main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .h-captcha {
+    width: 100%;
+  }
+  main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form .h-captcha iframe {
+    width: 100% !important;
+  }
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form p.warning {
+  font-size: 0.8rem;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form p.warning a {
+  color: #1755ce;
+}
+main[data-page=product] section.product-info div.tab-content.reviews .content .add-review form p.warning a:hover {
+  color: #008278;
+}
+
+/* Blog Page */
+main[data-page=blog] section.post-list {
+  display: grid;
+  grid-template: auto/repeat(4, 1fr);
+  gap: 2rem;
+}
+main[data-page=blog] section.post-list .post-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main[data-page=blog] section.post-list .post-preview .preview-wrapper {
+  transition: all 0.3s;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+}
+main[data-page=blog] section.post-list .post-preview .preview-wrapper a img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+main[data-page=blog] section.post-list .post-preview a.post-title {
+  font-family: "Museo Sans Cyrl 700";
+  font-size: 1.2rem;
+}
+main[data-page=blog] section.post-list .post-preview .post-controls {
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main[data-page=blog] section.post-list .post-preview .post-controls .views {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+main[data-page=blog] section.post-list .post-preview .post-controls .views img {
+  margin-right: 10px;
+}
+main[data-page=blog] section.post-list .post-preview .post-controls .views p.views-count {
+  color: rgba(61, 61, 61, 0.5019607843);
+  font-family: "Museo Sans Cyrl 500";
+  margin: 0;
+}
+main[data-page=blog] section.post-list .post-preview .post-controls a.read-more {
+  color: #39ac2d;
+  font-family: "Museo Sans Cyrl 900";
+  font-size: 1.2rem;
+}
+main[data-page=blog] section.post-list .post-preview .post-controls a.read-more:hover {
+  color: #1755ce;
+}
+main[data-page=blog] section.post-list .post-preview:hover .preview-wrapper {
+  transition: all 1s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+main[data-page=blog] section.post-list .post-preview:hover .preview-wrapper a img {
+  transition: all 1s;
+  transform: scale(1.1);
 }
 /*# sourceMappingURL=style.css.map */

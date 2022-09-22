@@ -156,6 +156,24 @@ jQuery( function( $ ) {
 
 	// Inits START
 	Fancybox.bind( '[data-fancybox="gallery"]' );
+	Fancybox.bind( '[data-fancybox="product"]' );
+
+	$('#tabs a').tabs( {
+		speed: 200,
+		activeClass: 'current-tab',
+		complete: function() {
+			const tabs = $( 'div.tab-content' );
+			const tabLink = $( 'a.current-tab' ).attr( 'data-tab' );
+			if ( tabs != tabLink ) {
+				tabs.hide();
+			}
+		},
+		animationComplete: function(tab) {
+			// code to run on show animation completion
+		},
+		watchHash: true,
+		defaultFromHash: true,
+	} );
 	// Inits END
 
 	/* [START]
@@ -373,7 +391,7 @@ jQuery( function( $ ) {
 		}
 	} );
 
-	/* [START]
+	/* [END]
 	* 1. Получение месяца и автовыбор на странице семинаров
 	* 2. Фильтрация семинаров по клику на месяц
 	*/
@@ -381,82 +399,159 @@ jQuery( function( $ ) {
 //	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 
 	/* [START]
-	 * Слайдеры SwiperJS
-	 */
-	const courseSlider = new Swiper( '.course-slider', {
-		loop: false,
-		slidesPerView: 1,
-		grid: false,
-		spaceBetween: 30,
-		pagination: {
-			el: '.course-pagination',
-			clickable: true,
-			renderBullet: function (index, className) {
-			  return '<span class="' + className + '">' + (index + 1) + '</span>';
-			},
-		  },
-		navigation: {
-			prevEl: '#course-prev',
-			nextEl: '#course-next',
-		},
-		breakpoints: {
-			960: {
-				slidesPerView: 2,
-				grid: {
-					rows: 2,
-				},
-			},
-		},
+	* Автоматическое определение рейтинга отзыва
+	*/
+
+	$( '#rating-length' ).html( $( '.review-item' ).length );
+
+	$( '.review-item' ).each( function() {
+		const fullStar = $( this ).find( '.star.one' );
+		const halfStar = $( this ).find( '.star.half' );
+		const emptyStar = $( this ).find( '.star.null' );
+		let ratingSum = $( this ).find( '.rating-sum' );
+
+		if ( emptyStar.length == 2 ) {
+			$( this ).addClass( 'bad-review' );
+		} else if ( emptyStar.length >= 3 ) {
+			$( this ).addClass( 'terrible-review' );
+		}
+
+		ratingSum.html( (( fullStar.length * 1 ) + ( halfStar.length * 0.5 )).toFixed(1) );
 	} );
 
-	const teamSlider = new Swiper( '.team-slider', {
-		loop: false,
-		slidesPerView: 1,
-		spaceBetween: 20,
-		pagination: {
-			el: '.team-pagination',
-			clickable: true,
-			renderBullet: function (index, className) {
-			  return '<span class="' + className + '">' + (index + 1) + '</span>';
-			},
-		  },
-		navigation: {
-			prevEl: '#team-prev',
-			nextEl: '#team-next',
-		},
-		breakpoints: {
-			580: {
-				slidesPerView: 2,
-			},
-			960: {
-				slidesPerView: 3,
-			},
-		},
-	} );
-
-	const certSlider = new Swiper( '.cert-slider', {
-		slidesPerView: 1,
-		spaceBetween: 20,
-		navigation: {
-			prevEl: '#cert-prev',
-			nextEl: '#cert-next',
-		},
-		breakpoints: {
-			480: {
-				slidesPerView: 2,
-			},
-			768: {
-				slidesPerView: 3,
-			},
-			900: {
-				slidesPerView: 4,
-			},
-		},
-	} );
 	/* [END]
-	 * Слайдеры SwiperJS
-	 */
+	* Автоматическое определение рейтинга отзыва
+	*/
 
 //	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 
+	/* [START]
+	 * Определение популярного или нового товара по атрибутам в шапке товара
+	*/
+	
+	$( '.product-header' ).each( function() {
+		const isPopular = $( this ).data( 'popular' );
+		const isNew = $( this ).data( 'new' );
+		const articul = $().data( 'articul' );
+
+		$( this ).find( '.badge.popular' ).hide();
+		$( this ).find( '.badge.new' ).hide();
+
+		if ( isPopular === true ) {
+			$( this ).find( '.badge.popular' ).show();
+		}
+		if ( isNew === true ) {
+			$( this ).find( '.badge.new' ).show();
+		}
+	} );
+
+	/* [START]
+	* Присваивание кнопке лайка активного класса и уведомление о добавлении в избранное
+	*/
+
+	$( 'input.like' ).on( 'click', function() {
+		$( '.product-message' ).hide();
+
+		const isChecked = $( this )[0].checked;
+		if ( isChecked === true ) {
+			$( this ).addClass( 'pressed' );
+			$( '.product-message.liked' ).fadeIn();
+			setTimeout(() => {
+				$( '.product-message.liked' ).fadeOut();
+			}, 4000);
+		} else {
+			$( this ).removeClass( 'pressed' );
+			$( '.product-message.unliked' ).fadeIn();
+			setTimeout(() => {
+				$( '.product-message.unliked' ).fadeOut();
+			}, 4000);
+		}
+	} );
+	$( '.product-message' ).each( function() {
+		const thisMessage = $( this );
+		const productCloseBtn = $( this ).find( 'button.close' );
+		productCloseBtn.on( 'click', function() {
+			thisMessage.slideUp();
+		} );
+	} );
+
+	$( 'button.add-to-cart' ).on( 'click', function() {
+		$( '.product-message' ).hide();
+		$( '.product-message.add-to-cart' ).fadeIn();
+		setTimeout(() => {
+			$( '.product-message.add-to-cart' ).fadeOut();
+		}, 4000);
+	} );
+
+	/* [END]
+	* Присваивание кнопке лайка активного класса и уведомление о добавлении в избранное
+	*/
+
+//	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+
+	/* [START]
+	 * Калькуляция суммы на стр. товара
+	 */
+
+	let cost = $( '#cost' ).val();
+	let sum = $( 'span.calculated' );
+	const quantity = $( 'input#qtt' ).val();
+	const plusQtt = $( '#qtt-plus' );
+	const minusQtt = $( '#qtt-minus' );
+
+	sum.html( (cost * quantity) );
+
+	plusQtt.on( 'click', function() {
+		this.parentNode.querySelector( 'input#qtt' ).stepUp();
+		sum.html( ( cost * this.parentNode.querySelector( 'input#qtt' ).value ).toLocaleString() );
+	} );
+	minusQtt.on( 'click', function() {
+		this.parentNode.querySelector( 'input#qtt' ).stepDown();
+		sum.html( ( cost * this.parentNode.querySelector( 'input#qtt' ).value ).toLocaleString() );
+	} );
+
+	$( 'input#qtt' ).on( 'keyup', function() {
+		sum.html( ( cost * this.parentNode.querySelector( 'input#qtt' ).value ).toLocaleString() );
+	} );
+	
+
+	/* [END]
+	* Калькуляция суммы на стр. товара
+	*/
+
+//	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+
+	/* [START]
+	* Мобильный фильтр товаров
+	*/
+
+	$( 'button.mobile-filter' ).on( 'click', function() {
+		$( this ).toggleClass( 'active' );
+		if ( $( this ).hasClass( 'active' ) ) {
+			$( 'aside.filters' ).slideDown();
+		} else {
+			$( 'aside.filters' ).slideUp();
+			$( '.shop-catalog-filter' ).slideUp();
+			$( 'div.filter' ).removeClass( 'active' );
+		}
+	} );
+
+	$( 'div.filter' ).each( function() {
+		const filter = $( this );
+		filter.find( '.filter-title' ).on( 'click', function() {
+			filter.toggleClass( 'active' );
+			if ( filter.hasClass( 'active' ) ) {
+				filter.find( '.shop-catalog-filter' ).slideDown();
+				
+			} else {
+				filter.find( '.shop-catalog-filter' ).slideUp();
+			}
+		} );
+	} );
+
+	/* [END]
+	* Мобильный фильтр товаров
+	*/
+
+//	[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 } );

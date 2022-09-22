@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<title>Целиус</title>
+	<link rel=" stylesheet" href="../assets/css/style.min.css">
+	<link rel="stylesheet" href="../assets/css/fancybox.css">
+	<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
+</head>
+
+<body>
+	<!-- SECTION Header -->
+	<header class="site-header">
+		<div class="header-top">
+			<div class="container">
+				<a href="/Celius-Static/">На главную</a>
+				<button class="label">Ваш город <i class="fa-solid fa-location-dot"></i></button>
+				<p>График работы: <span class="green">ежедневно с 10:00-19:00</span></p>
+				<a href="/Celius-Static/information">Сведения об образовательной деятельности</a>
+				<a href="/Celius-Static/delivery">Оплата и доставка</a>
+			</div>
+		</div>
+		<div class="header-controls">
+			<div class="container">
+				<a class="logo" href="/Celius-Static/"><img src="../assets/img/svg/logo.svg" alt="Логотип Целиус"></a>
+				<div class="vertical-information">
+					<p class="title">
+						Администратор центра
+					</p>
+					<div class="phone-wrapper"><a href="tel:#" class="phone">8 (909)-930-10-70</a><span
+							class="show-phones" type="button">Показать
+							все</span></div>
+				</div>
+				<div class="vertical-information">
+					<p class="title">
+						Интернет-магазин
+					</p>
+					<a href="tel:#" class="phone">8 (909)-930-10-70</a>
+				</div>
+				<div class="vertical-information">
+					<p class="title">
+						Онлайн-школа
+					</p>
+					<a href="tel:#" class="phone">8 (982)-363-49-77</a>
+				</div>
+				<div class="search">
+
+					<label for="header-search">
+						<input type="text" id="header-search">
+						<i class="fa-solid fa-magnifying-glass"></i>
+						<span>Поиск</span>
+					</label>
+
+				</div>
+				<div class="client-buttons">
+					<a href="/Celius-Static/cart">
+						<div class="cart">
+							<img src="../assets/img/svg/cart.svg" alt="Корзина">
+						</div>
+					</a>
+					<div class="auth">
+						<button type="button" id="auth"><img src="../assets/img/svg/person.svg" alt="Вход"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="header-links">
+			<div class="container">
+				<ul class="header-menu">
+					<li class="menu-item">
+						<a href="/Celius-Static/services">Услуги центра</a>
+					</li>
+					<li class="menu-item">
+						<a href="/Celius-Static/maintenance">Онлайн-школа "Код здоровья"</a>
+					</li>
+					<li class="menu-item has-child">
+						<a href="/Celius-Static/maintenance">Интернет-магазин</a>
+						<ul class="sub-menu">
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Здоровый мозг</a>
+							</li>
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Молодая кровь</a>
+							</li>
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Жизнь без боли</a>
+							</li>
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Активный иммунитет</a>
+							</li>
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Отсутствие воспаления</a>
+							</li>
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Виватон</a>
+							</li>
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Свечи</a>
+							</li>
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Приборы</a>
+							</li>
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Вода</a>
+							</li>
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Настойки и сборы</a>
+							</li>
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Книги</a>
+							</li>
+							<li class="sub-menu-item">
+								<a href="/Celius-Static/maintenance">Для микроскопа</a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-item">
+						<a href="/Celius-Static/maintenance">Семинары</a>
+					</li>
+					<li class="menu-item">
+						<a href="/Celius-Static/maintenance">Контакты</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<header class="site-header mobile">
+		<div class="header-controls">
+			<div class="container">
+				<a class="logo" href="/Celius-Static/"><img src="../assets/img/png/logo_mobile.png"
+						alt="Логотип Целиус"></a>
+
+				<div class="menu-buttons">
+					<div class="search">
+						<label for="header-search">
+							<input type="text" id="header-search">
+							<i class="fa-solid fa-magnifying-glass"></i>
+							<span>Поиск</span>
+						</label>
+					</div>
+
+					<div class="client-buttons">
+						<div class="cart">
+							<a href="/Celius-Static/cart"><img src="../assets/img/svg/cart_alt.svg" alt="Корзина"></a>
+						</div>
+						<div class="phone">
+							<a href="tel:"><img src="../assets/img/svg/phone.svg" alt="Позвонить"></a>
+						</div>
+						<div class="auth">
+							<a href="/Celius-Static/account"><img src="../assets/img/svg/person_alt.svg" alt="Вход"></a>
+						</div>
+						<div class="menu-toggle">
+							<button id="toggle">
+								<img src="../assets/img/svg/burger.svg" alt="">
+								<span class="closed">меню</span>
+								<span class="opened">назад</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mobile-menu">
+			<ul class="header-menu">
+				<li class="menu-item">
+					<a href="/Celius-Static/services">Услуги центра</a>
+				</li>
+				<li class="menu-item">
+					<a href="/Celius-Static/maintenance">Онлайн-школа "Код здоровья"</a>
+				</li>
+				<li class="menu-item has-child">
+					<a href="/Celius-Static/maintenance">Интернет-магазин</a>
+					<ul class="sub-menu">
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Здоровый мозг</a>
+						</li>
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Молодая кровь</a>
+						</li>
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Жизнь без боли</a>
+						</li>
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Активный иммунитет</a>
+						</li>
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Отсутствие воспаления</a>
+						</li>
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Виватон</a>
+						</li>
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Свечи</a>
+						</li>
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Приборы</a>
+						</li>
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Вода</a>
+						</li>
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Настойки и сборы</a>
+						</li>
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Книги</a>
+						</li>
+						<li class="sub-menu-item">
+							<a class="sub-link" href="/Celius-Static/maintenance">Для микроскопа</a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu-item">
+					<a href="/Celius-Static/maintenance">Семинары</a>
+				</li>
+				<li class="menu-item">
+					<a href="/Celius-Static/maintenance">Контакты</a>
+				</li>
+			</ul>
+			<div class="contact">
+				<div class="title">
+					<img src="../assets/img/png/Телефон.png" alt="">
+					<span>Телефоны</span>
+				</div>
+				<div class="phone">
+					<p class="title">
+						Администор центра:
+					</p>
+					<a href="tel:8 (909)-930-00-708" class="phone">8 (909)-930-00-708</a>
+					<a href="tel:8 (916)-584-68-57" class="phone">8 (916)-584-68-57</a>
+				</div>
+				<div class="phone">
+					<p class="title">
+						Интернет-магазин:
+					</p>
+					<a href="tel:8 (909)-930-10-70" class="phone">8 (909)-930-10-70</a>
+				</div>
+				<div class="phone">
+					<p class="title">
+						Онлайн-школа:
+					</p>
+					<a href="tel:8 (909)-930-10-70" class="phone">8 (909)-930-10-70</a>
+				</div>
+				<div class="open">
+					<p class="title">График работы:</p>
+					<p>Ежедневно с 10:00 - 19:00</p>
+				</div>
+				<a type="button" href="#" class="action-btn">Построить маршрут</a>
+			</div>
+			<div class="sublinks">
+				<a href="/Celius-Static/information">Сведения об образовательной организации</a>
+				<a href="/Celius-Static/delivery">Оплата и доставка</a>
+			</div>
+		</div>
+	</header>
+
+	<!-- SECTION Main -->
+	<main class="site-main" data-page="product">
+		<div class="container">
+			<section class="product-header" data-articul="a15" data-popular="true" data-new="false">
+				<div class="product-preview">
+					<div class="preview">
+						<div class="buttons">
+							<div class="like-button">
+								<input type="checkbox" class="like" id="like-arr220dk0" />
+								<label class="like-label" for="like-arr220dk0">
+									<svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
+										<g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+											<path
+												d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z"
+												id="heart" fill="#AAB8C2" />
+											<circle id="main-circle" fill="#E2264D" opacity="0" cx="29.5" cy="29.5"
+												r="1.5" />
+
+											<g id="grp7" opacity="0" transform="translate(7 6)">
+												<circle id="circle-1" fill="#9CD8C3" cx="2" cy="6" r="2" />
+												<circle id="circle-2" fill="#8CE8C3" cx="5" cy="2" r="2" />
+											</g>
+
+											<g id="grp6" opacity="0" transform="translate(0 28)">
+												<circle id="circle-1" fill="#CC8EF5" cx="2" cy="7" r="2" />
+												<circle id="circle-2" fill="#91D2FA" cx="3" cy="2" r="2" />
+											</g>
+
+											<g id="grp3" opacity="0" transform="translate(52 28)">
+												<circle id="circle-2" fill="#9CD8C3" cx="2" cy="7" r="2" />
+												<circle id="circle-1" fill="#8CE8C3" cx="4" cy="2" r="2" />
+											</g>
+
+											<g id="grp2" opacity="0" transform="translate(44 6)">
+												<circle id="circle-2" fill="#CC8EF5" cx="5" cy="6" r="2" />
+												<circle id="circle-1" fill="#CC8EF5" cx="2" cy="2" r="2" />
+											</g>
+
+											<g id="grp5" opacity="0" transform="translate(14 50)">
+												<circle id="circle-1" fill="#91D2FA" cx="6" cy="5" r="2" />
+												<circle id="circle-2" fill="#91D2FA" cx="2" cy="2" r="2" />
+											</g>
+
+											<g id="grp4" opacity="0" transform="translate(35 50)">
+												<circle id="circle-1" fill="#F48EA7" cx="6" cy="5" r="2" />
+												<circle id="circle-2" fill="#F48EA7" cx="2" cy="2" r="2" />
+											</g>
+
+											<g id="grp1" opacity="0" transform="translate(24)">
+												<circle id="circle-1" fill="#9FC7FA" cx="2.5" cy="3" r="2" />
+												<circle id="circle-2" fill="#9FC7FA" cx="7.5" cy="2" r="2" />
+											</g>
+										</g>
+									</svg>
+								</label>
+							</div>
+							<div class="badge popular">
+								<span>Популярный</span>
+							</div>
+							<div class="badge new">
+								<span>Новинка</span>
+							</div>
+						</div>
+						<div id="product-gallery" class="swiper product-gallery">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a data-fancybox="product" href="../assets/img/product-samples/6.png">
+										<img src="../assets/img/product-samples/6.png" />
+									</a>
+								</div>
+
+								<div class="swiper-slide">
+									<a data-fancybox="product" href="../assets/img/product-samples/7.png">
+										<img src="../assets/img/product-samples/7.png" />
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="product-meta">
+					<h1 class="title">Шампунь кондиционер Виватон</h1>
+
+					<div class="volume">
+						<p>Упаковка:</p>
+						<form class="product-radio-group">
+							<div class="product-radio-group-item">
+								<label for="arr220dk0-option-1">150 мл</label>
+								<input name="arr220dk0-option" type="radio" value="150 мл" id="arr220dk0-option-1" />
+							</div>
+							<div class="product-radio-group-item">
+								<label for="arr220dk0-option-2">200 мл</label>
+								<input name="arr220dk0-option" type="radio" value="200 мл" id="arr220dk0-option-2" />
+							</div>
+						</form>
+					</div>
+
+					<div class="price">
+						<button class="action-btn add-to-cart">
+							<span>Купить</span>
+						</button>
+						<div class="quantity-container">
+							<button id="qtt-minus" class="qtt minus">
+								<i class="fa-solid fa-minus"></i>
+							</button>
+							<input disabled class="quantity" id="qtt" type="number" value="1" min="1" max="100"
+								size="3" />
+							<button id="qtt-plus" class="qtt plus">
+								<i class="fa-solid fa-plus"></i>
+							</button>
+						</div>
+						<p class="sum"><span class="calculated"></span> руб.</p>
+						<input type="hidden" id="cost" value="765" />
+					</div>
+
+					<div class="short-description">
+						<p>
+							Порошок тыквы обыкновеннои, порошо к шелухи семян подорожника блошного, экстракт плодов
+							тмина, экстракт плодов фенхеля, экстракт листьев земляники лесной.
+						</p>
+						<a href="#tab1">Читать далее</a>
+					</div>
+
+					<div class="product-info">
+						<p>Артикул: <span class="current articul">V11</span></p>
+						<p>В наличии: <span class="current stock">5 шт.</span></p>
+						<p>Рейтинг: <span class="current rating">5 <i class="fa-solid fa-star"></i></span></p>
+					</div>
+				</div>
+			</section>
+
+			<div class="breadcrumbs product">
+				<p><span class="homepage"><a href="/Celius-Static/">Главная</a></span><span class="break"> /
+					</span><span><a href="/Celius-Static/shop">Интернет-магазин</a></span><span class="break">
+						/
+						<span><a href="/Celius-Static/#">Категория</a></span><span class="break"> / </span><span
+							class="last-crumb">Товар</span></p>
+			</div>
+
+			<section class="product-info">
+				<ul class="tab-controllers" id="tabs">
+					<li class="tab-button">
+						<a class="tab-link" data-tab="#tab1" href="#">Описание товара</a>
+					</li>
+					<li class="tab-button">
+						<a class="tab-link" data-tab="#tab2" href="#">Полезное видео</a>
+					</li>
+					<li class="tab-button">
+						<a class="tab-link" data-tab="#tab3" href="#">Отзывы (<span id="rating-length"></span>)</a>
+					</li>
+					<li class="tab-button">
+						<a class="tab-link" data-tab="#tab4" href="#">Оплата и доставка</a>
+					</li>
+				</ul>
+
+				<div class="tab-content description" id="tab1" data-tabs-default data-tab-content>
+					<div class="content">
+						<p class="strong">Состав:</p>
+						<p>
+							Корень лопуха, корень одуванчика, корень имбиря, трава люцерны - химический состав: инулин,
+							дубильные, горькие вещества, холин, воск, железо, сера, цинк, селен, йод, кальций, фосфор,
+							бор,
+							калий, магний, марганец, медь, хром, смолы, витамины А, D, D3, C, E, В1, В2, В3, В6, B12, H,
+							PP,
+							тритерпеновые соединения, фитостерины, жирные масла, глицериды кислот, кумарины, хлорофилл,
+							аминокислоты, высокомолекулярные соединения - триакоитанол, октакозанол; флавоноиды,
+							алкалоиды,
+							сапонны, фолиевая кислота, бета-каротин.
+						</p>
+
+						<p class="strong">Состав обладает действием:</>
+
+						<p>
+							Мочегонным, потогонным, болеутоляющим, противовоспалительным, противодиабетическими,
+							антиаллергическим, желчегонным, усиливает дренажную функцию и способствует более быстрой
+							дезинтоксикации организма.
+						</p>
+
+						<p>
+							Компоненты препарата имеют выраженную противогельминтную активность, обладают способностью
+							связывать
+							и выводить из организма фенольные и формальдсгидные ядьг, выраоатьгвасмыс гельминтами,
+							активны в
+							нейтрализации микотоксинов и бактериальных токсинов.
+						</p>
+
+						<p>
+							Стимулирует заживление открытых ран, эрозий, язв, образование протеолитических ферментов
+							поджелудочной железы, улучшают инсулинообразугощую функцию под, келудочной железы,
+							нормализую
+							уровень холестерина и липидов крови, поддерживают баланс кишечной флоры, улучшают секрецию и
+							моторную деятельность желудка и кишечника, повышает эластичность артерий, предупреждают
+							развитие
+							атеросклероза, расслабляют падкую мускулатуру.
+						</p>
+
+						<p class="strong">Показан при следующих состояниях:</p>
+
+						<p>
+							Глистные инвазии, нарушение обмена веществ, аллергия, головная боль, угри, дерматит,
+							нейродермит,
+							экзема, диатез, псориаз, крапивница, кожный зуд, фурункулы, отеки, себорея (перхоть),
+							витилиго,
+							опоясывающий лишай, герпес, бронхит, трахеит, бронхиальная астма, ринит, синусит, тонзиллит,
+							гайморит, артриты, артроз, бурсит, остеопороз, остеохондроз, переломы, ревматизм, инфаркт,
+							инсульт,
+							ИБС, атеросклероз, гипертония, вегето-сосудистая дистония, анемия, кисты, сахарный диабет,
+							диарея,
+							дисбактериоз, запоры, гастрит, гепатит, панкреатит, холецистит, колит, проктит, геморрой,
+							полипоз,
+							простатит, цистит, уретрит, пиелонефрит, миома, аднексит, эндометрит, поликистоз яичников,
+							дисменорея, кариес, пародонтоз, гингивит, стоматит, общая слабость, орексин различной
+							этиологии,
+							нарушение сна, способствует снижению синтеза в организме канцерогенных нитрозаминов
+							(предрасположенность к новообразованиям), до и после оперативных вмешательств, на фоне
+							проведения
+							химио и лучевой терапии.
+						</p>
+
+						<p>Применяют для укрепления и ускорения роста волос при облысении.</p>
+
+						<p class="strong">Способ употребления:</>
+						<p>
+							По 1 капсуле 2 раза в день.
+							Для наружного применения: ожоги, пролежни, язвы, экзема, порезы, гноящиеся раны и др.
+							Открыв капсулу, засыпать порошком, сверху наложить влажную марлевую повязку, марля постоянно
+							должна
+							быть влажной.
+							Спринцевание: на 1 литр теплой воды 1 капсула.
+						</p>
+
+						<p class="strong">Противопоказания: </p>
+						<p>Индивидуальная непереносимость препарата. </p>
+
+						<p><span class="strong">Форма выпуска:</span> 60 капсул по 400 мг.</p>
+					</div>
+				</div>
+				<div class="tab-content media" id="tab2" data-tab-content>
+					<div class="content">
+						<p class="subtitle">
+							Посмотрите полезные видео, как правило в этих видеороликах затрагивается данный препарат,
+							рассказывается о его применении для профилактики и восстановления здоровья.
+						</p>
+						<div class="videos">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/ceA9A-ZbnyM"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/EYru0_UYkzw"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+				<div class="tab-content reviews" id="tab3" data-tab-content>
+					<div class="content">
+						<div class="review-list">
+							<div class="review-item">
+								<div class="rating">
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star half"><i class="fa-regular fa-star"></i></div>
+									<div class="star null"><i class="fa-regular fa-star"></i></div>
+
+									<p class="rating-sum"></p>
+								</div>
+								<div class="review-content">
+									<p>
+										Хороший препарат, пользуюсь каждый день, делаю пропитку на ночь, утром чуствую
+										себя намного лучше. Рекомендую!
+									</p>
+								</div>
+								<div class="review-meta">
+									<p class="name">
+										Валентина М.
+									</p>
+									<p class="date">
+										25.05.2022 г.
+									</p>
+								</div>
+							</div> <!-- .review-item -->
+
+							<div class="review-item">
+								<div class="rating">
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star null"><i class="fa-regular fa-star"></i></div>
+									<div class="star null"><i class="fa-regular fa-star"></i></div>
+
+									<p class="rating-sum"></p>
+								</div>
+								<div class="review-content">
+									<p>
+										Хороший препарат, пользуюсь каждый день, делаю пропитку на ночь, утром чуствую
+										себя намного лучше. Рекомендую!
+									</p>
+								</div>
+								<div class="review-meta">
+									<p class="name">
+										Валентина М.
+									</p>
+									<p class="date">
+										25.05.2022 г.
+									</p>
+								</div>
+							</div> <!-- .review-item -->
+
+							<div class="review-item">
+								<div class="rating">
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star null"><i class="fa-regular fa-star"></i></div>
+									<div class="star null"><i class="fa-regular fa-star"></i></div>
+									<div class="star null"><i class="fa-regular fa-star"></i></div>
+
+									<p class="rating-sum"></p>
+								</div>
+								<div class="review-content">
+									<p>
+										Хороший препарат, пользуюсь каждый день, делаю пропитку на ночь, утром чуствую
+										себя намного лучше. Рекомендую!
+									</p>
+								</div>
+								<div class="review-meta">
+									<p class="name">
+										Валентина М.
+									</p>
+									<p class="date">
+										25.05.2022 г.
+									</p>
+								</div>
+							</div> <!-- .review-item -->
+
+							<div class="review-item">
+								<div class="rating">
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star null"><i class="fa-regular fa-star"></i></div>
+
+									<p class="rating-sum"></p>
+								</div>
+								<div class="review-content">
+									<p>
+										Хороший препарат, пользуюсь каждый день, делаю пропитку на ночь, утром чуствую
+										себя намного лучше. Рекомендую!
+									</p>
+								</div>
+								<div class="review-meta">
+									<p class="name">
+										Валентина М.
+									</p>
+									<p class="date">
+										25.05.2022 г.
+									</p>
+								</div>
+							</div> <!-- .review-item -->
+
+							<div class="review-item">
+								<div class="rating">
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+
+									<p class="rating-sum"></p>
+								</div>
+								<div class="review-content">
+									<p>
+										Хороший препарат, пользуюсь каждый день, делаю пропитку на ночь, утром чуствую
+										себя намного лучше. Рекомендую!
+									</p>
+								</div>
+								<div class="review-meta">
+									<p class="name">
+										Валентина М.
+									</p>
+									<p class="date">
+										25.05.2022 г.
+									</p>
+								</div>
+							</div> <!-- .review-item -->
+
+							<div class="review-item">
+								<div class="rating">
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+									<div class="star one"><i class="fa-regular fa-star"></i></div>
+
+									<p class="rating-sum"></p>
+								</div>
+								<div class="review-content">
+									<p>
+										Хороший препарат, пользуюсь каждый день, делаю пропитку на ночь, утром чуствую
+										себя намного лучше. Рекомендую!
+									</p>
+								</div>
+								<div class="review-meta">
+									<p class="name">
+										Валентина М.
+									</p>
+									<p class="date">
+										25.05.2022 г.
+									</p>
+								</div>
+							</div> <!-- .review-item -->
+						</div>
+						<!-- .review-list -->
+
+						<div class="add-review">
+							<form action="" method="POST">
+								<p class="form-title">Оставьте отзыв</p>
+								<div class="form-row">
+									<div class="input-group">
+										<label for="review-name">Ваше Имя<span class="required">*</span></label>
+										<input name="review" id="review-name" type="text" placeholder="Укажите Имя" />
+									</div>
+									<div class="input-group">
+										<label for="review-email">Email<span class="required">*</span></label>
+										<input name="review" id="review-email" type="text"
+											placeholder="Укажите Email" />
+									</div>
+								</div>
+								<div class="input-group">
+									<label for="review-name">Ваш отзыв<span class="required">*</span></label>
+									<textarea name="review" id="review-message" minlength="10" maxlength="140"
+										placeholder="Введите свой отзыв о данном товаре (до 140 символов)"></textarea>
+								</div>
+								<div class="h-captcha" data-sitekey="6090e8a9-2a4a-4005-8ef1-bc2f06534338"></div>
+								<p class="warning">
+									Перед отправкой отзыва убедитесь, что он соответствует <a href="#"
+										target="_blank">правилам</a>: не содержит
+									оскорблений
+									и ссылок на сторонние ресурсы
+								</p>
+								<input name="review" class="submit-btn" type="submit" value="Отправить отзыв" />
+							</form>
+						</div> <!-- .add-review -->
+					</div>
+				</div>
+				<div class="tab-content delivery" id="tab4" data-tab-content>
+					<div class="content">
+						<section class="delivery-content">
+							<div class="content-item">
+								<div class="title">
+									<h2>
+										Оплата заказа
+									</h2>
+								</div>
+								<div class="post">
+									<p class="strong">Для того, чтобы получить свой заказ мы подготовили для Вас
+										несколько
+										вариантов
+										оплаты:</p>
+									<ul class="delivery-list">
+										<li>
+											<p class="title">1. ВАРИАНТ - <span class="green">ОПЛАТА СРАЗУ НА
+													САЙТЕ</span>
+											</p>
+											<p>
+												Вы можете оплатить заказ сразу на сайте любой банковской картой VISA,
+												Master
+												Card,
+												МИР
+												или электронными деньгами Ю. Many (Яндекс Деньги), QIWI, а также через
+												систему
+												Сбербанк
+												Онлайн.
+											</p>
+											<p>
+												После оплаты в течении 5 минут на указанную Вами почту придёт
+												электронный
+												чек и
+												тварная
+												накладная с номером и перечнем Вашего заказа от имени нашего
+												интернет-магазина
+												“Целиус-Официальный интернет-магазин”.
+											</p>
+										</li>
+										<li>
+											<p class="title">2. ВАРИАНТ - <span class="green">ОПЛАТА ЗАКАЗА ПРИ
+													ПОЛУЧЕНИИ</span></p>
+											<p>
+												Вы можете воспользоваться услугой “Наложенный платёж” и оплатить заказ и
+												доставку
+												непосредственно при получении в отделение транспортной компании вашего
+												населённого
+												пункта. Если по каким либо причинам, в момент получения заказа
+												покупатель
+												решит
+												отказывается, он должен оплатить стоимость доставки в полном размере.
+											</p>
+										</li>
+										<li>
+											<p class="title">3. ВАРИАНТ - <span class="green">ОПЛАТА ЗАКАЗА НАЛИЧНЫМИ
+													ИЛИ
+													ПЕРЕВОДОМ
+													ЧЕРЕЗ ПРИЛОЖЕНИЕ ВАШЕГО БАНКА</span></p>
+											<p>
+												Если Вы выберите способ доставки “Самовывоз” или “Доставка курьером по
+												Москве”, Вы
+												всегда сможете оплатить заказ при получении наличным расчётом или
+												произвести
+												перевод
+												по
+												номеру телефона через мобильное приложение Вашего банка.
+											</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="content-item">
+								<div class="title">
+									<h2>
+										Доставка вашего заказа
+									</h2>
+								</div>
+								<div class="post">
+									<div class="alert">
+										<div class="info-icon"><i class="fa-solid fa-info"></i></div>
+										<p>
+											В связи с сложившийся ситуацией, мы не имеем возможности производить
+											отправку
+											заказов за
+											пределы Российской Федерации, будем надеяться, что эти ограничения скоро
+											закончаться и
+											логистика возобновит свою деятельность в превычном нам режиме.
+										</p>
+									</div>
+									<p class="strong">Для того, чтобы получить свой заказ мы подготовили для Вас
+										несколько
+										вариантов:</p>
+									<ul class="delivery-list">
+										<li>
+											<p class="title">1. ВАРИАНТ - <span class="green">САМОВЫВОЗ</span></p>
+											<p>
+												Если Вы находитесь в Москве, для Вас доступен Самовывоз заказа из нашего
+												центра,
+												который находится по адресу: Большая Семёновская 11 стр. 5 второй этаж.
+												Ежедневно с
+												10:30 до 18:30 (Для получения заказа, необходимо показать чек об оплате,
+												менеджеру
+												интернет-магазина).Вы всегда можете получить консультацию по Вашему
+												заказу
+												позвонив
+												по телефону: <a href="tel:8 (909)-930-10-70">8 (909)-930-10-70</a>
+												(Администратор
+												интернет-магазина).
+											</p>
+										</li>
+										<li>
+											<p class="title">2. ВАРИАНТ - <span class="green">ДОСТАВКА КУРЬЕРОМ ПО
+													МОСКВЕ</span></p>
+											<p>
+												Если Вы находитесь в Москве, для Вас доступен Самовывоз заказа из нашего
+												центра,
+												который находится по адресу: Большая Семёновская 11 стр. 5 второй этаж.
+												Ежедневно с
+												10:30 до 18:30 (Для получения заказа, необходимо показать чек об оплате,
+												менеджеру
+												интернет-магазина).Вы всегда можете получить консультацию по Вашему
+												заказу
+												позвонив
+												по телефону: <a href="tel:8 (909)-930-10-70">8 (909)-930-10-70</a>
+											</p>
+										</li>
+										<li>
+											<p class="title">3. ВАРИАНТ - <span class="green">ДОСТАВКА КУРЬЕРСКОЙ
+													СЛУЖБОЙ
+													ДОСТАВКИ</span></p>
+											<p>
+												Этот способ подойдёт для всех жителей России. Мы сотрудничаем с
+												транспортными
+												компаниями Boxberry и СDEK и Почта России. После того, как Вы
+												сформируете
+												корзину с
+												необходимыми товарами, Вас перенаправит на страницу “Оформления заказа”,
+												укажите
+												адрес доставки и в автоматическом режиме Вам будет предложены все 3
+												варианта
+												доставки, просто выберите для себя наиболее подходящий по срокам и
+												стоимости.
+											</p>
+											<p>
+												Если у Вас возникли какие либо вопросы по вариантам доставки, Вы всегда
+												можете
+												получить консультацию позвонив по телефону: <a
+													href="tel:8 (909)-930-10-70">8
+													(909)-930-10-70</a> (Администратор
+												интернет-магазина).
+											</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<div class="footer-links">
+				<div class="column">
+					<a href="/Celius-Static/maintenance">О ЦЕНТРЕ</a>
+					<a href="/Celius-Static/maintenance">О ПРОФЕССОРЕ ШИШОВОЙ О. И.</a>
+					<a href="/Celius-Static/maintenance">О МЕТОДЕ КОД “ЗДОРОВЬЯ”</a>
+					<a href="/Celius-Static/maintenance">САМОДИАГНОСТИКА</a>
+				</div>
+				<div class="column">
+					<a href="/Celius-Static/maintenance">ОТВЕТЫ НА ВОПРОСЫ</a>
+					<a href="/Celius-Static/maintenance">УПРАЖНЕНИЯ ДЛЯ ЗДОРОВЬЯ</a>
+					<a href="/Celius-Static/maintenance">НОВОСТИ</a>
+					<a href="/Celius-Static/delivery">ОПЛАТА И ДОСТАВКА</a>
+				</div>
+				<div class="column">
+					<a href="/Celius-Static/maintenance">ОФОРМЛЕНИЕ ЗАКАЗА</a>
+					<a href="/Celius-Static/maintenance">КОНТАКТЫ</a>
+					<a href="/Celius-Static/maintenance">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
+					<a href="/Celius-Static/maintenance">ДОГОВОР ОФРЕТЫ</a>
+				</div>
+			</div>
+			<div class="footer-law">
+				<p>ОГРН-1147746752845</p>
+				<p>ИНН-7719882964</p>
+				<p>КПП-771901001 г.</p>
+				<p>Москва Большая Семёновская 11 стр. 5</p>
+			</div>
+			<div class="footer-disclaimer">
+				<p>Материалы, размещенные на данной странице, носят информационный характер и предназначены для
+					образовательных целей. Посетители сайта не должны использовать их в качестве медицинских
+					рекомендаций. Определение диагноза и выбор методики лечения остается исключительной прерогативой
+					вашего лечащего врача! ООО «Целиус» не несёт ответственности за возможные негативные последствия,
+					возникшие в результате использования информации, размещенной на сайте, olgashishova.ru
+				</p>
+			</div>
+			<div class="footer-warning">
+				<p>ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- SECTION Scripts -->
+	<script src="../assets/js/jquery.js"></script> <!-- jQuery 3.6 -->
+	<script src="../assets/js/fancybox.js"></script>
+	<script src="../assets/js/sliders.js"></script>
+	<script src="../assets/js/swiper-bundle.min.js"></script>
+	<script src="../assets/js/all.min.js"></script> <!-- Все JS, включая библиотеки и app.js -->
+
+
+	<script src="../assets/js/jquery.tabs.min.js" defer></script>
+</body>
+
+</html>

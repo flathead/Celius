@@ -13,32 +13,7 @@ main[data-page="service"] {
           }
         }
       }
-      .breadcrumbs {
-        margin: 3rem 0;
-        p {
-          font-family: $font500;
-          span {
-            color: $color__greenlight;
-            a {
-              color: $color__greenlight;
-              &:hover {
-                color: $color__blue;
-              }
-            }
-            &.homepage {
-              color: $color__text_main;
-              a {
-                color: $color__text_main;
-              }
-            }
-            &.break {
-              &:first-child {
-                color: $color__text_main !important;
-              }
-            }
-          }
-        }
-      }
+
       .content {
         padding-bottom: 2rem;
         a,

@@ -34,6 +34,21 @@
 /* Event filter */
 @import "./parts/event-filter";
 
+/* Checkbox style */
+@import "./parts/checkbox";
+
+/* Like Button */
+@import "./parts/like-button";
+
+/* Product Message */
+@import "./parts/product-message";
+
+/* Delivery info on Delivery page & Product page tab */
+@import "./parts/delivery";
+
+/* Breadcrumbs */
+@import "./parts/breadcrumbs";
+
 /******************************
 * Libraries
 *****************************/
@@ -64,11 +79,17 @@
 /* Information Page */
 @import "./pages/information";
 
-/* Delivery Page */
-@import "./pages/delivery";
-
 /* Contact Page */
 @import "./pages/contact";
 
 /* Training Page */
 @import "./pages/training";
+
+/* Shop Page */
+@import "./pages/shop";
+
+/* Product Page */
+@import "./pages/product";
+
+/* Blog Page */
+@import "./pages/blog";
